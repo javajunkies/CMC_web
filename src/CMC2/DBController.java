@@ -409,7 +409,7 @@ public class DBController {
   {
     return db.user_addUser(firstName, lastName, username, password, type);
   }
-
+    
   
   /**
    * This method searches for schools that meet the criteria entered as parameters
@@ -481,7 +481,6 @@ public class DBController {
    * @return - true or false
    */
   public boolean betweenInt(int min, String number, int max)
-
   {
 	  if (min <= Integer.parseInt(number)   &&   Integer.parseInt(number) <= max)
 		  return true;
@@ -687,14 +686,21 @@ public class DBController {
    */
   public int removeUniversity(String name)
   {
+	 
    String[][] howMany = db.university_getNamesWithEmphases();
+   if(howMany.length > 0) {
    for(int i = 0; i < howMany.length; i++) {
     if(howMany[i][0].equals(name)) {
      String emphasis = howMany[i][1];
      db.university_removeUniversityEmphasis(name, emphasis);
     }
    }
-    return db.university_deleteUniversity(name);
+   }
+   	int result = db.university_deleteUniversity(name);
+    if(result != 1) {
+    	throw new IllegalArgumentException("Could not find university with name " + name);
+    }
+    return result;
   }
   
   /**
@@ -841,7 +847,11 @@ public class DBController {
         type = users[i][4].charAt(0);
       }
     }
-    return db.user_editUser(user, first, last, password, type, 'N');
+    int result = db.user_editUser(user, first, last, password, type, 'N');
+    if (result != 1) {
+    	throw new IllegalArgumentException("Could not find user with username " + username);
+    }
+    return result;
   }
   
   /**
@@ -854,12 +864,13 @@ public class DBController {
    String[][] howMany = db.user_getUsernamesWithSavedSchools();
    if(!(howMany == null)) {
    for(int x = 0; x < howMany.length; x++) {
+	   if(username.equals(howMany[x])) {
     String school = howMany[x][1];
     db.user_removeSchool(username, school);
+	   }
    }
    }
     return db.user_deleteUser(username);
-  
   }
   
   /**
@@ -876,81 +887,14 @@ public class DBController {
 	  int result;
 	  if (isUniqueUsername(user)) {
 		  result = db.user_addUser(first, last, user, pass, 't');
+		  db.user_editUser(user, first, last, pass, 't', 'N');
 	  }
 	  else {
 		  result = 0;
 	  }
-	  db.user_editUser(user, first, last, pass, 't', 'N');
     return result;
   }
 
-
-
- /** 
-   * sort a users saved schools by percent of students admitted 
-   * @param username   the username supplied for retrieving a list of saved schools
-   * 
-   * @return ArrayList a list sorted by Acceptances
-   */
- public ArrayList<University> sortByAcceptance(String username) {
-    ArrayList<University> byAcceptance = this.viewSavedSchools(username); 
-    for(int i = 0; i < byAcceptance.size(); i++) {
-    	for(int k = i + 1; k < byAcceptance.size(); k++) {
-    		if(byAcceptance.get(i).getPercentAdmitted() > byAcceptance.get(k).getPercentAdmitted()) {
-    			University temp = byAcceptance.get(i);
-    			byAcceptance.set(i, byAcceptance.get(k));
-    			byAcceptance.set(k, temp);
-    		}
-    	}
-    }
-    return byAcceptance;
- }
-    
-    
-
- /** 
-   * sort a users saved schools by price
-   * 
-   * @param username the username supplied for retrieving a list of saved schools
-   * 
-   * @return ArrayList a list sorted by the expenses
-   */
- public ArrayList<University> sortByExpenses(String username) {
-    ArrayList<University> byExpenses = this.viewSavedSchools(username);
-    for(int i = 0; i < byExpenses.size(); i++) {
-    	for(int k = i + 1; k < byExpenses.size(); k++) {
-    		if(byExpenses.get(i).getExpenses() > byExpenses.get(k).getExpenses()) {
-    			University temp = byExpenses.get(i);
-    			byExpenses.set(i, byExpenses.get(k));
-    			byExpenses.set(k, temp);
-    		}
-    	}
-    }
-    return byExpenses;
- }	
-    
-
- /** 
-   *  sort a users saved schools by number of students 
-   *              attending the school
-   * 
-   * @param username the username supplied for retrieving a list of saved schools
-   * 
-   * @return ArrayList list sorted by the number of students
-   */
- public ArrayList<University> sortByNumStudents(String username) {
-    ArrayList<University> byNumStudents = this.viewSavedSchools(username);
-    for(int i = 0; i < byNumStudents.size(); i++) {
-    	for(int k = i + 1; k < byNumStudents.size(); k++) {
-    		if(byNumStudents.get(i).getNumStudents() > byNumStudents.get(k).getNumStudents()) {
-    	    	  University temp = byNumStudents.get(i);
-    		      byNumStudents.set(i, byNumStudents.get(k));
-    		      byNumStudents.set(k, temp);
-    		}
-    	}
-    }
-    return byNumStudents;
- }
 
 	/**
 	 * sort a users saved schools by either number of students, expenses, or

@@ -75,11 +75,11 @@ public class AdminController {
 	  
 	  for(University university : dbcontroller.getAllUniversities()) {
 	    	if(name.equals(university.getSchool())) {
-	    		
+	    		return dbcontroller.removeUniversity(name);
 	    	}
 	    }
 	  
-    return dbcontroller.removeUniversity(name); 
+    throw new IllegalArgumentException("Cannot find university: " + name);
   }
 
   /**
@@ -213,17 +213,18 @@ public class AdminController {
                                double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, 
                                int academicsScale, int socialScale, int qualityOfLifeScale) {
 	  
-	/*
+	
 	  boolean nameChange = false;
 	  for(University university : dbcontroller.getAllUniversities()) {
 		  if(school.equals(university.getSchool())) {
 			  nameChange = true;
-			  
 		  }
 	  }
 
 
-  */
+  if(nameChange == true || school.equals("")) {
+	  throw new IllegalArgumentException("Invalid school name.");
+  }
 	  if(state.equals("")) {
 		  throw new IllegalArgumentException("No state entered.");
 	  }
@@ -305,8 +306,10 @@ public class AdminController {
    * @return int the status of editing a user
    */
   public int editUser(String username, String firstName, String lastName, String password, char type, char status) {
-	  if(!dbcontroller.isUniqueUsername(username)) {
-		  throw new IllegalArgumentException("Invalid username.");
+	  for(User user : dbcontroller.getAllUsers()) {
+		  if(username.equals(user.getUsername())) {
+			  throw new IllegalArgumentException("Invalid username.");
+		  }
 	  }
 	  
 	  if(firstName.equals("")) {
@@ -375,28 +378,31 @@ public class AdminController {
    * @return boolean If the user was added 
    */
   public int addNewUser(String firstName, String lastName, String username, String password, char type) {
+	 int o = 1;
 	  if(dbcontroller.isUser(username)) {
-		  throw new IllegalArgumentException("Invalid username.");
+		  throw new IllegalArgumentException("Username not unique.");
 	  }
 	  else if(accountController.checkPasswordCriteria(password) == 1) {
 		  throw new IllegalArgumentException("Invalid password, must have 8 characters.");
 		  //return -4;
 	  }
 	  else if(accountController.checkPasswordCriteria(password) == 2) {
-		  throw new IllegalArgumentException("Invalid password, must have atleast 1 letter.");
+		  throw new IllegalArgumentException("Invalid password, must have at least 1 letter.");
 		  //return -5;
 	  }
 	  else if(accountController.checkPasswordCriteria(password) == 3){
-		  throw new IllegalArgumentException("Invalid password, must have atleast 1 number.");
+		  throw new IllegalArgumentException("Invalid password, must have at least 1 number.");
 		  //return -6;
 	  }
-	  else if(type == 'u' && type == 'a' && type == 't') {
+	  else if(type == 'u' || type == 'a' || type == 't') {
+		  o = 0;
 		  
-		  throw new IllegalArgumentException("Invalid account type.");
 	  }
-	  else {
+	  
+	  if (o == 1) {
+		  throw new IllegalArgumentException("Invalid Account Type");
+	  }
 		  return dbcontroller.createUser(firstName, lastName, username, password, type);
-	  }
 	  
   }
   /**

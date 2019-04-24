@@ -24,7 +24,12 @@ public class AccountController{
    * @return int the status of the registration and entering into the database
    */
   public int register(String first, String last, String username, String password) {
+	  if(this.checkPasswordCriteria(password) == 0) {
     return db.registerNewUser(first, last, username, password);
+	  }
+	  else {
+		  throw new IllegalArgumentException("Invalid Password");
+	  }
   }
   
   /**
