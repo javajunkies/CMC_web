@@ -4,11 +4,9 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-//import org.junit.BeforeClass;
 import org.junit.Test;
 
 import CMC2.DBController;
@@ -18,15 +16,12 @@ import CMC2.User;
 public class DBControllerTest {
 
 	private static DBController db;
-<<<<<<< HEAD
-=======
 
 	@Before
 	public void setUp() {
 		db.addUniversity("Joe Town U", "MN", "St. Joseph", "private", 3000, 50.0, 2000.0, 2000.0, 7000.0, 50.0, 4000, 75.0, 60.0, 4, 3, 2);
 		db.createUser("ben", "west", "benwest", "slimshady12", 'u');
 	}
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -128,8 +123,7 @@ public class DBControllerTest {
 	}
 	
 	@Test
-<<<<<<< HEAD
-=======
+
 	public void alreadyOnaddToSavedTest() {
 		db.createUser("TestAddtesting", "ToSaved", "testAdd", "Password1", 'u');
 		int expected = -1;
@@ -171,7 +165,7 @@ public class DBControllerTest {
 	}
 	
 	@Test
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
+
 	public void deleteUserTest() {
 		db.createUser("john", "west", "jwest", "Password2", 'u');
 		int expected = 1;
@@ -208,20 +202,10 @@ public class DBControllerTest {
 	
 	@Test
 	public void deactivateUserTest() {
-<<<<<<< HEAD
 		db.deactivateUser("luser");
 	}
 	
-	@Test
-	public void sortByNumStudentsTest() {
-		db.sortByNumStudents("juser");
-	}
-=======
-		db.createUser("john", "sals", "jsals", "Password1", 'u');
-		int expected = 1;
-		int actual = db.deactivateUser("jsals");
-		assertEquals(expected, actual);
-	}
+
 	
 	@Test
 	public void InvalidUsernamedeactivateUserTest() {
@@ -239,7 +223,7 @@ public class DBControllerTest {
 		assertEquals(expected, actual);
 	}
 
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
+
 
 	
 	@Test
@@ -252,50 +236,39 @@ public class DBControllerTest {
 	public void getRecommendationsTest() {
 	}
 
-<<<<<<< HEAD
 	
-	@Test
+/*	@Test
 	public void editUnivInfo() {
 		//fill this out
 		db.editUnivInfo(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale)
-=======
-	@Test 
+}*/
+@Test 
 	public void removeFromSaved() {
 		db.createUser("ben", "west", "benwest", "slimshady12", 'u');
 		db.addToSaved("benwest", "BARD");
 		int expected = 1;
 	    int actual = db.removeFromSaved("benwest", "BARD");
 	    assertTrue("Remove From Saved: ", expected == actual);
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 	
 	@Test
 	public void viewUserTest() {
-<<<<<<< HEAD
-		db.viewUser("juser")
+		db.viewUser("juser");
 	}
 	
 	@Test 
 	public void isUserTest() {
-	    db.isUser("auser")
+	    db.isUser("auser");
 	}
 
-	@Test 
-	public void removeFromSaved() {
-	    db.removeFromSaved("auser", "BUTLER")
-	}
 	
-	@Test
+/*	@Test
 	public void sort() {
 		//finish after sort is done
 		db.sort();
-	}
+	}*/
 	
-=======
-		User user = new User("ben", "west", "benwest", "slimshady12", 'u', 'Y');
-		User result = db.viewUser("benwest");
-		assertTrue("View User Test: ", user.toString().equals(result.toString()));
-	}
+
 	
 	@Test 
 	public void isUserTestValid() {
@@ -320,7 +293,6 @@ public class DBControllerTest {
 	}
 	
 
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	@Test
 	public void removeUniversityTest() {
 		db.removeUniversity("Augsburg");
@@ -334,23 +306,13 @@ public class DBControllerTest {
 	@Test
 	public void getAllUniversitiesTest() {
 		int actualResult = db.getAllUniversities().size();
-<<<<<<< HEAD
-		int expResult = 179;
-		assertTrue("There are 179 universities", (actualResult == expResult));
-=======
 		int expResult = 186;
 		//assertEquals(actualResult, expResult);
 		assertTrue("There are 186 universities", (actualResult == expResult));
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 	
 	@Test
 	public void viewExistingUniversityTest() {
-<<<<<<< HEAD
-		University expUniversity = new University("Abilene Christian University", "Texas", "Suburban", "private", 10000, 50, -1, -1, 12088, 70, 4000, 90, 80, 2, 3, 3);
-		University actualUniversity = db.viewExistingUniversity("Abilene Christian University");
-		assertTrue("Universities are the same", (expUniversity == actualUniversity))
-=======
 		University expUniversity = new University("ABILENE CHRISTIAN UNIVERSITY", "TEXAS", "SUBURBAN", "PRIVATE", 10000, 50, -1, -1, 12088, 70, 4000, 90, 80, 2, 3, 3);
 		University actualUniversity = db.viewExistingUniversity("ABILENE CHRISTIAN UNIVERSITY");
 		assertTrue("Universities are the same", (expUniversity.toString().equals(actualUniversity.toString())));
@@ -385,8 +347,6 @@ public class DBControllerTest {
 		db.adminEditUser("akasnoopdawg", "ben", "east", "snoopdawg1", 't', 'N');
 		User testedUser = db.viewUser("akasnoopdawg");
 		assertTrue(testedUser.getLast().equals("east"));
-		db.adminEditUser("akasnoopdawg", "ben", "west", "snoopdawg1", 't', 'N');
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 
 	@AfterClass
@@ -394,11 +354,8 @@ public class DBControllerTest {
 	{
 		db.deleteUser("username");
 		db.deleteUser("testAdd");
-<<<<<<< HEAD
 		db.removeUniversity("testSchool");
 		db.removeUniversity("CSBSJU");
-	}
-=======
 		db.deleteUser("testAddtest");
 		db.deleteUser("testAddtesting");
 		db.removeUniversity("testSchool");
@@ -407,5 +364,4 @@ public class DBControllerTest {
 		db.deleteUser("ben");
 	}
 	
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 }

@@ -305,10 +305,8 @@ public class AdminController {
    * @return int the status of editing a user
    */
   public int editUser(String username, String firstName, String lastName, String password, char type, char status) {
-	  for(User user : dbcontroller.getAllUsers()) {
-		  if(username.equals(user.getUsername())) {
-			  throw new IllegalArgumentException("Invalid username.");
-		  }
+	  if(!dbcontroller.isUniqueUsername(username)) {
+		  throw new IllegalArgumentException("Invalid username.");
 	  }
 	  
 	  if(firstName.equals("")) {
