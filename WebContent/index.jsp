@@ -17,4 +17,11 @@
 		</div>
 		
 		
-		<!-- paste yo s
+		<!-- paste yo shit here -->
+		
+		
+		
+	</div>
+	<span class="footer">JavaJunkies</span>
+</body>
+</html>
