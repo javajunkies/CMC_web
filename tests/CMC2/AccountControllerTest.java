@@ -5,11 +5,7 @@ package CMC2;
 
 import static org.junit.Assert.*;
 
-<<<<<<< HEAD
-=======
 import org.junit.After;
-import org.junit.Before;
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -28,10 +24,6 @@ public class AccountControllerTest {
 	/**
 	 * @throws java.lang.Exception
 	 */
-<<<<<<< HEAD
-=======
-	
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ac = new AccountController();
@@ -39,7 +31,6 @@ public class AccountControllerTest {
 	}
 	
 	
-<<<<<<< HEAD
 	@Test(expected = IllegalArgumentException.class)
 	public void testRegister(String first, String last, String username, String password) {
 
@@ -56,21 +47,6 @@ public class AccountControllerTest {
 		assertTrue("Not Unique username ", expected == actual);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void testRegisterInvalidPassword(String first, String last, String username, String password) {
-		
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testIsNotUniqueUsername(String username) {
-		
-	}
-	
-	
-	@Test
-	public void testIsUniqueUsername(String username) {
-		
-=======
 	@Test
 	public void testRegister() {
 		int expected = 0; 
@@ -159,7 +135,6 @@ public class AccountControllerTest {
 	@After
 	public void setUpAfterClass()  {
 		db.deleteUser("ben2");
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 }
 	

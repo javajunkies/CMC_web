@@ -190,24 +190,9 @@ public class UserController {
 	 return dbcontroller.getRecommendations(university);
  }
 
-<<<<<<< HEAD
-public ArrayList<University> sortByAcceptance(String username) {
-	return dbcontroller.sortByAcceptance(username);
-}
-
-public ArrayList<University> sortByExpenses(String username) {
-	return dbcontroller.sortByExpenses(username);
-}
-
-public ArrayList<University> sortByNumStudents(String username) {
-	return dbcontroller.sortByNumStudents(username);
-}
-=======
 public ArrayList<University> sort(String username, int x) {
 	return dbcontroller.sort(username, x);
 }
-
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 
 public void setCurrentUser(User currentUser) {
 	this.currentUser = currentUser;

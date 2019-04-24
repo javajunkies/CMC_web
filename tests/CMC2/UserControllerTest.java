@@ -5,10 +5,7 @@ package CMC2;
 
 import static org.junit.Assert.*;
 
-<<<<<<< HEAD
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -16,13 +13,6 @@ import CMC2.DBController;
 import CMC2.University;
 import CMC2.User;
 import CMC2.UserController;
-
-=======
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 import java.util.ArrayList;
 
 /**
@@ -86,11 +76,7 @@ public class UserControllerTest {
 		double expResult = 29991.0;
 		University halfResult = UC.viewExistingUniversity("Augsburg");
 		double actualResult = halfResult.getExpenses();
-<<<<<<< HEAD
 		assertTrue(expResult == actualResult);
-=======
-		assertEquals(expResult, actualResult);
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 	
 	@Test
@@ -102,11 +88,7 @@ public class UserControllerTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void InvalidAccountSaveSchooltest() {
-<<<<<<< HEAD
 		UC.saveSchool("accountUsernamefdsa", "Augsburg");
-=======
-		UC.saveSchool("accountUsername", "Augsburg");
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -136,11 +118,7 @@ public class UserControllerTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void InvalidPasswordeditUserInfotest() {
-<<<<<<< HEAD
 		UC.editUserInfo("Tom", "Wolff", "accountUsername", " f");
-=======
-		UC.editUserInfo("accountUsername", "Tom", "Wolff", " f");
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 	}
 
 	
@@ -176,8 +154,7 @@ public class UserControllerTest {
 		assertEquals(searchTest.toString(), expected.toString());
 	}
 	
-<<<<<<< HEAD
-=======
+
 	@Test
 	public void getRecommendationsTest() {
 		//not working properly
@@ -207,7 +184,7 @@ public class UserControllerTest {
 		assertEquals(expected, actual);
 	}
 	
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
+
 	@AfterClass
 	public static void setUpAfterClass() {
 		db.deleteUser("accountUsername");

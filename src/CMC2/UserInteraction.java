@@ -199,21 +199,8 @@ public class UserInteraction
       return UserController.searchUniversities(mySchool, myState, negateState, myLocation, myControl, minNumStudents, maxNumStudents, minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses, maxExpenses, minPercentFinancialAid, maxPercentFinancialAid, minNumApplicants, maxNumApplicants, minPercentAdmitted, maxPercentAdmitted, minPercentEnrolled, maxPercentEnrolled, minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife, maxQualityOfLife);
 }
   
-<<<<<<< HEAD
-  public ArrayList<University> sortByAcceptance(String username){
-	  return UserController.sortByAcceptance(username);
-  }
 
-public ArrayList<University> sortByExpenses(String username) {
-	 return UserController.sortByExpenses(username);
-}
-
-public ArrayList<University> sortByNumStudents(String username) {
-	return UserController.sortByNumStudents(username);
-}
-=======
   public ArrayList<University> sort(String username, int x){
 	  return UserController.sort(username, x);
   }
->>>>>>> 27d5685d5aa956f64011b6b8f38e3906666af460
 }
