@@ -27,15 +27,7 @@ public class UseCaseTesting {
   
  }
 
- @AfterClass
- public static void tearDownAfterClass() throws Exception {
-     ai.editUniversity("AUGSBURG", "MINNESOTA", "SMALL-CITY", "PRIVATE" , 10000, 43, 420, 490, 29991, 80, 4000, 85, 50, 1, 3, 4);
-  db.deleteUser("testUser");
-  db.deleteUser("testRegister");
-  db.deleteUser("testTempAccount");
-  db.deleteUser("testUser1");
-  db.deleteUser("testUser3");
- }
+
 
  @Test
  public void testU1Login() {
@@ -79,12 +71,13 @@ public class UseCaseTesting {
   int expected = 0;
   int actual = ui.register("Tyreese", "Robinson", "testRegister", "Password1", "Password1");
   assertEquals(expected, actual);
+  db.deleteUser("testRegister");
  }
  
  @Test
  public void testU2RegisterA1() {
   int expected = 4;
-  int actual = ui.register("should", "fail", "juser", "Password1", "Password1");
+  int actual = ui.register("should", "fail", "nadmin", "Password1", "Password1");
   assertEquals(expected, actual);
  }
  
@@ -150,7 +143,7 @@ public class UseCaseTesting {
  
  @Test
  public void testU8ViewUniversityList() {
-  int expected = 185;
+  int expected = 179;
   List<University> result = ai.viewUniversities();
   int actual = result.size();
   assertEquals(expected, actual);
@@ -192,10 +185,9 @@ public class UseCaseTesting {
  @Test
  public void testU11EditUniversityInfo() {
   int expected = 1;
-     ai.addUniversity("Fakename", "State", "Location", "Control" , 100, 50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
-     int actual = ai.editUniversity("Fakename", "Minnesota", "CITY", "Control" , 100, 50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);     
+     ai.addUniversity("School", "State", "Location", "Control" , 100, 50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
+     int actual = ai.editUniversity("School", "Minnesota", "CITY", "Control" , 100, 50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);     
      assertEquals(expected, actual);
-     db.removeUniversity("Fakename");
  }
  
  @Test(expected = IllegalArgumentException.class)
@@ -215,15 +207,15 @@ public class UseCaseTesting {
  @Test
  public void testU14SaveSchool() {
   int expected = 1;
-  int actual = ui.saveSchool("juser", "Auburn");
+  int actual = ui.saveSchool("nadmin", "Auburn");
   assertEquals(expected, actual);
-  ui.removeSavedSchool("juser", "Auburn");
+  ui.removeSavedSchool("nadmin", "Auburn");
  }
  
  @Test(expected = IllegalArgumentException.class)
  public void testU14SaveSchoolA1() {
-  ui.saveSchool("juser", "Augsburg");
-  ui.saveSchool("juser", "Augsburg");
+  ui.saveSchool("nadmin", "Augsburg");
+  ui.saveSchool("nadmin", "Augsburg");
  }
 
  @Test
@@ -267,7 +259,7 @@ public class UseCaseTesting {
  
  @Test(expected = IllegalArgumentException.class)
  public void testU18AdminEditUserA1() {
-  ai.adminEditUser("juser", "FirstName", "LastName", "PAssword1", 'u', 'Y');
+  ai.adminEditUser("nadmin", "FirstName", "LastName", "PAssword1", 'u', 'Y');
  }
  
  @Test(expected = IllegalArgumentException.class)
@@ -277,17 +269,17 @@ public class UseCaseTesting {
  
  @Test(expected = IllegalArgumentException.class)
  public void testU18AdminEditUserA3() {
-  ai.adminEditUser("juser", "FirstName", "LastName", "PAssword1", 'u', 'Y');
+  ai.adminEditUser("nadmin", "FirstName", "LastName", "PAssword1", 'u', 'Y');
  }
  
  @Test(expected = IllegalArgumentException.class)
  public void testU18AdminEditUserA4() {
-  ai.adminEditUser("juser", "FirstName", "LastName", "PAssword1", 'u', 'Y');
+  ai.adminEditUser("nadmin", "FirstName", "LastName", "PAssword1", 'u', 'Y');
  }
  
  @Test
  public void testU19ViewUsers() {
-  int expected = 14;
+  int expected = 5;
   ArrayList<User> result = ai.viewUsers();
   int actual = result.size();
   assertEquals(expected, actual);
@@ -302,7 +294,7 @@ public class UseCaseTesting {
  
  @Test(expected = IllegalArgumentException.class)
  public void testU20AddNewUserA1() {
-  ai.addNewUser("Abnormal", "PathA1", "juser", "Password2", 'u');
+  ai.addNewUser("Abnormal", "PathA1", "nadmin", "Password2", 'u');
  }
  
  @Test(expected = IllegalArgumentException.class)
@@ -321,10 +313,20 @@ public class UseCaseTesting {
 @Test
  public void testU22Logff() {
   boolean expResult = false;
-  uc.login("testUser", "Password1");
+  uc.login("testUser", "Password123");
   uc.logoff();
   boolean actualResult = uc.isLoggedIn();
   assertEquals(expResult, actualResult);
  }
 
+@AfterClass
+public static void tearDownAfterClass() throws Exception {
+ ai.editUniversity("AUGSBURG", "MINNESOTA", "SMALL-CITY", "PRIVATE" , 10000, 43, 420, 490, 29991, 80, 4000, 85, 50, 1, 3, 4);
+ db.deleteUser("testUser");
+ db.deleteUser("testTempAccount");
+ db.deleteUser("testUser1");
+ db.deleteUser("testUser3");
+ db.deleteUser("testRegister");
+ db.removeUniversity("School");
+}
 }

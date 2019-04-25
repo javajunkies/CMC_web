@@ -194,6 +194,7 @@ public ArrayList<University> sort(String username, int x) {
 	return dbcontroller.sort(username, x);
 }
 
+
 public void setCurrentUser(User currentUser) {
 	this.currentUser = currentUser;
 }

@@ -185,11 +185,11 @@ public class UserInteraction
     return UserController.editUserInfo(userName, firstName, lastName, password);
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 1) {
-		  return 0;
+		  throw new IllegalArgumentException("Invalid Password.");
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 2) {
-		  return 2;
-	  }
+		  throw new IllegalArgumentException("Invalid Password.");
+		  }
 	  else{
 		  return 3;
 	  }
@@ -199,7 +199,6 @@ public class UserInteraction
       return UserController.searchUniversities(mySchool, myState, negateState, myLocation, myControl, minNumStudents, maxNumStudents, minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses, maxExpenses, minPercentFinancialAid, maxPercentFinancialAid, minNumApplicants, maxNumApplicants, minPercentAdmitted, maxPercentAdmitted, minPercentEnrolled, maxPercentEnrolled, minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife, maxQualityOfLife);
 }
   
-
   public ArrayList<University> sort(String username, int x){
 	  return UserController.sort(username, x);
   }
