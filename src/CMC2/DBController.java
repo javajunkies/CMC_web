@@ -947,6 +947,13 @@ public class DBController {
 		}
 		return null;
 	}
+	
+	public void distance(String u1, String u2) {
+		int result = 0;
+		
+		String[][] univs = db.university_getUniversities();
+		
+	}
 }
 
 
