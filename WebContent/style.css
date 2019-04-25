@@ -85,7 +85,7 @@ body {
   padding: 6px 8px;
   font-size: 12px;
   border: none;
-  float:left
+  float:right;
 }	
 .button:hover {
 	background-color: #2e3131;
@@ -98,9 +98,27 @@ body {
 	top: 35%;
 	margin-left:auto;
 	margin-right:auto;
+}
+.searchBarName{
+  padding: 6px 8px;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.searchAdvanced {
+	position: absolute;	
+	width: 100%;
+	top: 15%;
+	margin-left:auto;
+	margin-right:auto;
 	border-collapse: collapse;
+	
 }
 .searchBar{
   padding: 6px 8px;
   font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
 }
+
