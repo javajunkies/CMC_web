@@ -26,66 +26,87 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
-<td style="vertical-align: top;"><input name="School" value=<%univ.getfName();%>><br>
+<td style="vertical-align: top;"><input name="School" value=<%university.getSchool();%>><br>
 </td>
 </tr>
 <tr>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>
-<td style="vertical-align: top;"><input name="State" value=<%user.getlName();%>><br>
+<td style="vertical-align: top;"><input name="State" value=<%university.getState();%>><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Location<br>
 </td>
-<td style="vertical-align: top;"><input name="Location" value=<%user.getUsername();%> readonly> </td>
+<td style="vertical-align: top;"><input name="Location" value=<%university.getLocation();%> readonly> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Control<br>
 </td>
-<td style="vertical-align: top;"><input name="Control" value=<%user.getPassword();%>> </td>
+<td style="vertical-align: top;"><input name="Control" value=<%university.getControl;%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of Students<br>
 </td>
-<td style="vertical-align: top;"><input name="NumberOfStudents" value=<%user.getType();%>> </td>
+<td style="vertical-align: top;"><input name="NumberOfStudents" value=<%university.getNumberOfStudents();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Percent Females<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="PercentFemales" value=<%university.getPercentFemales();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Verbal<br>
 </td>
-<td style="vertical-align: top;"><input name="SATVerbal" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="SATVerbal" value=<%university.getSATVerbal();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Math<br>
 </td>
-<td style="vertical-align: top;"><input name="SATMath" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="SATMath" value=<%university.SATMath();%>> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Percent Females<br>
+<td style="vertical-align: top;">Expenses<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="Expenses" value=<%university.getExpenses();%>> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Percent Females<br>
+<td style="vertical-align: top;">Percent Financial Aid<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="PercentFinancialAid" value=<%university.getPercentFinancialAid();%>> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Percent Females<br>
+<td style="vertical-align: top;">Number Of Applicants<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="Number of Applicants" value=<%university.getNumApplicants();%>> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Percent Females<br>
+<td style="vertical-align: top;">Percent Admitted<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%user.getStatus();%>> </td>
+<td style="vertical-align: top;"><input name="Percent Admitted" value=<%university.getPercentAdmitted();%>> </td>
 </tr>
+<tr>
+<td style="vertical-align: top;">Percent Enrolled<br>
+</td>
+<td style="vertical-align: top;"><input name="Percent Enrolled" value=<%university.getPercentEnrolled();%>> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Academics Scale<br>
+</td>
+<td style="vertical-align: top;"><input name="Academics Scale" value=<%university.getAcademicsScale();%>> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Social Scale<br>
+</td>
+<td style="vertical-align: top;"><input name="Social Scale" value=<%university.getSocialScale();%>> </td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Quality of Life Scale<br>
+</td>
+<td style="vertical-align: top;"><input name="Quality of Life Scale" value=<%university.getQualityOfLife();%>> </td>
+</tr>
+
 
 <tr>
 <td style="vertical-align: top;"><input value="Edit"
