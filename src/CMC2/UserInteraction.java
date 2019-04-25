@@ -21,7 +21,7 @@ public class UserInteraction
    * @param password - user's password
    * @return int the status of the login
    */
-  public int login(String username, String password)
+  public int logisearn(String username, String password)
   {
     return UserController.login(username, password);
   }
