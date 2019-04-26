@@ -9,7 +9,7 @@
 </head>
 <body>
 <br>
-<form action="school.jsp" name:="" results="">
+<a href="results.jsp">Go back to search results</a>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
@@ -132,12 +132,10 @@ name="QualityScale" value=""><br>
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;"><input name="BackButton"
-value="Go back to search results" type="button"> <input
-name="SaveButton" value="Save" type="button"> </td>
+<td style="vertical-align: top;"><form method="post" action="save_action.jsp" name="SaveButton"></form><input
+name="SaveButton" value="Save" type="button"> </td></form>
 </tr>
 </tbody>
 </table>
-</form>
 </body>
 </html>

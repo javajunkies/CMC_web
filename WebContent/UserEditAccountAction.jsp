@@ -8,4 +8,5 @@
     String pass = request.getParameter("Pass");
     
     ui.editUserInfo(username, first, last, pass);
+    response.sendRedirect("viewAccount.jsp");
     %>
