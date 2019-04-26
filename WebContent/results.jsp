@@ -8,6 +8,7 @@
 <body>
 	<div class="container">
 		<table >
+		<tbody>
 			<%
 			UserInteraction ui = new UserInteraction();
 			
@@ -49,6 +50,7 @@
 				"</tr>"
 				);
 			} %>
+			</tbody>
 		</table>	
 	</div>
 </body>
