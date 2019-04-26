@@ -9,45 +9,45 @@
 <body>
 <table style="width=100%">
 	<tr>
-		<th>School</th>
-		<th>State</th>
-		<th>Location</th>
-		<th>Control</th>
-		<th>NumberOfStudents</th>
-		<th>PercentFemales</th>
-		<th>SATVerbal</th>
-		<th>SATMath</th>
-		<th>Expenses</th>
-		<th>PercentFinancialAid</th>
-		<th>NumberOfApplicants</th>
-		<th>PercentAdmitted</th>
-		<th>PercentEnrolled</th>
-		<th>AcademicsScale</th>
-		<th>SocialScale</th>
-		<th>QualityOfLifeScale</th>
+		<td style="vertical-align: top; text-align: center;">School</td>
+		<td style="vertical-align: top; text-align: center;">State</td>
+		<td style="vertical-align: top; text-align: center;">Location</td>
+		<td style="vertical-align: top; text-align: center;">Control</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfStudents</td>
+		<td style="vertical-align: top; text-align: center;">PercentFemales</td>
+		<td style="vertical-align: top; text-align: center;">SATVerbal</td>
+		<td style="vertical-align: top; text-align: center;">SATMath</td>
+		<td style="vertical-align: top; text-align: center;">Expenses</td>
+		<td style="vertical-align: top; text-align: center;">PercentFinancialAid</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfApplicants</td>
+		<td style="vertical-align: top; text-align: center;">PercentAdmitted</td>
+		<td style="vertical-align: top; text-align: center;">PercentEnrolled</td>
+		<td style="vertical-align: top; text-align: center;">AcademicsScale</td>
+		<td style="vertical-align: top; text-align: center;">SocialScale</td>
+		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale</td>
 	</tr>
 	<%
-	DBController db = new DBController();
-	for (int i = 0; i < db.getAllUniversities().size(); i++) { %>
-		<tr>
-			<th><%db.getAllUniversities().get(i).getSchool(); %></th>
-			<th><%db.getAllUniversities().get(i).getState(); %></th>
-			<th><%db.getAllUniversities().get(i).getLocation(); %></th>
-			<th><%db.getAllUniversities().get(i).getControl(); %></th>
-			<th><%db.getAllUniversities().get(i).getNumStudents();; %></th>
-			<th><%db.getAllUniversities().get(i).getPercentFemale(); %></th>
-			<th><%db.getAllUniversities().get(i).getSATVerbal(); %></th>
-			<th><%db.getAllUniversities().get(i).getSATMath(); %></th>
-			<th><%db.getAllUniversities().get(i).getExpenses(); %></th>
-			<th><%db.getAllUniversities().get(i).getPercentFinancialAid(); %></th>
-			<th><%db.getAllUniversities().get(i).getNumApplicants(); %></th>
-			<th><%db.getAllUniversities().get(i).getPercentAdmitted(); %></th>
-			<th><%db.getAllUniversities().get(i).getPercentEnrolled(); %></th>
-			<th><%db.getAllUniversities().get(i).getAcademicsScale(); %></th>
-			<th><%db.getAllUniversities().get(i).getSocialScale(); %></th>
-			<th><%db.getAllUniversities().get(i).getQualityOfLife(); %></th>
-		</tr>
-	<% } %>
+	AdminInteraction admin = new AdminInteraction();
+	for (int i = 0; i < admin.viewUniversities().size(); i++) {
+		out.print("<tr>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSchool() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getState() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getLocation() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getControl() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getNumStudents() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getPercentFemale() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSATVerbal() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSATMath() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getExpenses() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getPercentFinancialAid() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getNumApplicants() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getPercentAdmitted() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getPercentEnrolled() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getAcademicsScale() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSocialScale() + "</td>" +
+			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getQualityOfLife() + "</td>" +
+		"</tr>");
+	 } %>
 </table>
 </body>
 </html>
