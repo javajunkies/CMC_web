@@ -44,7 +44,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Control<br>
 </td>
-<td style="vertical-align: top;"><input name="Control" value=<%university.getControl;%>> </td>
+<td style="vertical-align: top;"><input name="Control" value=<%university.getControl();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of Students<br>
