@@ -1,4 +1,4 @@
-<%@ page language="java" import="CMC2" import="java.util.*"%>
+<%@ page language="java" import="CMC2.*" import="java.util.*"%>
 
 
      <%
