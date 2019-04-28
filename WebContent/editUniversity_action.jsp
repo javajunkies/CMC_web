@@ -1,11 +1,11 @@
-<%@ page language="java" import="CMC2" import="java.util.*"%>
+<%@ page language="java" import="CMC2.*" import="java.util.*"%>
 
 
      <%
-	  UniversityController uc = (UniversityController) session.getAttribute("universitycontroller");
-      char t = request.getParameter("Type").charAt(0);
-      char s = request.getParameter("Status").charAt(0);
-      User user = new User(request.getParameter("FirstName"),request.getParameter("LastName"),request.getParameter("Username"),request.getParameter("Password"), t, s); 
-      uc.editUniversity(user);
+	  AdminController ac = (AdminController) session.getAttribute("admincontroller");
+      ac.editUniversity(request.getParameter("School"), request.getParameter("State"), request.getParameter("Location"), request.getParameter("Control"),
+    		  request.getParameter("NumberOfStudents"), request.getParameter("PercentFemales"), request.getParameter("SATVerbal"), request.getParameter("SATMath"),
+    		  request.getParameter("S")
       response.sendRedirect("adminHome.jsp");
 	%>
+	
