@@ -1,19 +1,32 @@
-<!Doctype html>
+<%@page language="java" import="CMC2.*"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-
+<%UserController uc = (UserController)session.getAttribute("user");
+ String uname = uc.getCurrentUser().getUsername();
+%>
 <body>
 	<div class="container">
 		<div class="nav">
 			<span class="CMC">CMC</span>
 			<div class="dropdown">
-				<button class="dropbtn">User</button>
-				<div class="dropdown-content">
-					<a href="/???">Edit Account</a> <a href="/???">Logout</a>
+			<%
+			if (uname != null)
+			{
+				out.print("<button class=\"dropbtn\">" + uname + "</button>" +
+				"<div class= \"dropdown-content\">" + 
+				"<a href=\"edit_action.jsp\">Edit Account</a>" + 
+				"<a href=\"logout_action\">Logout</a>");
+			}
+			else
+			{
+				response.sendRedirect("index.jsp");
+			}
+			%>
+				
 				</div>
 			</div>
 		</div>
@@ -50,10 +63,12 @@
 							<td>Search</td>
 						</tr>
 						<tr>
-							<td><input class="searchBar" type="text" name="school"
-								placeholder="School Name"></td>
+							<td width=50%><input class="searchBar" type="text"
+								name="school" placeholder="School Name"></td>
 							<td><input class="searchBar" type="text" name="state"
 								placeholder="State"></td>
+							<td>Negate<input class="searchBar" type="checkbox"
+								name="negateState"></td>
 						</tr>
 						<tr>
 							<td><input class="searchBar" type="text" name="location"
@@ -146,25 +161,21 @@
 				</form>
 			</center>
 		</div>
+	</div>
+	<span class="footer">JavaJunkies</span>
 
-		<span class="footer">JavaJunkies</span> </span>
-
-		<script type="text/javascript">
-		function toggle() 
-		{
-		  var sa = document.getElementById("sa");
-		  var s = document.getElementById("s");
-		  if (sa.style.display === "none") 
-		  {
-			sa.style.display = "block";
-			s.style.display = "none";
-		  } 
-		  else 
-		  {
-			sa.style.display = "none";
-			s.style.display = "block";
-		  }
+	<script type="text/javascript">
+		function toggle() {
+			var sa = document.getElementById("sa");
+			var s = document.getElementById("s");
+			if (sa.style.display === "none") {
+				sa.style.display = "block";
+				s.style.display = "none";
+			} else {
+				sa.style.display = "none";
+				s.style.display = "block";
+			}
 		}
-		</script>
+	</script>
 </body>
 </html>
