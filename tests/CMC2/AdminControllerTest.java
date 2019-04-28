@@ -1,20 +1,14 @@
 package CMC2;
 
-//import org.java.util.*;
 import static org.junit.Assert.*;
 
-//import java.awt.List;
-//import java.util.ArrayList;
 
 import org.junit.Before;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import CMC2.AdminController;
 import CMC2.DBController;
-
-
-
 
 /**
  * @author dkuhr001
@@ -24,7 +18,7 @@ import CMC2.DBController;
 public class AdminControllerTest {
 	//@BeforeClass
 	private AdminController ac;
-	private DBController db;
+	private static DBController db;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -32,14 +26,14 @@ public class AdminControllerTest {
 	public void setUp() throws Exception {
 		ac = new AdminController();
 		db = new DBController();
+		db.createUser("Test", "FakeUser", "adminconttest", "Password1", 'u');
 	}
 
 	@Test
 	public void testLoginValid() {
-		int login = ac.login("juser","user");
+		int login = ac.login("adminconttest","Password1");
 		assertEquals("Login Successful",0,login);
-		ac.logoff();
-
+		
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -58,22 +52,15 @@ public class AdminControllerTest {
 	public void testLoginInactiveUser() {
 		db.deactivateUser("juser");
 		ac.login("juser","user");
-		
-		
-		
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testLoginTemporaryAccount() {
 		db.registerNewUser("dane","kuhr","dkuhr","danekuhr1234");
 		ac.login("dkuhr","danekuhr1234");
-		
-		db.deleteUser("dkuhr");
 	}
 	
-	
-	
-	
+
 	@Test
 	public void testLogoff() {
 		ac.logoff();
@@ -84,14 +71,9 @@ public class AdminControllerTest {
 	
 	@Test
 	public void testViewUniversities() {
-		//ArrayList<University> view = new ArrayList<University>();
 		ac.viewUniversities();
-		
 	}
-	
-	
-	
-	
+
 	@Test
 	public void testRemoveUniversity() {
 		int remove = ac.removeUniversity("AUGSBURG");
@@ -99,11 +81,10 @@ public class AdminControllerTest {
 		ac.addUniversity("AUGSBURG", "MINNESOTA", "SMALL-CITY", "PRIVATE" , 10000, 43, 420, 490, 29991, 80, 4000, 85, 50, 1, 3, 4);
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testRemoveUniversityInvalid() {
-		int remove = ac.removeUniversity("hdfh57");
-		assertTrue("University removed", remove==0 || remove== -1);
-	}
+		ac.removeUniversity("hdfh57");
+		}
 	
 	
 	
@@ -302,7 +283,7 @@ public class AdminControllerTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testEditUniversityInvalidSchool() {
-		ac.editUniversity("AUGSBURG", "MINNESOTA", "SMALL-CITY", "PRIVATE", 555,
+		ac.editUniversity("", "MINNESOTA", "SMALL-CITY", "PRIVATE", 555,
 	            44, 342, 456, 6653, 
 	            66, 6688, 88, 
 	            55, 4, 3, 1);
@@ -432,10 +413,9 @@ public class AdminControllerTest {
 	
 	@Test
 	public void testEditUser() {
-
-		int edit = ac.editUser("ladmin", "First", "Last1", "password1", 'u', 'Y');
-		assertTrue("User edited.", edit > 0);
-		ac.editUser("ladmin", "First", "LastOld", "password123", 'u', 'Y');
+		int expected = 1;
+		int actual = ac.editUser("adminconttest", "First", "Last1", "password1", 'u', 'Y');
+		assertEquals(expected, actual);
 
 	}
 	
@@ -492,15 +472,13 @@ public class AdminControllerTest {
 		int add = ac.addNewUser("First", "Last1", "userAdded", "password1", 'u');
 		assertTrue("User added.", add > 0);
 		ac.deleteUser("userAdded");
-		//ac.deleteUser("testAdd");
-
 	}
 	
 	
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testAddUserNotUniqueUsername() {
-		ac.addNewUser("First", "Last1", "juser", "password1", 'u');
+		ac.addNewUser("First", "Last1", "nadmin", "password1", 'u');
 	}
 
 
@@ -531,25 +509,18 @@ public class AdminControllerTest {
 	
 	@Test
 	public void testDeactivateUser() {
-		int deactivate = ac.deactivateUser("ladmin");
-		assertTrue("ladmin deactivated.", deactivate != -1);
-		ac.editUser("luser","luser","luser","password1",'U','Y');
+		db.createUser("T", "R", "FAKER", "Password1", 'u');
+		int deactivate = ac.deactivateUser("FAKER");
+		assertEquals(deactivate, 1);
 	}
-
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testDeactivateUserInvalidUsername() {
-		ac.deactivateUser("dogs");
-	}
-	
-	
-	
 	
 	
 	@Test
 	public void testDeleteUser() {
-		int delete = ac.deleteUser("tester2");
-		assertTrue("User deleted", delete > 0);
+		db.createUser("T", "R", "FAKER", "Password1", 'u');
+		int expected = 1;
+		int actual = ac.deleteUser("FAKER");
+		assertEquals(expected, actual);
 
 	}
 	
@@ -559,12 +530,12 @@ public class AdminControllerTest {
 	}
 	
 	
-	@After
-	public void remove() {
-		//ac.addNewUser("user","last","tester2","password1",'u');
-		db.adminEditUser("User John","User","juser","user",'u','Y');
-	}
-	
+	@AfterClass
+	public static void setUpAfterClass()  {
+		db.deleteUser("dkuhr");
+		db.deleteUser("adminconttest");
+		db.deleteUser("FAKER");
+	}	
 }
 
 

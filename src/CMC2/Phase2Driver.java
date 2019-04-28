@@ -335,7 +335,7 @@ import java.util.List;
 		  }
 		  return result;
 	  }
-
+	  
 	  public String testSort(String username, int x) {
 		  ArrayList<University> uni = ui1.sort(username, x);
 		  String result = "";
@@ -344,11 +344,7 @@ import java.util.List;
 	      }
 		 return result;
 	  }
-	  
-	  
-
-	 
-	  
+  
 
 	  public static void main(String[] args)
 	  {
@@ -430,20 +426,7 @@ import java.util.List;
 	    ui.saveSchool("testuser", "Butler");
 	    ui.saveSchool("testuser", "Augsburg");
 	    ui.saveSchool("testuser", "Bard");
-
-	    
-	    
-	    System.out.println("Sort by Expenses: ");
-	    ui.saveSchool("testuser", "Butler");
-	    ui.saveSchool("testuser", "Augsburg");
-	    ui.saveSchool("testuser", "Bard");
-	    
-	    System.out.println("Sort by Number of Students: ");
-	    ui.saveSchool("testuser", "Butler");
-	    ui.saveSchool("testuser", "Augsburg");
-	    ui.saveSchool("testuser", "Bard");
 	    System.out.println(p.testSort("testuser", 1) + '\n');
-
 	    
 	    
 	    
@@ -454,7 +437,7 @@ import java.util.List;
 	    //System.out.println("A1: No recommendations");
 	    System.out.println('\n');
 	    
-
+	    
 	    //U6 Remove Saved School
 	    ai.addNewUser("Remove", "Saved", "Test1", "Password1", 'u');
 	    ui.saveSchool("Test1", "Butler");
