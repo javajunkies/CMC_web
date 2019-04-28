@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class UserInteraction 
 {
-  
+  private User currentUser;
   //objects
   UserController UserController = new UserController();
   AccountController AccountController = new AccountController();
@@ -201,5 +201,12 @@ public class UserInteraction
   
   public ArrayList<University> sort(String username, int x){
 	  return UserController.sort(username, x);
+  }
+  
+  public void setCurrentUser(User user) {
+	  this.currentUser=user;
+  }
+  public User getCurrentUser() {
+	  return currentUser;
   }
 }
