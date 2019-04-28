@@ -5,7 +5,7 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<%UserController uc = (UserController)session.getAttribute("user");
+<%UserController uc = (UserController)session.getAttribute("username");
  String uname = uc.getCurrentUser().getUsername();
 %>
 <body>
@@ -13,7 +13,7 @@
 		<div class="nav">
 			<span class="CMC">CMC</span>
 			<div class="dropdown">
-			<%
+				<%
 			if (uname != null)
 			{
 				out.print("<button class=\"dropbtn\">" + uname + "</button>" +
@@ -26,8 +26,7 @@
 				response.sendRedirect("index.jsp");
 			}
 			%>
-				
-				</div>
+
 			</div>
 		</div>
 
