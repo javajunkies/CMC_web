@@ -2,7 +2,7 @@
 
 	<%
 		AdminController ac = (AdminController) session.getAttribute("admincontroller");
-		User user = ac.getSpecificUser(request.getParameter("Username"));
+		User user = ac.currentAdmin(request.getParameter("Username"));
 	%>
 
 <html>

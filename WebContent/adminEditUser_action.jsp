@@ -4,8 +4,7 @@
      <%
 	  AdminController ac = (AdminController) session.getAttribute("admincontroller");
       char t = request.getParameter("Type").charAt(0);
-      char s = request.getParameter("Status").charAt(0);
-      User user = new User(request.getParameter("FirstName"),request.getParameter("LastName"),request.getParameter("Username"),request.getParameter("Password"), t, s); 
-      ac.aUniversity(user);
+      char s = request.getParameter("Status").charAt(0); 
+      ac.editUser(request.getParameter("Username"), request.getParameter("FirstName"), request.getParameter("LastName"), request.getParameter("Password"), t, s);
       response.sendRedirect("adminHome.jsp");
 	%>
