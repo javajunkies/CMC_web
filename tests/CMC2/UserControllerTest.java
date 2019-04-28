@@ -9,10 +9,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import CMC2.DBController;
-import CMC2.University;
-import CMC2.User;
-import CMC2.UserController;
 import java.util.ArrayList;
 
 /**
@@ -70,7 +66,7 @@ public class UserControllerTest {
 		boolean actualResult = UC.isLoggedIn();
 		assertEquals(expResult, actualResult);
 	}
-	
+	/**
 	@Test
 	public void ViewExistingUniversitytest() {
 		double expResult = 29991.0;
@@ -78,7 +74,7 @@ public class UserControllerTest {
 		double actualResult = halfResult.getExpenses();
 		assertTrue(expResult == actualResult);
 	}
-	
+	*/
 	@Test
 	public void SaveSchooltest() {
 		int expResult = 1;
@@ -86,15 +82,6 @@ public class UserControllerTest {
 		assertEquals(expResult, actualResult);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void InvalidAccountSaveSchooltest() {
-		UC.saveSchool("accountUsernamefdsa", "Augsburg");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void InvalidSaveSchooltest() {
-		UC.saveSchool("accountUsername", "fdsafds");
-	}
 	
 	@Test
 	public void Comparetest() {
@@ -113,14 +100,24 @@ public class UserControllerTest {
 		int actualResult = UC.editUserInfo("accountUsername", "Tom", "wolff", "Password1");
 		//assertTrue("The number of the updates due to the save attempt was " + expResult, expResult == actualResult);
 		assertEquals(expResult, actualResult);
+		db.deleteUser("accountUsername");
 	}
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void InvalidPasswordeditUserInfotest() {
-		UC.editUserInfo("Tom", "Wolff", "accountUsername", " f");
+		UC.editUserInfo("accountUsername", "Tom", "Wolff", " f");
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void InvalidFirstNameeditUserInfotest() {
+		UC.editUserInfo("accountUsername", "", "Wolff", "Password1");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void InvalidLastNameeditUserInfotest() {
+		UC.editUserInfo("accountUsername", "John", "", "Password1");
+	}
 	
 	@Test
 	public void RemoveSaveSchooltest() {
@@ -138,13 +135,6 @@ public class UserControllerTest {
 		assertEquals(expResult, actualResult);
 	}
 	
-	/**
-	@Test(expected = IllegalArgumentException.class)
-	public void InvalidiAccountViewUserInfotest() {
-		UC.viewUserInfo("fdsafd");
-	}
-	*/
-	
 	@Test
 	public void SearchUniversitiestest() {
 		ArrayList<University> expected = new ArrayList<University>();
@@ -154,7 +144,6 @@ public class UserControllerTest {
 		assertEquals(searchTest.toString(), expected.toString());
 	}
 	
-
 	@Test
 	public void getRecommendationsTest() {
 		//not working properly
@@ -162,7 +151,7 @@ public class UserControllerTest {
 	
 	@Test
 	public void sortTest() {
-		//
+		
 	}
 	
 	@Test
@@ -184,7 +173,6 @@ public class UserControllerTest {
 		assertEquals(expected, actual);
 	}
 	
-
 	@AfterClass
 	public static void setUpAfterClass() {
 		db.deleteUser("accountUsername");

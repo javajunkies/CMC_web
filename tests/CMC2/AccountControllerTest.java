@@ -24,6 +24,7 @@ public class AccountControllerTest {
 	/**
 	 * @throws java.lang.Exception
 	 */
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ac = new AccountController();
@@ -31,25 +32,9 @@ public class AccountControllerTest {
 	}
 	
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void testRegister(String first, String last, String username, String password) {
-
-		int expected = 1; 
-		int actual = ac.register("ben", "west", "bwest", "pass1");
-		assertTrue("Register ", expected == actual);
-
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testRegisterNotUniqueUsername(String first, String last, String username, String password) {
-		int expected = 1;
-		int actual = ac.register("Snoopdawg", "smith", "juser", "passw");
-		assertTrue("Not Unique username ", expected == actual);
-	}
-	
 	@Test
 	public void testRegister() {
-		int expected = 0; 
+		int expected = 1; 
 		int actual = ac.register("ben2", "west2", "bwest2", "password122");
 		assertEquals(expected, actual);
 	}
@@ -57,21 +42,21 @@ public class AccountControllerTest {
 	@Test
 	public void testRegisterNotUniqueUsername() {
 		int expected = 0;
-		int actual = ac.register("Snoopdawg", "smith", "juser", "password12");
+		int actual = ac.register("Snoopdawg", "smith", "nadmin", "password12");
 		assertTrue("Not Unique username ", expected == actual);
 	}
 	
-	@Test
+	 @Test(expected = IllegalArgumentException.class)
 	public void testRegisterInvalidPassword() {
 		int expected = 0;
 		int actual = ac.register("Snoopdawg1", "smith", "username3", "passw");
-		assertTrue("Not Unique username ", expected == actual);
+		assertEquals(expected, actual);
 	}
 
 	@Test
 	public void testIsNotUniqueUsername() {
 		boolean expected = false; 
-		boolean actual = ac.isUniqueUsername("juser"); 
+		boolean actual = ac.isUniqueUsername("nadmin"); 
 		assertTrue("Not unique Username ", expected == actual);
 	}
 	
@@ -98,7 +83,7 @@ public class AccountControllerTest {
 	}
 	
 	@Test 
-	public void checkPasswordCriteriaTestTooManyChars() {
+	public void checkPasswordCriteriaTestTooLittleChars() {
 		int expected = 1;
 		int actual = ac.checkPasswordCriteria("pass4");
 		assertTrue("Check Password > 8 Characters", expected == actual);
@@ -128,13 +113,14 @@ public class AccountControllerTest {
 	@Test 
 	public void checkPasswordCriteriaTestNoneMet() {
 		int expected = 1;
-		int actual = ac.checkPasswordCriteria(""); //should be &%*(^)).
+		int actual = ac.checkPasswordCriteria("");
 		assertTrue("Check Password no letter no number", expected == actual);
 	}
 	
 	@After
 	public void setUpAfterClass()  {
-		db.deleteUser("ben2");
+		db.deleteUser("bwest2");
+		db.deleteUser("username3");
 	}
 }
 	

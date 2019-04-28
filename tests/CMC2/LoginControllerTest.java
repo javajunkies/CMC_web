@@ -81,8 +81,8 @@ public class LoginControllerTest {
 
 	@Test
 	public void testFindPassword() {
-		String expected = "password1";
-		String actual = l.findPassword("juser");
+		String expected = "Password1";
+		String actual = l.findPassword("testLogin");
 		assertTrue("Password is " + expected, expected.equals(actual));
 	}
 

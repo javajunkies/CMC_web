@@ -1,5 +1,6 @@
 <%@ page language="java" import="CMC2.*" import="java.util.*"%>
-<html>
+ <html>
+
 <head>
 <meta content="text/html; charset=UTF-8"
 http-equiv="content-type">
