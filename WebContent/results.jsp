@@ -41,9 +41,10 @@
 						int maxSocialScale = Integer.parseInt(request.getParameter("maxSocialScale"));
 						int minQualityOfLife = Integer.parseInt(request.getParameter("minQualityOfLife"));
 						int maxQualityOfLife = Integer.parseInt(request.getParameter("maxQualityOfLife"));
-						boolean negateState = request.getParameter("negateState");
 
-						ArrayList result = new ArrayList<University>();
+						ArrayList<University> result = new ArrayList<University>();
+						String negateStateString = request.getParameter("negateState");
+
 						result = ui.searchUniversities(school, state, negateState, location, control, minStudents, maxStudents,
 								minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses,
 								maxExpenses, minPercentFinancialAid, maxPercentFinancialAid, minNumberApplicants,

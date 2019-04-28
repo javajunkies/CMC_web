@@ -1,13 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page language="java" import="CMC2.*"%>
 <html>
 <head>
-<meta charset="UTF-8"> 
-	<title>CMC</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+<meta charset="UTF-8">
+<title>CMC</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<%-- <%UserController uc = (UserController)session.getAttribute("username");
+ String uname = uc.getCurrentUser().getUsername();
+%> --%>
 <body>
+<%-- 	<div class="container">
+		<div class="nav">
+			<span class="CMC">CMC</span>
+				<div class="dropdown">
+				<%
+				if (uname != null)
+				{
+					out.print("<button class=\"dropbtn\">" + uname + "</button>" +
+					"<div class= \"dropdown-content\">" + 
+					"<a href=\"edit_action.jsp\">Edit Account</a>" + 
+					"<a href=\"logout_action\">Logout</a>");
+				}
+				else
+				{
+					response.sendRedirect("index.jsp");
+				}
+				%>
+				</div>
+			</div>
+		</div> --%>
 <form action="UserEditAccountAction.jsp" name="View/Edit"> <input
 name="Edit" value="Edit User" type="submit"><input name="Reset"
 value="Reset" type="reset"><br>
@@ -50,5 +71,10 @@ name="Type" value="..."><br>
 </table>
 <br>
 </form>
+
+	</div>
+	<span class="footer">JavaJunkies</span>
 </body>
 </html>
+
+
