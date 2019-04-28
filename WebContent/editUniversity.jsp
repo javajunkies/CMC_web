@@ -6,7 +6,7 @@
 	<%
 		AdminController ac = (AdminController) session.getAttribute("admincontroller");
 		//User user = ac.getSpecificUser(request.getParameter("Username"));
-		University univ = ac.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale)
+		University university = ac.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
 	%>
 
 <html>
