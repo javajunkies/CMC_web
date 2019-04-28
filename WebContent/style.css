@@ -122,3 +122,10 @@ body {
   width: 100%;
 }
 
+.inside {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
