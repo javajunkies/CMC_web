@@ -1,12 +1,10 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
-
-
-
 	<%
-		AdminController ac = (AdminController) session.getAttribute("admincontroller");
+		//AdminController ac = (AdminController) session.getAttribute("admincontroller");
+		//UserInteraction ui =(UserInteraction) session.getAttribute("username");
 		//User user = ac.getSpecificUser(request.getParameter("Username"));
-		University university = ac.editUniversity(school, state, location, control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+		University university; 
 	%>
 
 <html>
@@ -15,8 +13,7 @@
 <title>Edit University Form</title>
 </head>
 <body>
-<br>
-Edit University:<br>
+
 <br>
 
 <form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
@@ -104,7 +101,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Quality of Life Scale<br>
 </td>
-<td style="vertical-align: top;"><input name="Quality of Life Scale" value=<%university.getQualityOfLife();%>> </td>
+<td style="vertical-align: top;"><input name="Quality of Life Scale" value=<%//university.getQualityOfLife();%>> </td>
 </tr>
 
 
