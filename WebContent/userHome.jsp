@@ -7,7 +7,7 @@ http-equiv="content-type">
 <title></title>
 </head>
 <body>
-<% UserInteraction ui =(UserInteraction) session.getAttribute("username"); %>
+<% UserInteraction ui = (UserInteraction) session.getAttribute("username"); %>
 Welcome User: <% out.println(ui.getCurrentUser().getUsername());%><br>
 
 <span style="text-decoration: underline;"><a href="UserProfile.jsp"

@@ -31,9 +31,7 @@ public class UserController {
 //	  else if(logInController.login(username, password) == 4) {
 //		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
 //	  }
-//	  else {
-//		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
-//		  this.setLoggedIn(true);
+	  
 		  return logInController.login(username, password);
 	  //}
  }

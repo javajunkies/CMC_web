@@ -17,9 +17,11 @@ import dblibrary.project.csci230.UniversityDBLibrary;
 public class AdminInteraction{
 	
 	private User currentUser;
+	private boolean loggedIn;
  
 	// Initializes AdminController, AccountContriller and LoginController objects
  AdminController adminController = new AdminController();
+ DBController dbcontroller = new DBController();
  //LoginController loginController = new LoginController();
  //AccountController accountController = new AccountController();
  
@@ -35,6 +37,10 @@ public class AdminInteraction{
 
  public int login(String username, String password){
 	 //catch 
+	 if(adminController.login(username,password)==0) {
+		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+		  this.setLoggedIn(true);
+	  }
   return adminController.login(username, password);
  }
  
@@ -196,11 +202,18 @@ public class AdminInteraction{
  public int deleteUser(String username) {
 	 return adminController.deleteUser(username);
  }
- 
+
  public void setCurrentUser(User user) {
 	  this.currentUser=user;
  }
  public User getCurrentUser() {
-	  return currentUser;
+	  return this.currentUser;
  }
+ public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean log) {
+		this.loggedIn = log;
+	}
 }
