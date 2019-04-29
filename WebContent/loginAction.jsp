@@ -1,44 +1,63 @@
-<%@ page language="java" import="CMC2.*" import="java.util.*"%>
+<%@page language="java" import="CMC2.*" import="java.util.*"%>
 
 <%
-	User u = new User();
 	UserInteraction ui = new UserInteraction();
 	AdminInteraction ai = new AdminInteraction();
-	if (u.getType(request.getParameter("Username")) == 'u') {
+	DBController db = new DBController();
 
-		int login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
+	int login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
+	if (login != 1) {
+		Account u = db.findByUsername(request.getParameter("Username"));
 
-		if (login == 0) {
-			// 		session.setAttribute("username", ui);
-			// 		if (u.getType(request.getParameter("Username")) == a) {
-			// 			response.sendRedirect("adminHome.jsp");
-			// 		} else {
-			response.sendRedirect("userHome.jsp");
+		if (u.getUsertype() == 'a' || u.getUsertype() == 'A') {
+			login = ai.login(request.getParameter("Username"), request.getParameter("Password"));
+			if (login == 0) {
+				session.setAttribute("username", ai);
+				response.sendRedirect("adminHome.jsp");
+			} else if (login == 2) {
+				response.sendRedirect("temp_index.jsp?Error=2");
+			} else if (login == 3) {
+				response.sendRedirect("temp_index.jsp?Error=3");
+			} else if (login == 4) {
+				response.sendRedirect("temp_index.jsp?Error=4");
+			} else {
+				response.sendRedirect("temp_index.jsp?Error=5");
+			}
 		}
-	}
-	else if (u.getType(request.getParameter("Username")) == 'a'){
-		int login = ai.login(request.getParameter("Username"), request.getParameter("Password"));
-		if(login==0){
-			response.sendRedirect("adminHome.jsp");
+		// 	else if (u.getUsertype() == 'u' || u.getUsertype() == 'U') {
+		else {
+			login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
+			if (login == 0) {
+				session.setAttribute("username", ui);
+				response.sendRedirect("userHome.jsp");
+			}
+
+			else if (login == 2) {
+				response.sendRedirect("temp_index.jsp?Error=2");
+			} else if (login == 3) {
+				response.sendRedirect("temp_index.jsp?Error=3");
+			} else if (login == 4) {
+				response.sendRedirect("temp_index.jsp?Error=4");
+			} else {
+				response.sendRedirect("temp_index.jsp?Error=5");
+			}
 		}
+	} else {
+		response.sendRedirect("temp_index.jsp?Error=1");
 	}
-	else{
-			response.sendRedirect("index.jsp");
-	}
-			
-	if (login == 1) {
-		response.sendRedirect("index.jsp?Error=1");
-	} 
-	else if (login == 2) {
-		response.sendRedirect("index.jsp?Error=2");
-	} 
-	else if (login == 3) {
-		response.sendRedirect("index.jsp?Error=3");
-	} 
-	else if (login == 4) {
-		response.sendRedirect("index.jsp?Error=4");
-	} 
-	else {
-		response.sendRedirect("index.jsp?Error=5");
-	}
+	//else {
+	//login = 5;
+	//}
+
+	// 	if (login == 1) {
+	// 		response.sendRedirect("temp_index.jsp?Error=1");
+	// 	} else if (login == 2) {
+	// 		response.sendRedirect("temp_index.jsp?Error=2");
+	// 	} else if (login == 3) {
+	// 		response.sendRedirect("temp_index.jsp?Error=3");
+	// 	} else if (login == 4) {
+	// 		response.sendRedirect("temp_index.jsp?Error=4");
+	// 	} else {
+	// 		response.sendRedirect("temp_index.jsp?Error=5");
+	// 	}
 %>

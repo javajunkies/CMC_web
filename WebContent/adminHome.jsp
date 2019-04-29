@@ -7,11 +7,11 @@ http-equiv="content-type">
 <title></title>
 </head>
 <body>
-<% UserInteraction ui =(UserInteraction) session.getAttribute("username"); %>
-Welcome Admin: <% out.println(ui.getCurrentUser().getUsername());%><br>
+<% AdminInteraction ai = (AdminInteraction) session.getAttribute("username"); %>
+Welcome Admin: <% out.println(ai.getCurrentUser().getUsername());%><br>
 
-<a target="_blank" href="ManageUniversities.jsp">Manage Universities</a><br>
-<a href="ManageUsers.jsp" target="_blank">Manage Users</a><br>
+<a target="_blank" href="viewSchools.jsp">Manage Universities</a><br>
+<a href="viewUsers.jsp" target="_blank">Manage Users</a><br>
 
 </body>
 </html>

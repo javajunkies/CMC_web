@@ -5,6 +5,9 @@
 package CMC2;
 import java.util.*;
 
+import dblibrary.project.csci230.UniversityDBLibrary;
+//import edu.csbsju.csci230.User;
+
 /**
  * Interaction class for the admin functionalities
  * 
@@ -12,11 +15,16 @@ import java.util.*;
  * @version March 19, 2019
  */
 public class AdminInteraction{
+	
+	private User currentUser;
+	private boolean loggedIn;
  
 	// Initializes AdminController, AccountContriller and LoginController objects
  AdminController adminController = new AdminController();
- LoginController loginController = new LoginController();
- AccountController accountController = new AccountController();
+ DBController dbcontroller = new DBController();
+ //LoginController loginController = new LoginController();
+ //AccountController accountController = new AccountController();
+ 
  
  /** 
   * Calls the login method from LoginController with given parameters.
@@ -28,7 +36,12 @@ public class AdminInteraction{
   */
 
  public int login(String username, String password){
-  return loginController.login(username, password);
+	 //catch 
+	 if(adminController.login(username,password)==0) {
+		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+		  this.setLoggedIn(true);
+	  }
+  return adminController.login(username, password);
  }
  
  /**
@@ -189,4 +202,18 @@ public class AdminInteraction{
  public int deleteUser(String username) {
 	 return adminController.deleteUser(username);
  }
+
+ public void setCurrentUser(User user) {
+	  this.currentUser=user;
+ }
+ public User getCurrentUser() {
+	  return this.currentUser;
+ }
+ public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean log) {
+		this.loggedIn = log;
+	}
 }

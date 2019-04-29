@@ -29,24 +29,25 @@ public class AdminController {
  * @return int the status of the login
  */
   public int login(String username, String password) {
-	  if(logInController.login(username, password) == 1) {
-		  throw new IllegalArgumentException("Invalid username");
-	  }
-	  else if(logInController.login(username, password) == 2) {
-		  throw new IllegalArgumentException("Invalid username/password combination.");
-	  }
-	  else if(logInController.login(username, password) == 3) {
-		  throw new IllegalArgumentException("Account status is inactive.");
-	  }
-	  else if(logInController.login(username, password) == 4) {
-		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
-	  }
-	  else {
-		  this.setCurrentAdmin((User) dbcontroller.findByUsername(username));
-		  this.setLoggedIn(true);
-		  return logInController.login(username, password);
-	  }
-    
+//	  if(logInController.login(username, password) == 1) {
+//		  throw new IllegalArgumentException("Invalid username");
+//		  return
+//	  }
+//	  else if(logInController.login(username, password) == 2) {
+//		  throw new IllegalArgumentException("Invalid username/password combination.");
+//	  }
+//	  else if(logInController.login(username, password) == 3) {
+//		  throw new IllegalArgumentException("Account status is inactive.");
+//	  }
+//	  else if(logInController.login(username, password) == 4) {
+//		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
+//	  }
+//	  else {
+//		  this.setCurrentAdmin((User) dbcontroller.findByUsername(username));
+//		  this.setLoggedIn(true);
+//		  return logInController.login(username, password);
+//	  }
+	  return logInController.login(username, password);
   }
 
   /**

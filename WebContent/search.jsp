@@ -5,8 +5,8 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<%UserController uc = (UserController)session.getAttribute("username");
- String uname = uc.getCurrentUser().getUsername();
+<%UserInteraction ui = (UserInteraction)session.getAttribute("username");
+ String uname = ui.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">

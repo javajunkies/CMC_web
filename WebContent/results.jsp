@@ -41,9 +41,18 @@
 						int maxSocialScale = Integer.parseInt(request.getParameter("maxSocialScale"));
 						int minQualityOfLife = Integer.parseInt(request.getParameter("minQualityOfLife"));
 						int maxQualityOfLife = Integer.parseInt(request.getParameter("maxQualityOfLife"));
-
+						
+						boolean negateState;
+						if (request.getParameter("negateState") == null)
+						{
+							negateState = false;
+						}
+						else
+						{
+							negateState = true;
+						}
+						
 						ArrayList<University> result = new ArrayList<University>();
-						String negateStateString = request.getParameter("negateState");
 
 						result = ui.searchUniversities(school, state, negateState, location, control, minStudents, maxStudents,
 								minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses,
@@ -53,10 +62,15 @@
 								maxQualityOfLife);
 
 						for (int i = 0; i != result.size(); i++) {
-							out.print("<tr>" + "<td>School</td><td>Compare</td>" + "</tr>" + "<tr>" + "<td width=50% >"
-									+ result.get(i).getSchool() + "</td>"
-									+ "<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value="
-									+ result.get(i).getSchool() + "></td>" + "</tr>");
+							out.print("<tr>" + 
+										"<td>School</td>" +
+										"<td>Compare</td>" + 
+									"</tr>" + 
+									"<tr>" + 
+										"<td width=10% > <input type=\"button\" class=\"button\" value=\"save\" onclick=\"addAction.jsp\"> </td>"+
+										"<td width=50% >" + result.get(i).getSchool() + "</td>" +
+										"<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value=" + result.get(i).getSchool() + "></td>" +
+									"</tr>");
 						}
 					%>
 					<tr>
