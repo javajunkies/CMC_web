@@ -33,7 +33,8 @@
 <br>
 <%String useName = request.getParameter("username");
 	out.println("Edit user:" + useName);
-	
+	UserController uc = (UserController)session.getAttribute("username");
+	User use = uc.getCurrentUser();
 %>
 <form action="UserEditAccountAction.jsp" name="View/Edit"> <input
 name="Edit" value="Edit User" type="submit"><input name="Reset"
@@ -44,33 +45,33 @@ cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">First Name<br>
 </td>
-<td style="vertical-align: top;"><input name="First" value="..."><br>
+<td style="vertical-align: top;"><input name="First" value="<%=use.getFirst()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="Last" value="..."><br>
+<td style="vertical-align: top;"><input name="Last" value="<%=use.getLast()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Username" value="..."><br>
+name="Username" value="<%=use.getUsername()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>
 </td>
-<td style="vertical-align: top;"><input name="Pass" value="..."><br>
+<td style="vertical-align: top;"><input name="Pass" value="<%=use.getPassword()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Type" value="..."><br>
+name="Type" value="<%=use.getUsertype()%>"><br>
 </td>
 </tr>
 </tbody>
