@@ -17,8 +17,8 @@ public class AdminInteraction{
  
 	// Initializes AdminController, AccountContriller and LoginController objects
  AdminController adminController = new AdminController();
- LoginController loginController = new LoginController();
- AccountController accountController = new AccountController();
+ //LoginController loginController = new LoginController();
+ //AccountController accountController = new AccountController();
  
  /** 
   * Calls the login method from LoginController with given parameters.

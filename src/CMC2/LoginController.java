@@ -13,8 +13,8 @@ public class LoginController {
 
 
 	DBController db = new DBController();
-	UserInteraction ui = new UserInteraction();
-	AdminInteraction ai = new AdminInteraction();
+	//UserInteraction ui = new UserInteraction();
+	//AdminInteraction ai = new AdminInteraction();
 
 	/**
 	 * Logs user into system.
