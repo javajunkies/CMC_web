@@ -1,9 +1,10 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
 	<%
-		AdminController ac = (AdminController) session.getAttribute("admincontroller");
-		User user = ac.currentAdmin(request.getParameter("Username"));
+		//AdminController ac = (AdminController) session.getAttribute("admincontroller");
+		//User user = ac.getCurrentAdmin(request.getParameter("Username"));
 	%>
+
 
 <html>
 <head>
