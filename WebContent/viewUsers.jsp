@@ -8,6 +8,10 @@
 </head>
 <body>
 <table style="width=100%">
+	<tr> 
+		<td style="vertical-align: top; text-align: center;"> <button type="button" onclick="addUser.jsp">Add User</button>
+		</td>
+	</tr>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
 		</td>
@@ -32,7 +36,7 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"location.href(\'adminEditUser.jsp\'); value=\"Redirect\">Edit</button> </td>" +
+			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"adminEditUser.jsp\">Edit</button> </td>" +
 		"</tr>");
 	}
 	%>
