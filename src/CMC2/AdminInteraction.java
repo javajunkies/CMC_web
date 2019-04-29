@@ -15,6 +15,8 @@ import dblibrary.project.csci230.UniversityDBLibrary;
  * @version March 19, 2019
  */
 public class AdminInteraction{
+	
+	private User currentUser;
  
 	// Initializes AdminController, AccountContriller and LoginController objects
  AdminController adminController = new AdminController();
@@ -32,7 +34,7 @@ public class AdminInteraction{
   */
 
  public int login(String username, String password){
-  return loginController.login(username, password);
+  return adminController.login(username, password);
  }
  
  /**
@@ -192,5 +194,12 @@ public class AdminInteraction{
   */
  public int deleteUser(String username) {
 	 return adminController.deleteUser(username);
+ }
+ 
+ public void setCurrentUser(User user) {
+	  this.currentUser=user;
+ }
+ public User getCurrentUser() {
+	  return currentUser;
  }
 }
