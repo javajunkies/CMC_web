@@ -37,6 +37,8 @@ public class UserInteraction
    */
   public void logoff()
   {
+	this.setCurrentUser(null);
+	this.setLoggedIn(false);
     UserController.logoff();
   }
   
