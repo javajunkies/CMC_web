@@ -5,21 +5,25 @@
 	AdminInteraction ai = new AdminInteraction();
 	DBController db = new DBController();
 	Account u = db.findByUsername(request.getParameter("Username"));
-	int login = ai.login(request.getParameter("Username"), request.getParameter("Password"));
+	int login;
 	if (u.getUsertype() == 'a' || u.getUsertype() == 'A') {
+		login = ai.login(request.getParameter("Username"), request.getParameter("Password"));
 		if (login == 0) {
 			session.setAttribute("username", ai);
 			response.sendRedirect("adminHome.jsp");
 		}
-	} else if (u.getUsertype() == 'u' || u.getUsertype() == 'U') {
-
+	} 
+// 	else if (u.getUsertype() == 'u' || u.getUsertype() == 'U') {
+	else{
+		login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
 		if (login == 0) {
 			session.setAttribute("username", ui);
 		}
 		response.sendRedirect("userHome.jsp");
-	} else {
-		login = 5;
-	}
+	} 
+	//else {
+		//login = 5;
+	//}
 
 // 	if (login == 1) {
 // 		response.sendRedirect("temp_index.jsp?Error=1");
