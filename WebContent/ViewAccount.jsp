@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CMC</title>
+<title>Edit Account</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <%-- <%UserController uc = (UserController)session.getAttribute("username");
- String uname = uc.getCurrentUser().getUsername();
-%> --%>
-<body>
-<%-- 	<div class="container">
+ String uname = uc.getCurrentUser().getUsername(); 
+ %> --%>
+<%-- <body>
+	<div class="container">
 		<div class="nav">
 			<span class="CMC">CMC</span>
 				<div class="dropdown">
@@ -28,7 +28,13 @@
 				%>
 				</div>
 			</div>
-		</div> --%>
+		</div>   --%>
+<body>
+<br>
+<%String useName = request.getParameter("username");
+	out.println("Edit user:" + useName);
+	
+%>
 <form action="UserEditAccountAction.jsp" name="View/Edit"> <input
 name="Edit" value="Edit User" type="submit"><input name="Reset"
 value="Reset" type="reset"><br>
