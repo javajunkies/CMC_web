@@ -8,7 +8,9 @@
 </head>
 <body>
 <form method="post" action="adminEditUser.jsp" name="adminEditUser"><br>
-<table style="width=100%">
+<table style="text-align: left; width: 1069px; height: 480px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
 		</td>
@@ -37,6 +39,7 @@
 		"</tr>");
 	}
 	%>
+</tbody>
 </table>
 </form>
 </body>
