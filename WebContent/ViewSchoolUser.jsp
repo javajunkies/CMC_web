@@ -8,9 +8,12 @@
 <body>
 <br>
 <%
+UserInteraction ui = (UserInteraction)session.getAttribute("username");
 String school = (request.getParameter("school"));
+University univ = ui.viewExistingUniversity(school);
+out.println(school);
 %>
-<%=school%>
+
 <a href="results.jsp">Go back to search results</a>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
@@ -19,112 +22,112 @@ border="1" cellpadding="2" cellspacing="2">
 <td style="vertical-align: top;">School<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="School"><br>
+name="School" value="<%=univ.getSchool()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="State"><br>
+name="State" value="<%=univ.getState()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Location<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Location"><br>
+name="Location" value="<%=univ.getLocation()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Control<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Control"><br>
+name="Control" value="<%=univ.getControl()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number Of Students<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="NumStudents"><br>
+name="NumStudents" value="<%=univ.getNumStudents()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% Female<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Female"><br>
+name="Female" value="<%=univ.getPercentFemale()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Verbal<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="SATVerbal"><br>
+name="SATVerbal"> value="<%=univ.getSATVerbal()%>"<br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Math<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="SATMath"><br>
+name="SATMath" value="<%=univ.getSATMath()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Expenses<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Expenses"><br>
+name="Expenses" value="<%=univ.getExpenses()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% Financial Aid<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="FinancialAid"><br>
+name="FinancialAid" value="<%=univ.getPercentFinancialAid()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of Applicants<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="NumApplicants"><br>
+name="NumApplicants" value="<%=univ.getNumApplicants()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% Admitted<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Admitted"><br>
+name="Admitted" value="<%=univ.getPercentAdmitted()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">% Enrolled<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Enrolled"><br>
+name="Enrolled" value="<%=univ.getPercentEnrolled()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Academics Scale (1-5)<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="Academics"><br>
+name="Academics" value="<%=univ.getAcademicsScale()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Social Scale (1-5)<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="SocialScale"><br>
+name="SocialScale" value="<%=univ.getSocialScale()%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Quality of Life Scale (1-5)<br>
 </td>
 <td style="vertical-align: top;"><input readonly="readonly"
-name="QualityScale" value=""><br>
+name="QualityScale" value="<%=univ.getQualityOfLife()%>"><br>
 </td>
 </tr>
 <tr>
