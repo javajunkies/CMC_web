@@ -15,7 +15,7 @@
 Edit User:<br>
 <br>
 
-<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
+<form method="post" action="adminEditUser_action.jsp" name="adminEditUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
