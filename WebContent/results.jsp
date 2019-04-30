@@ -380,7 +380,7 @@
 										
 										"<td width=5% >"+
 										"<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"View\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
-										"<td width=5% > <form method=\"post\" action=\"SaveSchool_action.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
+										"<td width=5% > <form method=\"post\" action=\"saveSchoolSearchAction.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
 											"<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value=" + result.get(i).getSchool() + "></td>" +

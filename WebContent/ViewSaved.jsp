@@ -1,77 +1,107 @@
 <%@ page language="java" import="CMC2.*, java.util.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<title>CMC</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Manage Saved Schools</title>
 </head>
+<%
+	UserInteraction ui = (UserInteraction) session.getAttribute("username");
+	String uname = ui.getCurrentUser().getUsername();
+%>
 <body>
-	<%
+	<div class="container">
+		<div class="nav">
+			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<div class="dropdown">
+				<%
+					if (uname != null) {
+						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
+								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+					} else {
+						response.sendRedirect("index.jsp");
+					}
+				%>
+
+			</div>
+		</div>
+		<div class="inside">
+
+			<%
 		UserInteraction uc = (UserInteraction)session.getAttribute("username");
 	%>
-	
-	<a href="userHome.jsp">Return to Menu</a>
-	
-	<table style="text-align: left; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
-		<tbody>
-			<tr align="center">
+			<center>
 
-				<td colspan="18" rowspan="1" style="vertical-align: top;"><a>School</a></td>
-				<%
-				String uname = uc.getCurrentUser().getUsername();
-				ArrayList<University> savedSchools = uc.viewSavedSchools(uname);
-				
-				if(savedSchools.size() == 0){
-					request.setAttribute("Error", "You have no saved schools");
-			        request.getRequestDispatcher("userHome.jsp").forward(request, response);
-				}
+				<table>
+					<tbody>
+						<tr>
+
+							<td></td>
+							<td><a>School</a></td>
+							<%
+				ArrayList<University> savedSchools;
+				try{
+					savedSchools = uc.viewSavedSchools(uname);
+					if(savedSchools.size() == 0){
+						out.print(" <tr>" + 
+							"<td>You don't have any saved schools</td>"	 +
+						"</tr>");
+					}
 				else if(savedSchools.size() == 1){
 					for (University s : savedSchools) {
-						out.println("<tr>");
-						out.println("<td style=\"vertical-align: top;\">");
-						out.println("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
-						out.println("<input name = \"View\" value=\"View\" type=\"submit\">");
-						out.println("</form>");
-						out.println("</td>");
-						out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + "</td>");
-						out.println("<td style=\"vertical-align: top;\">");
-						out.println("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
-						out.println("<input name=\"Remove\" value=\"Remove\" type=\"submit\">");
-						out.println("</form>");
-						out.println("</td>");
-						out.println("</tr>");
+						out.print("<tr>");
+						out.print("<td>");
+						out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
+						out.print("<input name = \"View\" class=\"button\" value=\"View\" type=\"submit\">");
+						out.print("</form>");
+						out.print("</td>");
+						out.print("<td>" + s.getSchool() + "</td>");
+						out.print("<td>");
+						out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
+						out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
+						out.print("</form>");
+						out.print("</td>");
+						out.print("</tr>");
 					}
 					
 				}
 				else{
 				for (University s : savedSchools) {
-					out.println("<tr>");
-					out.println("<td style=\"vertical-align: top;\">");
-					out.println("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.println("<input name = \"Compare\" value=\"Compare\" type=\"submit\">");
-					out.println("</form>");
-					out.println("</td>");
-					out.println("<td style=\"vertical-align: top;\">");
-					out.println("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
-					out.println("<input name = \"View\" value=\"View\" type=\"submit\">");
-					out.println("</form>");
-					out.println("</td>");
-					out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + " (added on: "  + ") " + "</td>");
-					out.println("<td style=\"vertical-align: top;\">");
-					out.println("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
-					out.println("<input name=\"Remove\" value=\"Remove\" type=\"submit\">");
-					out.println("</form>");
-					out.println("</td>");
-					out.println("</tr>");
+					out.print("<tr>");
+					out.print("<td>");
+					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
+					out.print("<input name = \"Compare\" value=\"Compare\" type=\"submit\">");
+					out.print("</form>");
+					out.print("</td>");
+					out.print("<td>");
+					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
+					out.print("<input name = \"View\" value=\"View\" type=\"submit\">");
+					out.print("</form>");
+					out.print("</td>");
+					out.print("<td>" + s.getSchool() + " (added on: "  + ") " + "</td>");
+					out.print("<td>");
+					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
+					out.print("<input name=\"Remove\" value=\"Remove\" type=\"submit\">");
+					out.print("</form>");
+					out.print("</td>");
+					out.print("</tr>");
 				}
+				}
+				
+				}
+				catch (Exception e){
+					out.print("<tr>" + 
+								"<td>You don't have any saved schools</td>"	 +
+							"</tr>");
 				}
 			%>
-				
 
-			</tr>
-		</tbody>
-	</table>
 
+						</tr>
+					</tbody>
+				</table>
+			</center>
+		</div>
 </body>
 </html>
