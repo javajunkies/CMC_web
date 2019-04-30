@@ -5,10 +5,10 @@
 <title>Edit Account</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<%-- <%UserController uc = (UserController)session.getAttribute("username");
- String uname = uc.getCurrentUser().getUsername(); 
- %> --%>
-<%-- <body>
+ <%UserInteraction ui = (UserInteraction)session.getAttribute("username");
+ String uname = ui.getCurrentUser().getUsername(); 
+ %> 
+ <body>
 	<div class="container">
 		<div class="nav">
 			<span class="CMC">CMC</span>
@@ -28,16 +28,14 @@
 				%>
 				</div>
 			</div>
-		</div>   --%>
-<body>
-<br>
+		</div>   
+		<br>
 
 <%
-	UserInteraction ui = (UserInteraction)session.getAttribute("username");
 	User use = ui.getCurrentUser();
-	out.println(use.getUsername());
+	out.println("Edit user: " + use.getUsername());
 %>
-<form action="UserEditAccountAction.jsp" name="View/Edit"> <input
+<form method=post action="UserEditAccountAction.jsp" name="View/Edit"> <input
 name="Edit" value="Edit User" type="submit"><input name="Reset"
 value="Reset" type="reset"><br>
 <table style="text-align: left; width: 100%;" border="1"
@@ -79,8 +77,6 @@ name="Type" value="<%=use.getUsertype()%>"><br>
 </table>
 <br>
 </form>
-
-	</div>
 	<span class="footer">JavaJunkies</span>
 </body>
 </html>
