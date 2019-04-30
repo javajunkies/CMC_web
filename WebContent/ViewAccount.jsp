@@ -17,9 +17,9 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action\">Logout</a>");
+								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a>");
 					} else {
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("temp_index.jsp");
 					}
 				%>
 			</div>
