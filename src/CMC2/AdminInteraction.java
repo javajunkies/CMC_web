@@ -169,6 +169,21 @@ public class AdminInteraction{
  {
    return adminController.editUser(username, firstName, lastName, password, type, status);
  }
+ 
+ /**
+  * calls the adminController to edit a user
+  * @param username the users username
+  * @param firstName the users desired firstname
+  * @param lastName the users desired lastname
+  * @param password the users desired password
+  * @param type the type of user
+  * @param status the status of the account
+  * @return int the status of the edit
+  */
+ public int adminEditUserSameName(String username, String firstName, String lastName, String password, char type, char status)
+ {
+   return adminController.editUserSameName(username, firstName, lastName, password, type, status);
+ }
 
  /**
   * Calls the addNewUser method from AdminController and passes it the specified parameters

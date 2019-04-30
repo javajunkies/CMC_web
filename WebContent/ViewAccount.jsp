@@ -33,8 +33,8 @@
 <br>
 <%String useName = request.getParameter("Username");
 	out.println("Edit user:" + useName);
-	UserInteraction uc = (UserInteraction)session.getAttribute("username");
-	User use = uc.getCurrentUser();
+	UserInteraction ui = (UserInteraction)session.getAttribute("username");
+	User use = ui.getCurrentUser();
 %>
 <form action="UserEditAccountAction.jsp" name="View/Edit"> <input
 name="Edit" value="Edit User" type="submit"><input name="Reset"
