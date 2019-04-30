@@ -5,14 +5,17 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<br>
+<br>
+<br>
 <body>
 	<div class="container">
 		<div class="nav">
 			<span class="CMC">CMC</span>
 		</div>
 		<center>
-			<div class=register>
-				<form method="get" action="registerAction.jsp" name="register">
+			<div class=Register>
+				<form method="get" action="registerAction.jsp" name="Register">
 					<table style="text-align: left; width: 100%;" border="1"
 						cellpadding="2" cellspacing="2">
 						<tbody>
@@ -47,14 +50,13 @@
 								<td style="vertical-align: top;"><input name="password1"><br>
 								</td>
 							</tr>
-							<tr>
-								<td></td>
-								<td><input name="Submit" type="submit" value="register"
-									class="button"> <input name="Reset" type="reset"
-									class="button"></td>
-							</tr>
+
+
 						</tbody>
 					</table>
+					<input name="Reset" type="reset" class="button">
+					<input name="Submit" type="submit" value="Register" class="button">
+					
 				</form>
 				<%
 				String anyErrors = request.getParameter("Error");
@@ -74,7 +76,7 @@
 			%>
 			</div>
 		</center>
-			</div>
-			<span class="footer">JavaJunkies</span>
+	</div>
+	<span class="footer">JavaJunkies</span>
 </body>
 </html>
