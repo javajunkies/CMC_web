@@ -102,6 +102,9 @@
 					<td><input disabled="disabled" value=<%=school.getQualityOfLife()%> name="QualScale" type="text"></td>
 					<td><input disabled="disabled" value=<%=school2.getQualityOfLife()%> name="QualScale" type="text"></td>
 				</tr>
+				<tr>
+					<td>EMPHASES</td>
+					<td><input disabled="disabled" 
 			</tbody>
 		</table>
 	</form>
