@@ -46,14 +46,14 @@
 						"</tr>");
 					}
 				else if(savedSchools.size() == 1){
-					out.print("<tr><td></td><td>School</td></tr><tr>");
+					out.print("<tr><td><td></td>School Name</td></tr><tr>");
 					for (University s : savedSchools) {
 						out.print("<td>");
 						out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
 						out.print("<input name = \"View\" class=\"button\" value=\"View\" type=\"submit\">");
 						out.print("</form>");
 						out.print("</td>");
-						out.print("<td>" + s.getSchool() + "</td>");
+						out.print("<td>" + s.getSchool() +  "</td>");
 						out.print("<td>");
 						out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
 						out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
@@ -61,28 +61,29 @@
 						out.print("</td>");
 						out.print("</tr>");
 					}
+					//" (added on: "  s.getTimeStamp() +
 					
 				}
 				else{
-					out.print("<tr><td></td><td></td><td>School</td></tr><tr>");
+					out.print("<tr><td></td><td>School Name</td></tr><tr>");
 				for (University s : savedSchools) {
-					out.print("<td>");
+					/* out.print("<td>");
 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
-					out.print("</td>");
+					out.print("</td>"); */
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
 					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
 					out.print("</td>");
-					out.print("<td>" + s.getSchool() + " (added on: "  + ") " + "</td>");
+					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
 					out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
 					out.print("</td>");
-					out.print("</tr>");
+					out.print("</tr>");//+ " (added on: " + s.getTimeStamp() + ") "
 				}
 				}
 				
@@ -97,6 +98,10 @@
 
 						</tr>
 					</tbody>
+					<tr>
+						<td></td><td></td>
+						<td><input type="submit" class="button" value="Compare"></td>
+					</tr>
 				</table>
 			</center>
 		</div>
