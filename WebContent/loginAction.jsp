@@ -1,5 +1,5 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-
+<title>CMC</title>
 <%
 	UserInteraction ui = new UserInteraction();
 	AdminInteraction ai = new AdminInteraction();
