@@ -13,14 +13,14 @@
 <body>
 	<div class="container">
 		<div class="nav">
-			<span class="CMC">CMC</span>
+			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"edit_action.jsp\">Edit Account</a>" + "<a href=\"logout_action\">Logout</a></div>");
+								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("temp_index.jsp");
 					}
 				%>
 
@@ -379,8 +379,8 @@
 							out.print("<tr>" + 
 										
 										"<td width=5% >"+
-										"<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"View\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\" "+ result.get(i).getSchool() + " \" type=\"hidden\"> </td> </form>" +
-										"<td width=5% > <form method=\"post\" action=\"SaveSchool_action.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\" "+ result.get(i).getSchool() + " \" type=\"hidden\">  </form> </td>" +
+										"<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"View\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
+										"<td width=5% > <form method=\"post\" action=\"SaveSchool_action.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
 											"<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value=" + result.get(i).getSchool() + "></td>" +

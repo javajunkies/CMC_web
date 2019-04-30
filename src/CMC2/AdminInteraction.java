@@ -17,6 +17,7 @@ import dblibrary.project.csci230.UniversityDBLibrary;
 public class AdminInteraction{
 	
 	private User currentUser;
+	private University currentUniversity;
 	private boolean loggedIn;
  
 	// Initializes AdminController, AccountContriller and LoginController objects
@@ -224,6 +225,12 @@ public class AdminInteraction{
  public User getCurrentUser() {
 	  return this.currentUser;
  }
+ 
+ public University getCurrentUniversity() {
+	  return this.currentUniversity;
+}
+ 
+ 
  public boolean isLoggedIn() {
 		return loggedIn;
 	}

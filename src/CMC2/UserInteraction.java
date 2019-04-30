@@ -192,13 +192,13 @@ public class UserInteraction
     return UserController.editUserInfo(userName, firstName, lastName, password);
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 1) {
-		  throw new IllegalArgumentException("Invalid Password.");
+		  return 2;
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 2) {
-		  throw new IllegalArgumentException("Invalid Password.");
+		  return 3;
 		  }
 	  else{
-		  return 3;
+		  return 4;
 	  }
   }
   

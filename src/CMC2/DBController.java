@@ -976,6 +976,8 @@ public class DBController {
         academicsScale = Integer.parseInt(universities[i][13]);
         socialScale = Integer.parseInt(universities[i][14]);
         qualityOfLife = Integer.parseInt(universities[i][15]);
+        University university1 = new University(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
+        return university1;
       }
     }
     University university1 = new University(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
