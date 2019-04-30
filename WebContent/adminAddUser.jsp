@@ -7,8 +7,7 @@
 <title>Add User Form</title>
 </head>
 <body>
-<br>
-Add User form:<br>
+
 <br>
 <form method="post" action="Add_action.jsp" name="addUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
