@@ -32,8 +32,7 @@
 <body>
 <br>
 
-<%//String useName = request.getParameter("Username");
-	
+<%
 	UserInteraction ui = (UserInteraction)session.getAttribute("username");
 	User use = ui.getCurrentUser();
 	out.println(use.getUsername());

@@ -33,7 +33,7 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"location.href(\'adminEditUser.jsp\'); value=\"Redirect\">Edit</button> </td>" +
+			"<td style=\"vertival-align: top:\"> <input name=\"Edit\" value=\"Edit User\" type=\"submit\"> </td>" +
 		"</tr>");
 	}
 	%>
