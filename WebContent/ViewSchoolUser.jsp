@@ -127,21 +127,34 @@ name="SaveButton" value="Save" type="submit"></form>
 <br>
 <br>
 MAY WE ALSO RECOMMEND<br>
+<<<<<<< HEAD
+	
+	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+=======
 <table style="text-align: center; width: 100%;" border="1" cellpadding="2"
+>>>>>>> cc5e3839ee33ddb2a4511703d12d2575abbe1b4d
 cellspacing="2">
 <tbody>
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
 <td style="vertical-align: top;"> <input readonly="readonly"
+<<<<<<< HEAD
+name="School1" value="<% out.println(ui.getRecommendedList(school).get(0).getSchool());%>"><br>
+=======
 name="School1" <%=%>><br>
+>>>>>>> cc5e3839ee33ddb2a4511703d12d2575abbe1b4d
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>
 <td style="vertical-align: top;"> <input readonly="readonly"
+<<<<<<< HEAD
+name="State1" value="<% out.println(ui.getRecommendedList(school).get(0).getState());%>"><br>
+=======
 name="State1" <%=%>><br>
+>>>>>>> cc5e3839ee33ddb2a4511703d12d2575abbe1b4d
 </td>
 </tr>
 <tr>

@@ -182,7 +182,7 @@ public class UserController {
  public ArrayList<University> getRecommendedList(String name)
  {
 	 University university = dbcontroller.viewExistingUniversity(name);
-	 return dbcontroller.getRecommendations(university);
+	 return dbcontroller.getRecommendations2(university);
  }
 
 public ArrayList<University> sort(String username, int x) {

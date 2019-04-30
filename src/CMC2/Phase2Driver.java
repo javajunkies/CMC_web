@@ -355,7 +355,7 @@ import java.util.List;
 		AdminInteraction ai = new AdminInteraction();
 		
 		System.out.println(p.testViewUsers());
-		
+		System.out.println(ui.getRecommendedList("AUGSBURG"));
 	    //create testers
 	    ai.addNewUser("test", "user", "testUser", "Password1", 'a');
 	    ai.addUniversity("testSchool", "State", "Location", "Control" , 100, 50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 );
