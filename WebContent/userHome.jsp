@@ -10,10 +10,9 @@ http-equiv="content-type">
 <% UserInteraction ui = (UserInteraction) session.getAttribute("username"); %>
 Welcome User: <% out.println(ui.getCurrentUser().getUsername());%><br>
 
-<span style="text-decoration: underline;"><a href="ViewAccount.jsp"
-target="_blank">Manage My Profile</a><br>
-<a href="SavedSchools.jsp" target="_blank">Manage My Saved Schools</a><br>
-<a href="search.jsp" target="_blank">Search for Schools</a><br>
+<span style="text-decoration: underline;"><a href="ViewAccount.jsp">Manage My Profile</a><br>
+<a href="SavedSchools.jsp">Manage My Saved Schools</a><br>
+<a href="search.jsp">Search for Schools</a><br>
 </span>
 
 </body>

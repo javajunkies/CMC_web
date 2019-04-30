@@ -7,7 +7,10 @@
 <title>CMC</title>
 </head>
 <body>
-<table style="width=100%">
+<form method="post" action="adminEditUser.jsp" name="adminEditUser"><br>
+<table style="text-align: left; width: 1069px; height: 480px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
 		</td>
@@ -32,11 +35,13 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"location.href(\'adminEditUser.jsp\'); value=\"Redirect\">Edit</button> </td>" +
+			"<td style=\"vertival-align: top:\"> <input name=\"Edit\" value=\"Edit User\" type=\"submit\"> </td>" +
 		"</tr>");
 	}
 	%>
+</tbody>
 </table>
+</form>
 </body>
 </html>
 

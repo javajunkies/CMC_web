@@ -10,8 +10,8 @@ http-equiv="content-type">
 <% AdminInteraction ai = (AdminInteraction) session.getAttribute("username"); %>
 Welcome Admin: <% out.println(ai.getCurrentUser().getUsername());%><br>
 
-<a target="_blank" href="viewSchools.jsp">Manage Universities</a><br>
-<a href="viewUsers.jsp" target="_blank">Manage Users</a><br>
+<a href="viewSchools.jsp">Manage Universities</a><br>
+<a href="viewUsers.jsp">Manage Users</a><br>
 
 </body>
 </html>
