@@ -135,8 +135,8 @@ name="EP1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <br>
 MAY WE ALSO RECOMMEND<br>
@@ -180,8 +180,8 @@ name="NumStudents1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
@@ -224,8 +224,8 @@ name="NumStudents1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -267,8 +267,8 @@ name="NumStudents1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -310,8 +310,8 @@ name="NumStudents1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
@@ -353,8 +353,8 @@ name="NumStudents1" value=""><br>
 </tr>
 </tbody>
 </table>
-<form method="post" action="save_action.jsp" name="SaveButton"> <input
-name="SaveButton" value="Save" type="button"></form>
+<form method="post" action="SaveSchool_action.jsp" name="SaveButton"> <input
+name="SaveButton" value="Save" type="submit"></form>
 <br>
 <br>
 </body>

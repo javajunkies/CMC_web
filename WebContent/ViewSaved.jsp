@@ -7,8 +7,7 @@
 </head>
 <body>
 	<%
-		UserInteraction ui = new UserInteraction();
-		UserController uc = (UserController)session.getAttribute("username");
+		UserInteraction uc = (UserInteraction)session.getAttribute("username");
 	%>
 	
 	<a href="userHome.jsp">Return to Menu</a>
