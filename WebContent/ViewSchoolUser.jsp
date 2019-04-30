@@ -8,9 +8,10 @@
 <body>
 <br>
 <%
+UserInteraction ui = (UserInteraction)session.getAttribute("username");
 String school = (request.getParameter("school"));
 %>
-<%=school%>
+<%-- <%=school%> --%>
 <a href="results.jsp">Go back to search results</a>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
@@ -145,21 +146,22 @@ name="SaveButton" value="Save" type="submit"></form>
 <br>
 <br>
 MAY WE ALSO RECOMMEND<br>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+	
+	<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
 <tr>
 <td style="vertical-align: top;">School<br>
 </td>
 <td style="vertical-align: top;"> <input readonly="readonly"
-name="School1" value=""><br>
+name="School1" value="<% out.println(ui.getRecommendedList(school).get(0).getSchool());%>"><br>
 </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">State<br>
 </td>
 <td style="vertical-align: top;"> <input readonly="readonly"
-name="State1" value=""><br>
+name="State1" value="<% out.println(ui.getRecommendedList(school).get(0).getState());%>"><br>
 </td>
 </tr>
 <tr>
