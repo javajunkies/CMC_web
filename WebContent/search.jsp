@@ -36,7 +36,7 @@
 						</tr>
 						<tr>
 							<td width=90%><input class="searchBarName" type="text"
-								name="school" placeholder="School Name"></td>
+								name="schoolBasic" placeholder="School Name"></td>
 							<td width=10%><input type="submit" class="button"
 								value="Submit"></td>
 						</tr>

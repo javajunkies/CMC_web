@@ -1,3 +1,4 @@
+<%@page language="java" import="CMC2.*"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,6 +7,10 @@
 </head>
 <body>
 <br>
+<%
+String school = (request.getParameter("school"));
+%>
+<%=school%>
 <a href="results.jsp">Go back to search results</a>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
