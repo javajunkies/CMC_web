@@ -1,4 +1,4 @@
-<%@ page language="java" import="CMC2.*" import="java.util.*;" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="CMC2.*" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,7 +7,10 @@
 <title>Schools</title>
 </head>
 <body>
-<table style="width=100%">
+<table style="text-align: left; width: 1069px; height: 480px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<a href="addUniversity.jsp" target="_blank">Add a University</a> <br>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">School</td>
 		<td style="vertical-align: top; text-align: center;">State</td>
@@ -48,6 +51,7 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getQualityOfLife() + "</td>" +
 		"</tr>");
 	 } %>
+	 </tbody>
 </table>
 </body>
 </html>

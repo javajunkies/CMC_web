@@ -17,11 +17,14 @@ import dblibrary.project.csci230.UniversityDBLibrary;
 public class AdminInteraction{
 	
 	private User currentUser;
+	private University currentUniversity;
+	private boolean loggedIn;
  
 	// Initializes AdminController, AccountContriller and LoginController objects
  AdminController adminController = new AdminController();
- LoginController loginController = new LoginController();
- AccountController accountController = new AccountController();
+ DBController dbcontroller = new DBController();
+ //LoginController loginController = new LoginController();
+ //AccountController accountController = new AccountController();
  
  
  /** 
@@ -34,6 +37,11 @@ public class AdminInteraction{
   */
 
  public int login(String username, String password){
+	 //catch 
+	 if(adminController.login(username,password)==0) {
+		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+		  this.setLoggedIn(true);
+	  }
   return adminController.login(username, password);
  }
  
@@ -162,6 +170,21 @@ public class AdminInteraction{
  {
    return adminController.editUser(username, firstName, lastName, password, type, status);
  }
+ 
+ /**
+  * calls the adminController to edit a user
+  * @param username the users username
+  * @param firstName the users desired firstname
+  * @param lastName the users desired lastname
+  * @param password the users desired password
+  * @param type the type of user
+  * @param status the status of the account
+  * @return int the status of the edit
+  */
+ public int adminEditUserSameName(String username, String firstName, String lastName, String password, char type, char status)
+ {
+   return adminController.editUserSameName(username, firstName, lastName, password, type, status);
+ }
 
  /**
   * Calls the addNewUser method from AdminController and passes it the specified parameters
@@ -195,11 +218,24 @@ public class AdminInteraction{
  public int deleteUser(String username) {
 	 return adminController.deleteUser(username);
  }
- 
+
  public void setCurrentUser(User user) {
 	  this.currentUser=user;
  }
  public User getCurrentUser() {
-	  return currentUser;
+	  return this.currentUser;
  }
+ 
+ public University getCurrentUniversity() {
+	  return this.currentUniversity;
+}
+ 
+ 
+ public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean log) {
+		this.loggedIn = log;
+	}
 }

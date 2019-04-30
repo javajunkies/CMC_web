@@ -9,7 +9,7 @@
 
 <br>
 
-<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
+<form method="post" action="addUniversity_action.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
@@ -69,32 +69,32 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Number Of Applicants<br>
 </td>
-<td style="vertical-align: top;"><input name="Number of Applicants"> </td>
+<td style="vertical-align: top;"><input name="NumberOfApplicants"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Percent Admitted<br>
 </td>
-<td style="vertical-align: top;"><input name="Percent Admitted"> </td>
+<td style="vertical-align: top;"><input name="PercentAdmitted"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Percent Enrolled<br>
 </td>
-<td style="vertical-align: top;"><input name="Percent Enrolled"> </td>
+<td style="vertical-align: top;"><input name="PercentEnrolled"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Academics Scale<br>
 </td>
-<td style="vertical-align: top;"><input name="Academics Scale"> </td>
+<td style="vertical-align: top;"><input name="AcademicsScale"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Social Scale<br>
 </td>
-<td style="vertical-align: top;"><input name="Social Scale"> </td>
+<td style="vertical-align: top;"><input name="SocialScale"> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Quality of Life Scale<br>
 </td>
-<td style="vertical-align: top;"><input name="Quality of Life Scale"> </td>
+<td style="vertical-align: top;"><input name="QualityOfLifeScale"> </td>
 </tr>
 
 

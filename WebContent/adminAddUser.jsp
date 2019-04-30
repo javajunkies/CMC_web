@@ -9,7 +9,7 @@
 <body>
 
 <br>
-<form method="post" action="Add_action.jsp" name="addUser"><br>
+<form method="post" action="adminAddUser_action.jsp" name="addUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
@@ -28,7 +28,7 @@ border="1" cellpadding="2" cellspacing="2">
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username"> </td>
+<td style="vertical-align: top;"><input name="Username"> value=</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Password<br>

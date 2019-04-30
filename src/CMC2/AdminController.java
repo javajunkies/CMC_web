@@ -29,24 +29,25 @@ public class AdminController {
  * @return int the status of the login
  */
   public int login(String username, String password) {
-	  if(logInController.login(username, password) == 1) {
-		  throw new IllegalArgumentException("Invalid username");
-	  }
-	  else if(logInController.login(username, password) == 2) {
-		  throw new IllegalArgumentException("Invalid username/password combination.");
-	  }
-	  else if(logInController.login(username, password) == 3) {
-		  throw new IllegalArgumentException("Account status is inactive.");
-	  }
-	  else if(logInController.login(username, password) == 4) {
-		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
-	  }
-	  else {
-		  this.setCurrentAdmin((User) dbcontroller.findByUsername(username));
-		  this.setLoggedIn(true);
-		  return logInController.login(username, password);
-	  }
-    
+//	  if(logInController.login(username, password) == 1) {
+//		  throw new IllegalArgumentException("Invalid username");
+//		  return
+//	  }
+//	  else if(logInController.login(username, password) == 2) {
+//		  throw new IllegalArgumentException("Invalid username/password combination.");
+//	  }
+//	  else if(logInController.login(username, password) == 3) {
+//		  throw new IllegalArgumentException("Account status is inactive.");
+//	  }
+//	  else if(logInController.login(username, password) == 4) {
+//		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
+//	  }
+//	  else {
+//		  this.setCurrentAdmin((User) dbcontroller.findByUsername(username));
+//		  this.setLoggedIn(true);
+//		  return logInController.login(username, password);
+//	  }
+	  return logInController.login(username, password);
   }
 
   /**
@@ -307,12 +308,47 @@ public class AdminController {
    */
   public int editUser(String username, String firstName, String lastName, String password, char type, char status) {
 	  for(User user : dbcontroller.getAllUsers()) {
-		  if(username.equals(user.getUsername())) {
+		  if(username.equals(user.getUsername()) || username.equals("")) {
 			  throw new IllegalArgumentException("Invalid username.");
 		  }
 	  }
-	  
 	  if(firstName.equals("")) {
+		  throw new IllegalArgumentException("Invalid first name.");
+	  }
+	  else if(lastName.equals("")) {
+		  throw new IllegalArgumentException("Invalid last name.");
+	  }
+	  else if (accountController.checkPasswordCriteria(password) != 0) {
+		  throw new IllegalArgumentException("Invalid password, must be 8 characters.");
+	  }
+	  else if (type != 'u' && type != 'a' && type != 't') {
+		  throw new IllegalArgumentException("Invalid account type.");
+	  }
+	  else if (status != 'Y' && status != 'N') {
+		  throw new IllegalArgumentException("Invalid account status.");
+	  }
+	  else {
+	  return dbcontroller.adminEditUser(username, firstName, lastName, password, type, status);
+	  }
+  }
+  
+  /**
+   * Calls the edit user for admin from DBControler
+   * 
+   * @param username is the username associated with this account
+   * @param firstName is the first name associated with this account
+   * @param lastName is the last name associated with this account
+   * @param password is the password associated with this account
+   * @param type is the type of this account
+   * @param status is the status of this account
+   * 
+   * @return int the status of editing a user
+   */
+  public int editUserSameName(String username, String firstName, String lastName, String password, char type, char status) {
+	  if(username.equals("")) {
+		  throw new IllegalArgumentException("Please enter an username");
+	  }
+	  else if(firstName.equals("")) {
 		  throw new IllegalArgumentException("Invalid first name.");
 	  }
 	  else if(lastName.equals("")) {

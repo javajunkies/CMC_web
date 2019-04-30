@@ -13,8 +13,8 @@ public class LoginController {
 
 
 	DBController db = new DBController();
-	UserInteraction ui = new UserInteraction();
-	AdminInteraction ai = new AdminInteraction();
+	//UserInteraction ui = new UserInteraction();
+	//AdminInteraction ai = new AdminInteraction();
 
 	/**
 	 * Logs user into system.
@@ -23,7 +23,7 @@ public class LoginController {
 	 *            username associated with this user
 	 * @param pass
 	 *            password user uses to log in
-	 * @return int representation of login attempt. 0 if admin login is succesful,6 is user login is successful, 1 if invalid
+	 * @return int representation of login attempt. 0 if login is successful, 1 if invalid
 	 *         username, 2 if invalid password, and 3 if status is inactive, 4 if
 	 *         type is temporary, 5 if system error
 	 */

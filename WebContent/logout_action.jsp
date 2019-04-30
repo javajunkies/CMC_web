@@ -2,7 +2,7 @@
 
 <%
 //clear secession var
-UserController uc = (UserInteraction)session.getAttribute("username");
+UserInteraction uc = (UserInteraction)session.getAttribute("username");
 String uname = uc.getCurrentUser().getUsername();
 response.sendRedirect("index.jsp");
 

@@ -10,10 +10,11 @@ import java.util.ArrayList;
 public class UserInteraction 
 {
   private User currentUser;
+  private boolean loggedIn;
   //objects
   UserController UserController = new UserController();
   AccountController AccountController = new AccountController();
-  
+  DBController dbcontroller = new DBController();
   /**
    * login method
    * 
@@ -23,6 +24,10 @@ public class UserInteraction
    */
   public int login(String username, String password)
   {
+	  if(UserController.login(username,password)==0) {
+		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+		  this.setLoggedIn(true);
+	  }
     return UserController.login(username, password);
   }
   
@@ -32,6 +37,8 @@ public class UserInteraction
    */
   public void logoff()
   {
+	this.setCurrentUser(null);
+	this.setLoggedIn(false);
     UserController.logoff();
   }
   
@@ -207,6 +214,13 @@ public class UserInteraction
 	  this.currentUser=user;
   }
   public User getCurrentUser() {
-	  return currentUser;
+	  return this.currentUser;
   }
+  public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean log) {
+		this.loggedIn = log;
+	}
 }

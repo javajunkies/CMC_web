@@ -5,8 +5,9 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<%UserInteraction ui = (UserInteraction)session.getAttribute("username");
- String uname = ui.getCurrentUser().getUsername();
+<%
+	UserInteraction ui = (UserInteraction) session.getAttribute("username");
+	String uname = ui.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">
@@ -14,18 +15,13 @@
 			<span class="CMC">CMC</span>
 			<div class="dropdown">
 				<%
-			if (uname != null)
-			{
-				out.print("<button class=\"dropbtn\">" + uname + "</button>" +
-				"<div class= \"dropdown-content\">" + 
-				"<a href=\"edit_action.jsp\">Edit Account</a>" + 
-				"<a href=\"logout_action\">Logout</a>");
-			}
-			else
-			{
-				response.sendRedirect("index.jsp");
-			}
-			%>
+					if (uname != null) {
+						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
+								+ "<a href=\"edit_action.jsp\">Edit Account</a>" + "<a href=\"logout_action\">Logout</a></div>");
+					} else {
+						response.sendRedirect("index.jsp");
+					}
+				%>
 
 			</div>
 		</div>
@@ -121,7 +117,7 @@
 						</tr>
 						<tr>
 							<td><input class="searchBar" type="text"
-								name="minPercntAdmitted" placeholder="Minimum Percent Admitted"></td>
+								name="minPercentAdmitted" placeholder="Minimum Percent Admitted"></td>
 							<td><input class="searchBar" type="text"
 								name="maxPercentAdmitted" placeholder="Maximum Percent Admitted"></td>
 						</tr>
@@ -150,6 +146,7 @@
 								name="maxQualityOfLife" placeholder="Maximum Quality of Life"></td>
 						</tr>
 						<tr>
+							<td></td>
 							<td><input type="submit" class="button" value="Submit">
 								<input type="reset" class="button" value="Reset"> <input
 								type="button" class="button" value="Advanced <" onclick="toggle()">
@@ -161,20 +158,20 @@
 			</center>
 		</div>
 	</div>
-	<span class="footer">JavaJunkies</span>
+		<span class="footer">JavaJunkies</span>
 
-	<script type="text/javascript">
-		function toggle() {
-			var sa = document.getElementById("sa");
-			var s = document.getElementById("s");
-			if (sa.style.display === "none") {
-				sa.style.display = "block";
-				s.style.display = "none";
-			} else {
-				sa.style.display = "none";
-				s.style.display = "block";
+		<script type="text/javascript">
+			function toggle() {
+				var sa = document.getElementById("sa");
+				var s = document.getElementById("s");
+				if (sa.style.display === "none") {
+					sa.style.display = "block";
+					s.style.display = "none";
+				} else {
+					sa.style.display = "none";
+					s.style.display = "block";
+				}
 			}
-		}
-	</script>
+		</script>
 </body>
 </html>
