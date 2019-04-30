@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit Account</title>
+<title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <%
@@ -25,13 +25,28 @@
 			</div>
 		</div>
 	</div>
-	<%
-		User use = ui.getCurrentUser();
-		out.println("Edit user: " + use.getUsername());
-	%>
+	
 	<center>
+
 	<div class="inside">
-	<form method=post action="UserEditAccountAction.jsp" name="View/Edit">
+		<%
+		User use = ui.getCurrentUser();
+		
+		String r = request.getParameter("Result");
+		if(r != null && r.equals("1")){
+			out.println("User sucessfully edited."+ "<br> <br>");
+		}
+		else if(r != null && r.equals("-1")){
+			out.println("Invalid Password, please try again."+ "<br> <br>");
+		}
+		else if (r != null && r.equals("-2")){
+			out.println("You left the first name blank, please try again."+ "<br> <br>");
+		}
+		else if(r != null && r.equals("-3")){
+			out.println("You left the last name blank, please try again."+ "<br> <br>");
+		}
+	%>
+	<form method="get" action="UserEditAccountAction.jsp" name="View/Edit">
 		<table>
 			<tbody>
 				<tr>
@@ -64,8 +79,10 @@
 					<td style="vertical-align: top;"><input readonly="readonly"
 						name="Type" value="<%=use.getUsertype()%>"><br></td>
 				</tr>
+				<tr>
 				<td></td>
-				<td><input name="Edit" value="Edit User" type="submit" class="button"> <input name="Reset" value="Reset" type="reset" class="button"> </td>
+			<td><input name="Edit" value="Edit User" type="submit" class="button"> <input name="Reset" value="Reset" type="reset" class="button"> </td>
+			</tr>
 			</tbody>
 		</table>
 		<br>
