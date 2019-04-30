@@ -73,12 +73,195 @@ public class DBController {
   
   //new
   public ArrayList<University> getRecommendations2(University university) {
-	  ArrayList<University> list = new ArrayList<University>();
-	  String[][] universities = db.university_getUniversities();
+	  ArrayList<University> all = this.getAllUniversities();
 	  
-	  for (int i = 0; universities.length <= i; i++)
-	  {
-		  int num = Math.abs(university.getNumStudents() - Integer.parseInt(universities[i][4]));
+	  Map<Double,String> schoolDistance = new TreeMap<Double,String>();
+	  int maxNumStudents = 17000;
+		    int minNumStudents = 4000;
+		    double maxPercentFemale = 100;
+		    double minPercentFemale = 0;
+		    double maxSATVerbal = 800;
+		    double minSATVerbal = 0;
+		    double maxSATMath = 800;
+		    double minSATMath = 0;
+		    double maxExpenses = 62915;
+		    double minExpenses = 34980;
+		    double maxPercentFinancialAid = 100;
+		    double minPercentFinancialAid = 0;
+		    int maxNumApplicants = 17000;
+		    int minNumApplicants = 11500;
+		    double maxPercentAdmitted = 100;
+		    double minPercentAdmitted = 0;
+		    double maxPercentEnrolled = 100;
+		    double minPercentEnrolled = 0;
+		    int maxAcademicsScale = 5;
+		    int minAcademicsScale = 1;
+		    int maxSocialScale = 5;
+		    int minSocialScale = 1;
+		    int maxQualityOfLife = 5;
+		    int minQualityOfLife = 1;
+		  
+		for (University univ : all) {
+			double x1 = 1.0;
+			double x2 = 1.0;
+			double x3 = 1.0;
+			
+			if (univ.getState().equals(university.getState())) {
+				x1 = 0.0;
+			}
+
+			if (univ.getLocation().equals(university.getLocation())) {
+				x2 = 0.0;
+			}
+
+			if (univ.getControl().equals(university.getControl())) {
+				x3 = 0.0;
+			}
+			if(univ.getNumStudents() > maxNumStudents) {
+	            maxNumStudents= univ.getNumStudents();
+	            
+	        }
+	        if(univ.getNumStudents() < minNumStudents) {
+	        	minNumStudents = univ.getNumStudents();
+
+	        }
+	          
+	        if(univ.getPercentFemale() > maxPercentFemale) {
+	        	maxPercentFemale= univ.getPercentFemale();
+	              
+	        }
+	        if(univ.getPercentFemale() < minPercentFemale) {
+	        	minPercentFemale = univ.getPercentFemale();
+
+	        }
+	        
+	        if(univ.getSATVerbal() > maxSATVerbal) {
+	        	maxSATVerbal= univ.getSATVerbal();
+	              
+	        }
+	        if(univ.getSATVerbal() < minSATVerbal) {
+	        	minSATVerbal = univ.getSATVerbal();
+
+	        }
+	        
+	        if(univ.getSATMath() > maxSATMath) {
+	        	maxSATMath= univ.getSATMath();
+	              
+	        }
+	        if(univ.getSATMath() < minSATMath) {
+	        	minSATMath = univ.getSATMath();
+
+	        }
+	        
+	        if(univ.getExpenses() > maxExpenses) {
+	        	maxExpenses = univ.getExpenses();
+	              
+	        }
+	        if(univ.getExpenses() < minExpenses) {
+	        	minExpenses = univ.getExpenses();
+
+	        }
+	        
+	        if(univ.getPercentFinancialAid() > maxPercentFinancialAid) {
+	        	maxPercentFinancialAid = univ.getPercentFinancialAid();
+	              
+	        }
+	        if(univ.getPercentFinancialAid() < minPercentFinancialAid) {
+	        	minPercentFinancialAid = univ.getPercentFinancialAid();
+
+	        }
+	        
+	        if(univ.getNumApplicants() > maxNumApplicants) {
+	            maxNumApplicants= univ.getNumApplicants();
+	            
+	        }
+	        if(univ.getNumApplicants() < minNumApplicants) {
+	        	minNumApplicants = univ.getNumApplicants();
+
+	        }
+	        
+	        if(univ.getPercentAdmitted() > maxPercentAdmitted) {
+	        	maxPercentAdmitted = univ.getPercentAdmitted();
+	              
+	        }
+	        if(univ.getPercentAdmitted() < minPercentAdmitted) {
+	        	minPercentAdmitted = univ.getPercentAdmitted();
+
+	        }
+	        
+	        if(univ.getPercentEnrolled() > maxPercentEnrolled) {
+	        	maxPercentEnrolled = univ.getPercentEnrolled();
+	              
+	        }
+	        if(univ.getPercentEnrolled() < minPercentEnrolled) {
+	        	minPercentEnrolled = univ.getPercentEnrolled();
+
+	        }
+	        
+	        if(univ.getAcademicsScale() > maxAcademicsScale) {
+	        	maxAcademicsScale = univ.getAcademicsScale();
+	            
+	        }
+	        if(univ.getAcademicsScale() < minAcademicsScale) {
+	        	minAcademicsScale = univ.getAcademicsScale();
+
+	        }
+	        
+	        if(univ.getSocialScale() > maxSocialScale) {
+	        	maxSocialScale = univ.getSocialScale();
+	            
+	        }
+	        if(univ.getSocialScale() < minSocialScale) {
+	        	minSocialScale = univ.getSocialScale();
+
+	        }
+	        
+	        if(univ.getQualityOfLife() > maxQualityOfLife) {
+	        	maxQualityOfLife = univ.getQualityOfLife();
+	            
+	        }
+	        if(univ.getQualityOfLife() < minQualityOfLife) {
+	        	minQualityOfLife = univ.getQualityOfLife();
+
+	        }
+			double distance = x1 + x2 + x3
+					+ Math.abs(univ.getNumStudents()  - university.getNumStudents()) / Math.abs(maxNumStudents - minNumStudents)
+					+ Math.abs(univ.getPercentFemale() - university.getPercentFemale())
+							/ Math.abs(maxPercentFemale - minPercentFemale)
+					+ Math.abs(univ.getSATVerbal() - university.getSATVerbal()) / Math.abs(maxSATVerbal - minSATVerbal)
+					+ Math.abs(univ.getSATMath() - university.getSATMath()) / Math.abs(maxSATMath - minSATMath)
+					+ Math.abs(univ.getExpenses() - university.getExpenses()) / Math.abs(maxExpenses - minExpenses)
+					+ Math.abs(univ.getPercentFinancialAid() - university.getPercentFinancialAid())
+							/ Math.abs(maxPercentFinancialAid - minPercentFinancialAid)
+					+ Math.abs(univ.getNumApplicants() - university.getNumApplicants())
+							/ Math.abs(maxNumApplicants - minNumApplicants)
+					+ Math.abs(univ.getPercentAdmitted() - university.getPercentAdmitted())
+							/ Math.abs(maxPercentAdmitted - minPercentAdmitted)
+					+ Math.abs(univ.getPercentEnrolled() - university.getPercentEnrolled())
+							/ Math.abs(maxPercentEnrolled - minPercentEnrolled)
+					+ Math.abs(univ.getAcademicsScale() - university.getAcademicsScale())
+							/ Math.abs(maxAcademicsScale - minAcademicsScale)
+					+ Math.abs(univ.getSocialScale() - university.getSocialScale()) / Math.abs(maxSocialScale - minSocialScale)
+					+ Math.abs(univ.getQualityOfLife() - university.getQualityOfLife())
+							/ Math.abs(maxQualityOfLife - minQualityOfLife);
+			if(!univ.getSchool().equals(university.getSchool())) {
+				schoolDistance.put(distance,univ.getSchool());
+			}
+		}
+		Set<Map.Entry<Double,String>> schoolSet = schoolDistance.entrySet();
+		//Map<Double,String> finalMap = new TreeMap<Double,String>();
+		ArrayList<University>  finalSchools = new ArrayList<University>();
+		int i = 0;
+		for(Map.Entry<Double,String> school : schoolSet) {
+			if(i<5) {
+				//finalMap.put(school.getKey(),school.getValue());
+				finalSchools.add(this.viewExistingUniversity(school.getValue()));
+				i++;
+			}
+		}
+		return finalSchools;
+		//for()
+		  //int num = Math.abs(university.getNumStudents() - Integer.parseInt(universities[i][4]));
 		  
 		  //list.add(universities[i][1]);
 		  
@@ -88,9 +271,9 @@ public class DBController {
 //		  }
 		  
 		  
-	  }
+	 
 	  
-	  return list;
+	  
   }
   
   /**
@@ -793,6 +976,8 @@ public class DBController {
         academicsScale = Integer.parseInt(universities[i][13]);
         socialScale = Integer.parseInt(universities[i][14]);
         qualityOfLife = Integer.parseInt(universities[i][15]);
+        University university1 = new University(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
+        return university1;
       }
     }
     University university1 = new University(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
@@ -885,7 +1070,7 @@ public class DBController {
    */
   public int registerNewUser(String first, String last, String user, String pass) {
 	  int result;
-	  if (isUniqueUsername(user)) {
+	  if (this.isUniqueUsername(user)) {
 		  result = db.user_addUser(first, last, user, pass, 't');
 		  db.user_editUser(user, first, last, pass, 't', 'N');
 	  }
@@ -948,12 +1133,12 @@ public class DBController {
 		return null;
 	}
 	
-	public void distance(String u1, String u2) {
-		int result = 0;
-		
-		String[][] univs = db.university_getUniversities();
-		
-	}
+//	public void distance(String u1, String u2) {
+//		int result = 0;
+//		
+//		String[][] univs = db.university_getUniversities();
+//		
+//	}
 }
 
 

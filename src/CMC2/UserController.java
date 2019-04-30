@@ -19,21 +19,13 @@ public class UserController {
   *@return int the status of the login
   */
  public int login(String username, String password) {
-//	  if(logInController.login(username, password) == 1) {
-//		  throw new IllegalArgumentException("Invalid username");
-//	  }
-//	  else if(logInController.login(username, password) == 2) {
-//		  throw new IllegalArgumentException("Invalid username/password combination.");
-//	  }
-//	  else if(logInController.login(username, password) == 3) {
-//		  throw new IllegalArgumentException("Account status is inactive.");
-//	  }
-//	  else if(logInController.login(username, password) == 4) {
-//		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
-//	  }
-	  
-		  return logInController.login(username, password);
-	  //}
+
+		  int results = logInController.login(username, password);
+		  if(results == 0) {
+			  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+			  this.setLoggedIn(true);
+		  }
+		  return results;
  }
  /**
   * method to log the user off the CMC system
@@ -101,13 +93,10 @@ public class UserController {
   */
  public int editUserInfo(String username, String firstname, String lastname, String password) {
 	  if(firstname.equals("")) {
-		  throw new IllegalArgumentException("Invalid first name.");
+		  return -1;
 	  }
 	  else if(lastname.equals("")) {
-		  throw new IllegalArgumentException("Invalid last name.");
-	  }
-	  else if (accountController.checkPasswordCriteria(password) != 0) {
-		  throw new IllegalArgumentException("Invalid password, must be 8 characters.");
+		  return-2;
 	  }
 	  else {
 		  return dbcontroller.userEditUser(username, firstname, lastname, password);
@@ -185,7 +174,7 @@ public class UserController {
  public ArrayList<University> getRecommendedList(String name)
  {
 	 University university = dbcontroller.viewExistingUniversity(name);
-	 return dbcontroller.getRecommendations(university);
+	 return dbcontroller.getRecommendations2(university);
  }
 
 public ArrayList<University> sort(String username, int x) {

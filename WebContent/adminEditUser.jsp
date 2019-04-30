@@ -1,9 +1,11 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
 	<%	
-	    AdminInteraction ui = (AdminInteraction) session.getAttribute("username");
-		User user = ui.getCurrentUser();
+	AdminInteraction ai = (AdminInteraction)session.getAttribute("username");    
+	String username = request.getParameter("userName");
+	User user = ai.viewUserInfo(username);
 	%>
+	
 
 <html>
 <head>
@@ -12,7 +14,7 @@
 </head>
 <body>
 <br>
-Edit User:<br>
+Edit User:<%=username%><br>
 <br>
 
 <form method="post" action="adminEditUser_action.jsp" name="adminEditUser"><br>

@@ -9,7 +9,7 @@ try{
 	String uname = ui.getCurrentUser().getUsername();
 	ui.removeSavedSchool(uname, name);
 	
-	response.sendRedirect("ManageSavedSchools.jsp");
+	response.sendRedirect("ViewSaved.jsp");
 	
 }catch(Exception e){
 	

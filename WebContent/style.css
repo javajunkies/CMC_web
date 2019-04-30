@@ -37,11 +37,13 @@ body {
   border: none;
   position: absolute;
   display: inline-block;
-  float:left
+  float:left;
+  text-decoration: none;
 }	
 .CMC:hover {
 	background-color: #1e824c;
 	color: white;
+	text-decoration: none;
 	}
 
 
@@ -137,4 +139,25 @@ body {
     top: 10%;
     margin-left: auto;
     margin-right: auto;
+}
+.login {
+	position: absolute;	
+	width: 100%;
+	top: 35%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.username{
+  padding: 6px 8px;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.password{
+  padding: 6px 8px;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
 }

@@ -7,9 +7,11 @@
 <title>Schools</title>
 </head>
 <body>
+<form method="post" action="editUniversity.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
+<a href="addUniversity.jsp" target="_blank">Add a University</a> <br>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">School</td>
 		<td style="vertical-align: top; text-align: center;">State</td>
@@ -48,7 +50,9 @@ border="1" cellpadding="2" cellspacing="2">
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getAcademicsScale() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSocialScale() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getQualityOfLife() + "</td>" +
-		"</tr>");
+			"<td> <form method=\"post\" action=\"editUniversity.jsp\" name=\"editUniv\" > <input type=\"submit\" class=\"button\" value=\"Edit\"> <input name=\"school\" value=\""+ admin.viewUniversities().get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
+
+					"</tr>");
 	 } %>
 	 </tbody>
 </table>

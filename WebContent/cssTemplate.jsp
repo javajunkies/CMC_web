@@ -12,21 +12,21 @@
 <body>
 	<div class="container">
 		<div class="nav">
-			<span class="CMC">CMC</span>
+			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"edit_action.jsp\">Edit Account</a>" + "<a href=\"logout_action\">Logout</a></div>");
+								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("temp_index.jsp");
 					}
 				%>
 
 			</div>
 		</div>
 		<center>
-			<div id=inside>
+			<div class=inside>
 
 		
 		<!-- Paste here -->
