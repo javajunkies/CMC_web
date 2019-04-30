@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="CMC2.*"%>
+    pageEncoding="UTF-8" import="CMC2.*" import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,13 +17,13 @@
 	University school2 = compareSchoolsList.get(1);
 %>
 <body>
-	<a href="UserMenu.jsp">Back to Menu</a>
+	<a href="userHome.jsp">Back to Menu</a>
 	<form>
 		<table style="text-align: left; width: 100%;" border="1"
 			cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>
-					<td></td>
+					<td>SCHOOL NAME</td>
 					<td><%=school.getSchool()%></td>
 					<td><%=school2.getSchool()%></td>
 				</tr>

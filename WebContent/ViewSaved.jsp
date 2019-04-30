@@ -34,7 +34,7 @@
 						out.println("<input name = \"View\" value=\"View\" type=\"submit\">");
 						out.println("</form>");
 						out.println("</td>");
-						out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + " " + s.getTimeStamp() + "</td>");
+						out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + "</td>");
 						out.println("<td style=\"vertical-align: top;\">");
 						out.println("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
 						out.println("<input name=\"Remove\" value=\"Remove\" type=\"submit\">");
@@ -57,7 +57,7 @@
 					out.println("<input name = \"View\" value=\"View\" type=\"submit\">");
 					out.println("</form>");
 					out.println("</td>");
-					out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + " (added on: " + s.getTimeStamp() + ") " + "</td>");
+					out.println("<td style=\"vertical-align: top;\">" + s.getSchool() + " (added on: "  + ") " + "</td>");
 					out.println("<td style=\"vertical-align: top;\">");
 					out.println("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
 					out.println("<input name=\"Remove\" value=\"Remove\" type=\"submit\">");
