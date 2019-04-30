@@ -4,11 +4,10 @@
 
 <%
 try{
-	UserController uc = (UserController)session.getAttribute("username");
-	UserInteraction ui = new UserInteraction();
+	UserInteraction ui = (UserInteraction)session.getAttribute("username");
 	
 	String name = request.getParameter("Name");
-	String uname = uc.getCurrentUser().getUsername();
+	String uname = ui.getCurrentUser().getUsername();
 	ui.removeSavedSchool(uname, name);
 	
 	response.sendRedirect("ManageSavedSchools.jsp");
