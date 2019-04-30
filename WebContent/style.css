@@ -138,3 +138,24 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.login {
+	position: absolute;	
+	width: 100%;
+	top: 35%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.username{
+  padding: 6px 8px;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.password{
+  padding: 6px 8px;
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}

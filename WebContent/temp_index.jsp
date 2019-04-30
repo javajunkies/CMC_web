@@ -20,33 +20,30 @@
 		</div>
 
 		<center>
-			<div id=inside>
-				<br> <br>
+			<div class=login>
 				<form method="get" action="loginAction.jsp" name="login">
-					<table style="text-align: left; width: 100%;" border="1"
-						cellpadding="2" cellspacing="2">
+					<table>
 						<tbody>
 							<tr>
-								<td style="vertical-align: top;">Username<br>
-								</td>
-								<td style="vertical-align: top;"><input name="Username"><br>
-								</td>
-							</tr>
-							<tr>
-								<td style="vertical-align: top;">Password<br>
-								</td>
-								<td style="vertical-align: top;"><input name="Password"><br>
+								<td>Username</td>
+								<td width=75%><input name="Username" class="username"><br>
 								</td>
 							</tr>
 							<tr>
-								<td style="vertical-align: top;"><input name="Submit"
-									type="submit"><br></td>
-								<td style="vertical-align: top;"><input name="Reset"
-									type="reset"><br></td>
+								<td>Password</td>
+								<td width=75%><input name="Password" class="password" ><br>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+								<input name="Submit" type="submit" value="Login" class="button">
+								<input name="Reset" type="reset" class="button" >
+								</td>
 							</tr>
 						</tbody>
 					</table>
-					<span style="text-decoration: underline;"><br> </span> <br>
+					
 				</form>
 
 				<%
