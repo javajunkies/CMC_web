@@ -226,8 +226,8 @@ public class AdminInteraction{
 	  return this.currentUser;
  }
  
- public University getCurrentUniversity() {
-	  return this.currentUniversity;
+ public University getCurrentUniversity(String univ) {
+	  return dbcontroller.viewExistingUniversity(univ);
 }
  
  

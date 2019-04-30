@@ -101,13 +101,10 @@ public class UserController {
   */
  public int editUserInfo(String username, String firstname, String lastname, String password) {
 	  if(firstname.equals("")) {
-		  throw new IllegalArgumentException("Invalid first name.");
+		  return -1;
 	  }
 	  else if(lastname.equals("")) {
-		  throw new IllegalArgumentException("Invalid last name.");
-	  }
-	  else if (accountController.checkPasswordCriteria(password) != 0) {
-		  throw new IllegalArgumentException("Invalid password, must be 8 characters.");
+		  return-2;
 	  }
 	  else {
 		  return dbcontroller.userEditUser(username, firstname, lastname, password);
@@ -185,7 +182,7 @@ public class UserController {
  public ArrayList<University> getRecommendedList(String name)
  {
 	 University university = dbcontroller.viewExistingUniversity(name);
-	 return dbcontroller.getRecommendations(university);
+	 return dbcontroller.getRecommendations2(university);
  }
 
 public ArrayList<University> sort(String username, int x) {

@@ -7,8 +7,19 @@
     String first = request.getParameter("First");
     String last = request.getParameter("Last");
     String pass = request.getParameter("Pass");
-    
-    ui.editUserInfo(username, first, last, pass);
-    response.sendRedirect("ViewAccount.jsp");
-	ui.setCurrentUser((User) db.findByUsername(username));
+    if(ui.editUserInfo(username, first, last, pass) == 1){
+        response.sendRedirect("ViewAccount.jsp?Result=1");
+        ui.setCurrentUser((User) db.findByUsername(username));
+    }
+    else if(ui.editUserInfo(username, first, last, pass) == 2 || ui.editUserInfo(username, first, last, pass) == 3){
+    	response.sendRedirect("ViewAccount.jsp?Result=-1");
+    }
+    else if (ui.editUserInfo(username, first, last, pass) == -1){
+    	response.sendRedirect("ViewAccount.jsp?Result=-2");
+
+    }
+    else if(ui.editUserInfo(username, first, last, pass) == -2){
+    	response.sendRedirect("ViewAccount.jsp?Result=-3");
+
+    }
     %>
