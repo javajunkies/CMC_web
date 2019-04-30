@@ -7,7 +7,7 @@
 <title>CMC</title>
 </head>
 <body>
-<form method="post" action="adminEditUser_action.jsp" name="adminEditUser"><br>
+<form method="post" action="adminEditUser.jsp" name="adminEditUser"><br>
 <table style="width=100%">
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
