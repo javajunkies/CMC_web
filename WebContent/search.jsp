@@ -62,8 +62,8 @@
 								name="school" placeholder="School Name"></td>
 							<td><input class="searchBar" type="text" name="state"
 								placeholder="State"></td>
-							<td>Negate<input class="searchBar" type="checkbox"
-								name="negateState"></td>
+							<td><input type="checkbox"
+								name="negateState">Negate</td>
 						</tr>
 						<tr>
 							<td><input class="searchBar" type="text" name="location"

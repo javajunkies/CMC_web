@@ -32,11 +32,6 @@
 	<center>
 		<div class="results">
 				<table>
-					<tr>
-						<td></td><td></td>
-						<td>School</td>
-						<td>Compare</td>
-					</tr> 
 					<%
 						String school = "";
 						String state = "";
@@ -323,7 +318,7 @@
 								maxQualityOfLife = Integer.parseInt(request.getParameter("maxQualityOfLife"));
 							}
 							//negateState
-							if (request.getParameter("negateState")=="")
+							if (request.getParameter("negateState")==null)
 							{
 								negateState = false;
 							}
@@ -368,13 +363,23 @@
 						
 						ArrayList<University> result = new ArrayList<University>();
 
-						result = ui.searchUniversities(school, state, false, location, control, minStudents, maxStudents,
+						result = ui.searchUniversities(school, state, negateState, location, control, minStudents, maxStudents,
 								minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses,
 								maxExpenses, minPercentFinancialAid, maxPercentFinancialAid, minNumberApplicants,
 								maxNumberApplicants, minPercentAdmitted, maxPercentAdmitted, minPercentEnrolled, maxPercentEnrolled,
 								minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife,
 								maxQualityOfLife);
 
+							if (result.size() == 1)
+							{
+								out.print("<tr><td></td><td></td><td>"+ result.size() + " School </td><td>Compare</td></tr>");
+							}
+							else if (result.size() < 1)
+							{
+								out.print("<tr><td></td><td></td><td>"+ result.size() + " Schools </td><td>Compare</td></tr>");
+							}
+						
+								
 						for (int i = 0; i != result.size(); i++) {
 							out.print("<tr>" + 
 										
