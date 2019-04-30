@@ -65,7 +65,7 @@
 				} else if (anyErrors != null && anyErrors.equals("2")) {
 					out.println("Password must contain atleast one letter.");
 				} else if (anyErrors != null && anyErrors.equals("3")) {
-					out.println("IPassword must contain atleast one number.");
+					out.println("Password must contain atleast one number.");
 				} else if (anyErrors != null && anyErrors.equals("4")) {
 					out.println("Username already taken.");
 				} else if (anyErrors != null && anyErrors.equals("5")) {
