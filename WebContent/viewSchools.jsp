@@ -10,6 +10,7 @@
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
+<a href="addUniversity.jsp" target="_blank">Add a University</a> <br>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">School</td>
 		<td style="vertical-align: top; text-align: center;">State</td>

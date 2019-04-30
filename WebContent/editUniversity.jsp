@@ -1,11 +1,9 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
-	<%
-		//AdminController ac = (AdminController) session.getAttribute("admincontroller");
-		//UserInteraction ui =(UserInteraction) session.getAttribute("username");
-		//User user = ac.getSpecificUser(request.getParameter("Username"));
-		University university; 
-	%>
+<%
+	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+	University university = ai.getCurrentUniversity();
+%>
 
 <html>
 <head>
@@ -46,12 +44,12 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Number of Students<br>
 </td>
-<td style="vertical-align: top;"><input name="NumberOfStudents" value=<%university.getNumberOfStudents();%>> </td>
+<td style="vertical-align: top;"><input name="NumberOfStudents" value=<%university.getNumStudents();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Percent Females<br>
 </td>
-<td style="vertical-align: top;"><input name="PercentFemales" value=<%university.getPercentFemales();%>> </td>
+<td style="vertical-align: top;"><input name="PercentFemales" value=<%university.getPercentFemale();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">SAT Verbal<br>
@@ -61,7 +59,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">SAT Math<br>
 </td>
-<td style="vertical-align: top;"><input name="SATMath" value=<%university.SATMath();%>> </td>
+<td style="vertical-align: top;"><input name="SATMath" value=<%university.getSATMath();%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Expenses<br>
@@ -101,7 +99,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Quality of Life Scale<br>
 </td>
-<td style="vertical-align: top;"><input name="Quality of Life Scale" value=<%//university.getQualityOfLife();%>> </td>
+<td style="vertical-align: top;"><input name="Quality of Life Scale" value=<%university.getQualityOfLife();%>> </td>
 </tr>
 
 

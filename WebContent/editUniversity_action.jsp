@@ -2,11 +2,26 @@
 
 
      <%
-	  AdminController ac = (AdminController) session.getAttribute("admincontroller");
-      ac.editUniversity(request.getParameter("School"), request.getParameter("State"), request.getParameter("Location"), request.getParameter("Control"),
-    		  request.getParameter("NumberOfStudents"), request.getParameter("PercentFemales"), request.getParameter("SATVerbal"), request.getParameter("SATMath"),
-    		  request.getParameter("Expenses"), request.getParameter("PercentFinancialAid"), request.getParameter("NumberOfApplicants"), request.getParameter("PercentAdmitted"), 
-    		  request.getParameter("PercentEnrolled"), request.getParameter("AcademicsScale"), request.getParameter("SocialScale"), request.getParameter("QualityOfLifeScale"));
-      response.sendRedirect("adminHome.jsp");
+ 	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+ 	
+ 	String school = request.getParameter("School");
+ 	String state = request.getParameter("State");
+ 	String location = request.getParameter("Location");
+ 	String control = request.getParameter("Control");
+ 	int numStudents = Integer.parseInt(request.getParameter("NumberOfStudents"));
+ 	double percentFemale = Double.parseDouble(request.getParameter("PercentFemales"));
+ 	double SATVerbal = Double.parseDouble(request.getParameter("SATVerbal"));
+ 	double SATMath = Double.parseDouble(request.getParameter("SATMath"));
+ 	double expenses = Double.parseDouble(request.getParameter("Expenses"));
+ 	double percentFinancialAid = Double.parseDouble(request.getParameter("PercentFinancialAid"));
+ 	int numApplicants = Integer.parseInt(request.getParameter("NumberOfApplicants"));
+ 	double percentAdmitted = Double.parseDouble(request.getParameter("PercentAdmitted"));
+ 	double percentEnrolled = Double.parseDouble(request.getParameter("PercentEnrolled"));
+ 	int academicsScale = Integer.parseInt(request.getParameter("AcademicsScale"));
+ 	int socialScale = Integer.parseInt(request.getParameter("SocialScale"));
+ 	int qualityOfLife= Integer.parseInt(request.getParameter("QualityOfLifeScale"));
+ 	
+ 	ai.editUniversity(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
+ 	response.sendRedirect("viewSchools.jsp");
 	%>
 	
