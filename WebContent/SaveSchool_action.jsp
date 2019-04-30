@@ -5,14 +5,11 @@
 <%
 
 try{
-	UserController uc = new UserController();
-	UserInteraction ui = new UserInteraction();
-	String username = uc.getCurrentUser().getUsername();
-
-	String name = request.getParameter("SchoolName");
-	University univ;
-	String uname = univ.getSchool();
-	ui.saveSchool(username, uname);
+	UserInteraction ui = (UserInteraction)session.getAttribute("username");
+	String username = ui.getCurrentUser().getUsername();
+	String univname = request.getParameter("school");
+	
+	ui.saveSchool(username, univname);
 	response.sendRedirect("ManageSavedSchools.jsp");
 }
 catch(Exception e){
