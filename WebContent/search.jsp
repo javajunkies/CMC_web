@@ -36,7 +36,7 @@
 						</tr>
 						<tr>
 							<td width=90%><input class="searchBarName" type="text"
-								name="school" placeholder="School Name"></td>
+								name="schoolBasic" placeholder="School Name"></td>
 							<td width=10%><input type="submit" class="button"
 								value="Submit"></td>
 						</tr>
@@ -117,7 +117,7 @@
 						</tr>
 						<tr>
 							<td><input class="searchBar" type="text"
-								name="minPercntAdmitted" placeholder="Minimum Percent Admitted"></td>
+								name="minPercentAdmitted" placeholder="Minimum Percent Admitted"></td>
 							<td><input class="searchBar" type="text"
 								name="maxPercentAdmitted" placeholder="Maximum Percent Admitted"></td>
 						</tr>
@@ -146,6 +146,7 @@
 								name="maxQualityOfLife" placeholder="Maximum Quality of Life"></td>
 						</tr>
 						<tr>
+							<td></td>
 							<td><input type="submit" class="button" value="Submit">
 								<input type="reset" class="button" value="Reset"> <input
 								type="button" class="button" value="Advanced <" onclick="toggle()">
