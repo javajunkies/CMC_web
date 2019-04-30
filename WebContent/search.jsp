@@ -19,7 +19,7 @@
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
 								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
-						response.sendRedirect("temp_index.jsp");
+						response.sendRedirect("index.jsp");
 					}
 				%>
 
@@ -62,8 +62,8 @@
 								name="school" placeholder="School Name"></td>
 							<td><input class="searchBar" type="text" name="state"
 								placeholder="State"></td>
-							<td>Negate<input class="searchBar" type="checkbox"
-								name="negateState"></td>
+							<td><input type="checkbox"
+								name="negateState">Negate</td>
 						</tr>
 						<tr>
 							<td><input class="searchBar" type="text" name="location"

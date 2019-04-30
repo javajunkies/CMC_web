@@ -19,21 +19,13 @@ public class UserController {
   *@return int the status of the login
   */
  public int login(String username, String password) {
-//	  if(logInController.login(username, password) == 1) {
-//		  throw new IllegalArgumentException("Invalid username");
-//	  }
-//	  else if(logInController.login(username, password) == 2) {
-//		  throw new IllegalArgumentException("Invalid username/password combination.");
-//	  }
-//	  else if(logInController.login(username, password) == 3) {
-//		  throw new IllegalArgumentException("Account status is inactive.");
-//	  }
-//	  else if(logInController.login(username, password) == 4) {
-//		  throw new IllegalArgumentException("Account type is temporary, wait for admin to approve registration.");
-//	  }
-	  
-		  return logInController.login(username, password);
-	  //}
+
+		  int results = logInController.login(username, password);
+		  if(results == 0) {
+			  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+			  this.setLoggedIn(true);
+		  }
+		  return results;
  }
  /**
   * method to log the user off the CMC system

@@ -32,11 +32,6 @@
 	<center>
 		<div class="results">
 				<table>
-					<tr>
-						<td></td><td></td>
-						<td>School</td>
-						<td>Compare</td>
-					</tr> 
 					<%
 						String school = "";
 						String state = "";
@@ -323,7 +318,7 @@
 								maxQualityOfLife = Integer.parseInt(request.getParameter("maxQualityOfLife"));
 							}
 							//negateState
-							if (request.getParameter("negateState")=="")
+							if (request.getParameter("negateState")==null)
 							{
 								negateState = false;
 							}
@@ -368,19 +363,29 @@
 						
 						ArrayList<University> result = new ArrayList<University>();
 
-						result = ui.searchUniversities(school, state, false, location, control, minStudents, maxStudents,
+						result = ui.searchUniversities(school, state, negateState, location, control, minStudents, maxStudents,
 								minPercentFemale, maxPercentFemale, minSATVerbal, maxSATVerbal, minSATMath, maxSATMath, minExpenses,
 								maxExpenses, minPercentFinancialAid, maxPercentFinancialAid, minNumberApplicants,
 								maxNumberApplicants, minPercentAdmitted, maxPercentAdmitted, minPercentEnrolled, maxPercentEnrolled,
 								minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife,
 								maxQualityOfLife);
 
+							if (result.size() == 1)
+							{
+								out.print("<tr><td></td><td></td><td>"+ result.size() + " School </td><td>Compare</td></tr>");
+							}
+							else if (result.size() < 1)
+							{
+								out.print("<tr><td></td><td></td><td>"+ result.size() + " Schools </td><td>Compare</td></tr>");
+							}
+						
+								
 						for (int i = 0; i != result.size(); i++) {
 							out.print("<tr>" + 
 										
 										"<td width=5% >"+
 										"<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"View\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
-										"<td width=5% > <form method=\"post\" action=\"SaveSchool_action.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
+										"<td width=5% > <form method=\"post\" action=\"saveSchoolSearchAction.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
 											"<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value=" + result.get(i).getSchool() + "></td>" +
