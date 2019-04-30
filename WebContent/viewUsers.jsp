@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Users</title>
+<title>CMC</title>
 </head>
 <body>
+<form method="post" action="adminEditUser.jsp" name="adminEditUser"><br>
 <table style="width=100%">
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
@@ -32,11 +33,12 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"location.href(\'adminEditUser.jsp\'); value=\"Redirect\">Edit</button> </td>" +
+			"<td style=\"vertival-align: top:\"> <input name=\"Edit\" value=\"Edit User\" type=\"submit\"> </td>" +
 		"</tr>");
 	}
 	%>
 </table>
+</form>
 </body>
 </html>
 

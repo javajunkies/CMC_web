@@ -1,8 +1,8 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
 	<%	
-	    UserInteraction ui = (UserInteraction) session.getAttribute("userinteraction");
-		User user = ui.getCurrentUser(request.getParameter("username"));
+	    AdminInteraction ui = (AdminInteraction) session.getAttribute("userinteraction");
+		User user = ui.getCurrentUser();
 	%>
 
 <html>
@@ -15,7 +15,7 @@
 Edit User:<br>
 <br>
 
-<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
+<form method="post" action="adminEditUser_action.jsp" name="adminEditUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
