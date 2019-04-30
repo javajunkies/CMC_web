@@ -4,6 +4,6 @@
 //clear secession var
 UserInteraction uc = (UserInteraction)session.getAttribute("username");
 String uname = uc.getCurrentUser().getUsername();
-response.sendRedirect("index.jsp");
+response.sendRedirect("temp_index.jsp");
 
 %>
