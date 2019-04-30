@@ -1,7 +1,7 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
 
 	<%	
-	    AdminInteraction ui = (AdminInteraction) session.getAttribute("userinteraction");
+	    AdminInteraction ui = (AdminInteraction) session.getAttribute("username");
 		User user = ui.getCurrentUser();
 	%>
 
