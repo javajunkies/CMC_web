@@ -29,7 +29,7 @@
 			login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
 			if (login == 0) {
 				session.setAttribute("username", ui);
-				response.sendRedirect("search.jsp");
+				response.sendRedirect("userHome.jsp");
 			}
 
 			else if (login == 2) {
