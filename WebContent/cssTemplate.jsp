@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<center>
-			<div id=inside>
+			<div class=inside>
 
 		
 		<!-- Paste here -->
