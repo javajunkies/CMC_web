@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Users</title>
+<title>CMC</title>
 </head>
 <body>
 <table style="width=100%">

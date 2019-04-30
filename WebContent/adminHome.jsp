@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=ISO-8859-1"
 http-equiv="content-type">
-<title></title>
+<title>CMC</title>
 </head>
 <body>
 <% AdminInteraction ai = (AdminInteraction) session.getAttribute("username"); %>
