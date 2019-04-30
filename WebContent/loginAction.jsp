@@ -1,5 +1,5 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-
+<title>CMC</title>
 <%
 	UserInteraction ui = new UserInteraction();
 	AdminInteraction ai = new AdminInteraction();
@@ -29,7 +29,7 @@
 			login = ui.login(request.getParameter("Username"), request.getParameter("Password"));
 			if (login == 0) {
 				session.setAttribute("username", ui);
-				response.sendRedirect("userHome.jsp");
+				response.sendRedirect("search.jsp");
 			}
 
 			else if (login == 2) {
