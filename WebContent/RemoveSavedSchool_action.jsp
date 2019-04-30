@@ -4,13 +4,12 @@
 
 <%
 try{
-	UserInteraction ui = (UserInteraction)session.getAttribute("username");
-	
+	UserInteraction ui = (UserInteraction)session.getAttribute("Name");
 	String name = request.getParameter("Name");
 	String uname = ui.getCurrentUser().getUsername();
 	ui.removeSavedSchool(uname, name);
 	
-	response.sendRedirect("ManageSavedSchools.jsp");
+	response.sendRedirect("ViewSaved.jsp");
 	
 }catch(Exception e){
 	

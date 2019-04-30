@@ -41,25 +41,33 @@
 								<input name="Reset" type="reset" class="button" >
 								</td>
 							</tr>
+							<tr>
+								<td></td>
+								<td style="vertical-align: top;"><a href="register.jsp">Register</a><br>
+								</td>
+								<td style="vertical-align: top;"><br></td>
+							</tr>
 						</tbody>
 					</table>
 					
 				</form>
 
 				<%
-						String anyErrors = request.getParameter("Error");
-						if (anyErrors != null && anyErrors.equals("1")) {
-							out.println("Invalid username.");
-						} else if (anyErrors != null && anyErrors.equals("2")) {
-							out.println("Invalid password.");
-						} else if (anyErrors != null && anyErrors.equals("3")) {
-							out.println("Invalid user status.");
-						} else if (anyErrors != null && anyErrors.equals("4")) {
-							out.println("Invalid user type.");
-						} else if (anyErrors != null && anyErrors.equals("5")) {
-							out.println("System Error.");
-						}
-					%>
+					String anyErrors = request.getParameter("Error");
+					if (anyErrors != null && anyErrors.equals("1")) {
+						out.println("Invalid username.");
+					} else if (anyErrors != null && anyErrors.equals("2")) {
+						out.println("Invalid password.");
+					} else if (anyErrors != null && anyErrors.equals("3")) {
+						out.println("Invalid user status.");
+					} else if (anyErrors != null && anyErrors.equals("4")) {
+						out.println("Invalid user type.");
+					} else if (anyErrors != null && anyErrors.equals("5")) {
+						out.println("System Error.");
+					} else if (anyErrors != null && anyErrors.equals("7")) {
+						out.println("User Registered, please wait to be activated by an administrator.");
+					}
+				%>
 
 			</div>
 		</center>

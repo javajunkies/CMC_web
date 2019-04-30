@@ -25,10 +25,11 @@ public class AccountController{
    */
   public int register(String first, String last, String username, String password) {
 	  if(this.checkPasswordCriteria(password) == 0) {
-    return db.registerNewUser(first, last, username, password);
+		  return db.registerNewUser(first, last, username, password);
 	  }
 	  else {
-		  throw new IllegalArgumentException("Invalid Password");
+		  //throw new IllegalArgumentException("Invalid Password");
+		  return this.checkPasswordCriteria(password);
 	  }
   }
   
