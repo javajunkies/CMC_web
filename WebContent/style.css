@@ -37,11 +37,13 @@ body {
   border: none;
   position: absolute;
   display: inline-block;
-  float:left
+  float:left;
+  text-decoration: none;
 }	
 .CMC:hover {
 	background-color: #1e824c;
 	color: white;
+	text-decoration: none;
 	}
 
 
