@@ -12,7 +12,7 @@
 			<div class="dropdown">
 				<button class="dropbtn">Options</button>
 				<div class="dropdown-content">
-					<a href="edit_action.jsp">Edit Account</a> <a href="logout_action">Logout</a>
+					<a href="ViewAccount.jsp">Edit Account</a> <a href="logout_action">Logout</a>
 				</div>
 
 
