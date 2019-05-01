@@ -10,10 +10,9 @@
 		<div class="nav">
 			<span class="CMC">CMC</span>
 			<div class="dropdown">
-				<button class="dropbtn">Options</button>
+				<button class="dropbtn">Welcome!</button>
 				<div class="dropdown-content">
-					<a href="ViewAccount.jsp">Edit Account</a> <a href="logout_action.jsp">Logout</a>
-				</div>
+								</div>
 
 
 			</div>
