@@ -32,7 +32,6 @@
 		UserInteraction uc = (UserInteraction)session.getAttribute("username");
 	%>
 			<center>
-
 				<table>
 					<tbody>
 						
@@ -73,9 +72,7 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
-					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
+					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
 					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
@@ -98,10 +95,10 @@
 
 						</tr>
 					</tbody>
-					<tr>
+					<!-- <tr>
 						<td></td><td></td><td></td>
-						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
-					</tr>
+					<td><form method="post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
+					</tr> -->
 				</table>
 			</center>
 		</div>
