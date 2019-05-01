@@ -9,22 +9,38 @@
 <body>
 <table style="width=100%">
 	<tr>
-		<td style="vertical-align: top; text-align: center;">School</td>
-		<td style="vertical-align: top; text-align: center;">State</td>
-		<td style="vertical-align: top; text-align: center;">Location</td>
-		<td style="vertical-align: top; text-align: center;">Control</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfStudents</td>
-		<td style="vertical-align: top; text-align: center;">PercentFemales</td>
-		<td style="vertical-align: top; text-align: center;">SATVerbal</td>
-		<td style="vertical-align: top; text-align: center;">SATMath</td>
-		<td style="vertical-align: top; text-align: center;">Expenses</td>
-		<td style="vertical-align: top; text-align: center;">PercentFinancialAid</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfApplicants</td>
-		<td style="vertical-align: top; text-align: center;">PercentAdmitted</td>
-		<td style="vertical-align: top; text-align: center;">PercentEnrolled</td>
-		<td style="vertical-align: top; text-align: center;">AcademicsScale</td>
-		<td style="vertical-align: top; text-align: center;">SocialScale</td>
-		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale</td>
+		<td style="vertical-align: top; text-align: center;">School
+		</td>
+		<td style="vertical-align: top; text-align: center;">State
+		</td>
+		<td style="vertical-align: top; text-align: center;">Location
+		</td>
+		<td style="vertical-align: top; text-align: center;">Control
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfStudents
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFemales
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATVerbal
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATMath
+		</td>
+		<td style="vertical-align: top; text-align: center;">Expenses
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFinancialAid
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfApplicants
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentAdmitted
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentEnrolled
+		</td>
+		<td style="vertical-align: top; text-align: center;">AcademicsScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">SocialScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale
+		</td>
 	</tr>
 	<%
 	AdminInteraction admin = new AdminInteraction();

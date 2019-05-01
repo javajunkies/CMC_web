@@ -36,7 +36,7 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertival-align: top:\"> <button type = \"button\" onclick=\"adminEditUser.jsp\">Edit</button> </td>" +
+			"<td style=\"vertical-align: top:\"> <button type = \"button\" onclick=\"adminEditUser.jsp\">Edit</button> </td>" +
 		"</tr>");
 	}
 	%>
