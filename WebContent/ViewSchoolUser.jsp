@@ -44,10 +44,6 @@
 <body>
 	<br>
 
-
-	<a href="results.jsp">Go back to search results</a>
-	<br>
-	<a href="search.jsp">Search again</a>
 	<table>
 		<tbody>
 			<tr>
@@ -141,7 +137,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" value="Save" class="button" type="submit">
 	</form>
 	<br>
 	<br> MAY WE ALSO RECOMMEND
@@ -189,7 +185,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" value="Save" class="button" type="submit">
 	</form>
 	<br>
 	<br>
@@ -233,7 +229,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" value="Save" class="button" type="submit">
 	</form>
 	<br>
 	<table >
@@ -276,7 +272,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" value="Save" class="button" type="submit">
 	</form>
 	<br>
 	<table >
@@ -319,7 +315,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" class="button" value="Save" type="submit">
 	</form>
 	<br>
 	<table>
@@ -362,7 +358,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
+		<input name="SaveButton" value="Save" class="button" type="submit">
 	</form>
 	<br>
 	<br>
