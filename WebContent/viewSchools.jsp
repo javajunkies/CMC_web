@@ -17,7 +17,7 @@
 <body>
 	<div class="container">
 		<div class="nav">
-			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<span><a href="adminHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (uname != null) {
