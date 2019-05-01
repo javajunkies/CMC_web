@@ -57,7 +57,7 @@
 // 					out.print("</form>");
 // 					out.print("</td>");
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
+					out.print("<form method=\"post\" action=\"viewSchoolFromSaved.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
 					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
@@ -65,12 +65,11 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
-					//+ " (added on: " + s.getTimeStamp() + ") "
 
 				}
 				out.print("</tbody>" +
 						"<tr>" +
-							"<td></td><td></td><td>" + 
+							"<td></td><td>" + 
 								"<input type=\"button\" class=\"button\" value=\"Sort By Students\" onclick=\"sortNumStudents()\"> " +
 								"<input type=\"button\" class=\"button\" value=\"Sort By Expense\" onclick=\"sortExpense()\">" +
 								"<input type=\"button\" class=\"button\" value=\"Sort By Acceptance\" onclick=\"sortAccept()\"> " +
