@@ -1,4 +1,5 @@
 <%@ page language="java" import="CMC2.*, java.util.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <html>
