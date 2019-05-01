@@ -1,4 +1,5 @@
 <%@ page language="java" import="CMC2.*, java.util.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <html>
@@ -32,7 +33,6 @@
 		UserInteraction uc = (UserInteraction)session.getAttribute("username");
 	%>
 			<center>
-
 				<table>
 					<tbody>
 						
@@ -74,9 +74,7 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
-					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
+					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
 					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
@@ -100,7 +98,7 @@
 
 						</tr>
 					</tbody>
-					<tr>
+					<!-- <tr>
 						<td></td><td></td><td></td>
 						<td><form method="post" action="sortSavedSchoolsbyNumStudents_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Number Of Students"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
 						<td><form method="post" action="sortSavedSchoolsbyExpenses_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Expenses"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>

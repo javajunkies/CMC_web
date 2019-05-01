@@ -1,5 +1,5 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-
+<%@include file="checkUserLoggedIn.jsp"%>
     <%
     UserInteraction ui = (UserInteraction)session.getAttribute("username");
     DBController db = new DBController();

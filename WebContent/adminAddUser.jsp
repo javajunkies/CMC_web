@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<%@ page language="java" import="CMC2.*" import="java.util.*"%>
+<%@include file="checkAdminLoggedIn.jsp"%>
+=======
+>>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
 
 
 <%@page language="java" import="CMC2.*"%>

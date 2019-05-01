@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="CMC2.*" import="java.util.*"%>
-    
+    <%@include file="checkUserLoggedIn.jsp"%>
 
 <%
 
@@ -12,11 +12,11 @@ University univ = db.viewExistingUniversity(name);
 String uname = univ.getSchool();
 
 try{
-	ui.saveSchool(username, uname);
+	ui.saveSchool(username, name);
 	response.sendRedirect("ViewSaved.jsp");
 }
 catch(Exception e){
-	out.print("error" + username + " " + uname);
+	out.print("error" + username + " " + name);
 	out.print(e.getMessage());
 }
 %>

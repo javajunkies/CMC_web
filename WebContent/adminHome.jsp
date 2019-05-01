@@ -1,4 +1,5 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
+<%@include file="checkAdminLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,13 +7,13 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <%
-	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+  	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 	String aname = ai.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">
 		<div class="nav">
-			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<span><a href="adminHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (aname != null) {

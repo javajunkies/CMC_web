@@ -1,4 +1,7 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
+<<<<<<< HEAD
+<%@include file="checkAdminLoggedIn.jsp"%>
+=======
 
 
 
@@ -10,6 +13,7 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+>>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
 <%
 AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 	String uname = ai.getCurrentUser().getUsername();
