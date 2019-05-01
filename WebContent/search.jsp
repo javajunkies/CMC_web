@@ -1,4 +1,5 @@
 <%@page language="java" import="CMC2.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -17,7 +18,7 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+								+ "<a href=\"ViewSaved.jsp\">My Saved Schools</a>" + "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("index.jsp");
 					}
@@ -29,7 +30,7 @@
 
 		<div class="search" style="display: block;" id="s">
 			<center>
-				<form method="post" action="results.jsp" name="search">
+				<form method="get" action="results.jsp" name="search">
 					<table>
 						<tr>
 							<td>Search</td>
@@ -42,8 +43,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="button" class="button" value="Advanced >"
-								onclick="toggle()"></td>
+							<td><input type="button" class="button" value="Advanced >" onclick="toggle()"></td>
 						</tr>
 					</table>
 				</form>
@@ -52,7 +52,7 @@
 
 		<div class="searchAdvanced" style="display: none;" id="sa">
 			<center>
-				<form method="post" action="results.jsp" name="search">
+				<form method="get" action="results.jsp" name="search">
 					<table>
 						<tr>
 							<td>Search</td>

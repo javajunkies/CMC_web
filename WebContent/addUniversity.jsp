@@ -1,5 +1,9 @@
 
 <%@page language="java" import="CMC2.*"%>
+<%@include file="checkAdminLoggedIn.jsp"%>
+
+
+
 <html>
 <head>
 <meta charset="UTF-8">

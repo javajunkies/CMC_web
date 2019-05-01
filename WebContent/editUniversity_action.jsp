@@ -1,5 +1,5 @@
 <%@ page language="java" import="CMC2.*" import="java.util.*"%>
-
+<%@include file="checkAdminLoggedIn.jsp"%>
 
      <%
  	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
@@ -21,7 +21,9 @@
  	int socialScale = Integer.parseInt(request.getParameter("SocialScale"));
  	int qualityOfLife= Integer.parseInt(request.getParameter("QualityOfLifeScale"));
  	
- 	ai.editUniversity(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
- 	response.sendRedirect("viewSchools.jsp");
+ 	
+ 	int result = ai.editUniversity(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
+ 	response.sendRedirect("viewSchools.jsp?Result=" + result);
+ 	
 	%>
 	

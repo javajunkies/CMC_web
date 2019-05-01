@@ -51,6 +51,8 @@ public class AdminInteraction{
   */
 
  public void logoff(){
+	this.loggedIn = false;
+	this.currentUser = null;
     adminController.logoff();
  }
  

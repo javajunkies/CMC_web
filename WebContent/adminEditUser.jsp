@@ -1,19 +1,22 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-
+<%@include file="checkAdminLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <%
 	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 	String uname = ai.getCurrentUser().getUsername();
+	String username = request.getParameter("userName");
+	User user = ai.viewUserInfo(username);
 %>
 <body>
 	<div class="container">
 		<div class="nav">
-			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<span><a href="adminHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (uname != null) {
@@ -28,15 +31,6 @@
 		</div>
 		<center>
 			<div class=inside>
-
-		
-<%	 
-	String username = request.getParameter("userName");
-	User user = ai.viewUserInfo(username);
-%>
-	
-
-<html>
 <head>
 
 <title>Admin Edit User Form</title>
@@ -53,7 +47,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username" value="<%=user.getUsername()%>"><br>
+<td style="vertical-align: top;"><input readonly="readonly" name="Username" value="<%=user.getUsername()%>"><br>
 </td>
 </tr>
 <tr>

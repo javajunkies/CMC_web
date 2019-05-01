@@ -1,9 +1,6 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
+<%@include file="checkAdminLoggedIn.jsp"%>
 
-
-
-
-<%@page language="java" import="CMC2.*"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -18,12 +15,13 @@ AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 String univ = request.getParameter("school");
 out.print(univ);
 University school = ai.getCurrentUniversity(univ);
+
 %>
 
 <body>
 	<div class="container">
 		<div class="nav">
-			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<span><a href="adminHome.jsp" class="CMC">CMC</a></span>
 			<div class="dropdown">
 				<%
 					if (uname != null) {
@@ -50,8 +48,8 @@ University school = ai.getCurrentUniversity(univ);
 <body>
 
 <br>
-
-<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
+	
+	<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>

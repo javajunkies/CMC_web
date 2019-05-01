@@ -1,5 +1,5 @@
 <%@page language="java" import="CMC2.*"%>
-
+<%@include file="checkAdminLoggedIn.jsp"%>
 <% 
 	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 	
