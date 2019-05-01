@@ -43,8 +43,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="button" class="button" value="Advanced >"
-								onclick="toggle()"></td>
+							<td><input type="button" class="button" value="Advanced >" onclick="toggle()"></td>
 						</tr>
 					</table>
 				</form>
