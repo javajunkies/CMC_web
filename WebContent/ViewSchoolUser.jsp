@@ -109,9 +109,10 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
-		<input name="SaveButton" value="Save" type="submit">
-	</form>
+	<!-- <form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton"> 
+ 	<input name="SaveButton" value="Save" type="submit"> 
+ 	</form>  -->
+ 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=univ.getSchool()%>" type="hidden">  </form>
 	<br>
 	<br> MAY WE ALSO RECOMMEND
 	<br>
@@ -158,7 +159,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
+	<form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton">
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>
@@ -203,7 +204,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
+	<form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton">
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>
@@ -247,7 +248,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
+	<form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton">
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>
@@ -291,7 +292,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
+	<form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton">
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>
@@ -335,7 +336,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="SaveSchool_action.jsp" name="SaveButton">
+	<form method="post" action="saveSchoolSearchAction.jsp\" name="SaveButton">
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>

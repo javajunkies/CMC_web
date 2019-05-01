@@ -7,7 +7,6 @@
 
 UserInteraction ui = (UserInteraction)session.getAttribute("username");
 String username = ui.getCurrentUser().getUsername();
-DBController db = new DBController();
 
 String name = request.getParameter("school");
 
