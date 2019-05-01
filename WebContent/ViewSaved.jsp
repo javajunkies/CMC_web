@@ -29,7 +29,6 @@
 		</div>
 		
 		<div class="sort">
-
 		<br>
 		<br>
 						
@@ -50,13 +49,13 @@
 				
 				else{
 
-					out.print("<tr><td></td><td></td><td>School Name</td></tr><tr>");
+					out.print("<tr><td></td><td>School Name</td></tr><tr>");
 				for (University s : savedSchools) {
-					out.print("<td>");
-					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
-					out.print("</td>");
+// 					out.print("<td>");
+// 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
+// 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
+// 					out.print("</form>");
+// 					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
@@ -106,7 +105,7 @@
 							
 				ArrayList<University> savedSchools1;
 				try{
-					savedSchools1 = uc.viewSavedSchools(uname);
+					savedSchools1 = uc.sort(uname, 1);
 					if(savedSchools1.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
@@ -116,13 +115,13 @@
 
 				else{
 
-					out.print("<tr><td></td><td></td><td>School Name by Number of Students </td></tr><tr>");
+					out.print("<tr><td></td><td>School Name by Number of Students </td></tr><tr>");
 				for (University s : savedSchools1) {
-					out.print("<td>");
-					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
-					out.print("</td>");
+// 					out.print("<td>");
+// 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
+// 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
+// 					out.print("</form>");
+// 					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
@@ -169,7 +168,7 @@
 							out.print("<table id=\"expense\" style=\"top: 10%;display: none;\"><tbody>");
 				ArrayList<University> savedSchools2;
 				try{
-					savedSchools2 = uc.viewSavedSchools(uname);
+					savedSchools2 = uc.sort(uname, 2);
 					if(savedSchools2.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
@@ -179,13 +178,13 @@
 					
 				else{
 
-					out.print("<tr><td></td><td></td><td>School Name by Expense</td></tr><tr>");
+					out.print("<tr><td></td><td>School Name by Expense</td></tr><tr>");
 				for (University s : savedSchools2) {
-					out.print("<td>");
-					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
-					out.print("</td>");
+// 					out.print("<td>");
+// 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
+// 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
+// 					out.print("</form>");
+// 					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"viewSchoolFromSaved.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
@@ -221,15 +220,7 @@
 				}
 			%>
 
-						</tr>
-					</tbody>
-					<tr>
-						<td></td><td></td><td></td>
-						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
-					</tr>
-				</table>
-			</center>
-		</div>
+
 
 
 				
@@ -248,7 +239,7 @@
 							out.print("<table id=\"Accept\" style=\"top: 10%;display: none;\"><tbody>");
 				ArrayList<University> savedSchools3;
 				try{
-					savedSchools3 = uc.viewSavedSchools(uname);
+					savedSchools3 = uc.sort(uname,3);
 					if(savedSchools3.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
@@ -257,13 +248,13 @@
 					//" (added on: "  s.getTimeStamp() +
 					
 				else{
-					out.print("<tr><td></td><td></td><td>School Name by Acceptance</td></tr><tr>");
+					out.print("<tr><td></td><td>School Name by Acceptance</td></tr><tr>");
 				for (University s : savedSchools3) {
-					out.print("<td>");
-					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
-					out.print("</td>");
+// 					out.print("<td>");
+// 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
+// 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
+// 					out.print("</form>");
+// 					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
@@ -301,7 +292,7 @@
 				
 				
 				
-				
+			</div>	
 		<script type="text/javascript">
 			function sortNumStudents() {
 				var defaults = document.getElementById("defaults");
@@ -345,6 +336,8 @@
 					expense.style.display = "none";
 					Accept.style.display = "block";
 				}
+			
+			
 		</script>
 </body>
 </html>
