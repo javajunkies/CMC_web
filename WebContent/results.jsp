@@ -28,12 +28,20 @@
 			</div>
 		</div>
 
+<%
+//sets sesssion var
+Map<String,String[]> params = request.getParameterMap();
+session.setAttribute("searchParams", params);
+%>
+
+
+
 
 	<div class="container">
 	<center>
 		<div class="results">
 				<table>
-					<%
+					<%		
 						String school = "";
 						String state = "";
 						String location = "";
@@ -383,12 +391,11 @@
 										"<td width=5% > <form method=\"post\" action=\"saveSchoolSearchAction.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
-											"<td width=10% > <form method=\"post\" action=\"compareAction.jsp\" name=\"Compare\" > <input type=\"submit\" class=\"button\" value=\"Compare\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" + 
+											"<td width=10% > <form method=\"post\" action=\"compareAction.jsp\" name=\"Compare\" > <input type=\"submit\" class=\"button\" value=\"Compare\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"></form> </td>" + 
 									"</tr>");
 						}
 					%>
 				</table>
-
 		</div>
 		</center>
 	</div>
