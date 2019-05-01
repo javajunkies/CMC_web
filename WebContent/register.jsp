@@ -12,12 +12,19 @@
 	<div class="container">
 		<div class="nav">
 			<span class="CMC">CMC</span>
+			<div class="dropdown">
+				<button class="dropbtn">Welcome!</button>
+				<div class="dropdown-content">
+								</div>
+
+
+			</div>
 		</div>
+		
 		<center>
-			<div class=Register>
+			<div class="inside">
 				<form method="get" action="registerAction.jsp" name="Register">
-					<table style="text-align: left; width: 100%;" border="1"
-						cellpadding="2" cellspacing="2">
+					<table>
 						<tbody>
 							<tr>
 								<td style="vertical-align: top;">First Name<br>
@@ -50,12 +57,16 @@
 								<td style="vertical-align: top;"><input name="password1"><br>
 								</td>
 							</tr>
-
+							<tr>
+							<td></td><td>
+								<input name="Reset" type="reset" class="button">
+								<input name="Submit" type="submit" value="Register" class="button">
+							</td>
+							</tr>
 
 						</tbody>
 					</table>
-					<input name="Reset" type="reset" class="button">
-					<input name="Submit" type="submit" value="Register" class="button">
+				
 					
 				</form>
 				<%

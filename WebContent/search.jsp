@@ -30,7 +30,7 @@
 
 		<div class="search" style="display: block;" id="s">
 			<center>
-				<form method="post" action="results.jsp" name="search">
+				<form method="get" action="results.jsp" name="search">
 					<table>
 						<tr>
 							<td>Search</td>
@@ -52,7 +52,7 @@
 
 		<div class="searchAdvanced" style="display: none;" id="sa">
 			<center>
-				<form method="post" action="results.jsp" name="search">
+				<form method="get" action="results.jsp" name="search">
 					<table>
 						<tr>
 							<td>Search</td>
