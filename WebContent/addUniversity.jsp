@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-<%@page language="java" import="CMC2.*"%>
-<%@include file="checkAdminLoggedIn.jsp"%>
-=======
 
 <%@page language="java" import="CMC2.*"%>
->>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
+<%@include file="checkAdminLoggedIn.jsp"%>
+
+
+
 <html>
 <head>
 <meta charset="UTF-8">

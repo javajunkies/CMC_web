@@ -58,9 +58,9 @@
 					} else if (anyErrors != null && anyErrors.equals("2")) {
 						out.println("Invalid password.");
 					} else if (anyErrors != null && anyErrors.equals("3")) {
-						out.println("Invalid user status.");
+						out.println("Your account is disabled, you cannot log in.");
 					} else if (anyErrors != null && anyErrors.equals("4")) {
-						out.println("Invalid user type.");
+						out.println("Your account is temporary, an admin must approve your account before you may log in.");
 					} else if (anyErrors != null && anyErrors.equals("5")) {
 						out.println("System Error.");
 					} else if (anyErrors != null && anyErrors.equals("7")) {

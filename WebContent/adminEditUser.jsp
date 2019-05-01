@@ -1,12 +1,12 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-<%@include file="checkAdminLoggedIn.jsp"%> 
-
+<%@include file="checkAdminLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <%
 	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 	String uname = ai.getCurrentUser().getUsername();
@@ -31,8 +31,6 @@
 		</div>
 		<center>
 			<div class=inside>
-
-<html>
 <head>
 
 <title>Admin Edit User Form</title>

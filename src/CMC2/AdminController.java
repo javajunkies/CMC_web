@@ -223,67 +223,67 @@ public class AdminController {
 	  }
 
 
-  if(nameChange == true || school.equals("")) {
-	  throw new IllegalArgumentException("Invalid school name.");
+  if( school.equals("")) {
+	  return 2;
   }
 	  if(state.equals("")) {
-		  throw new IllegalArgumentException("No state entered.");
+		  return 3; 
 	  }
   
 	  if(location.equals("")) {
-		  throw new IllegalArgumentException("No location entered.");
+		 return 4;
 	  }
   
-  else if(control.equals("")) {
-  	throw new IllegalArgumentException("No control entered.");
+     if(control.equals("")) {
+  	   return 5;
+     }
+  
+ if(numberOfStudents <= 0) {
+  	  return 6;
   }
   
-  else if(numberOfStudents <= 0) {
-  	throw new IllegalArgumentException("Invalid number of students.");
+ if(percentFemales < 0 || percentFemales > 100) {
+  	return 7;
   }
   
-  else if(percentFemales < 0 || percentFemales > 100) {
-  	throw new IllegalArgumentException("Invalid percent femalale.");
+  if(SATVerbal < 0 || SATVerbal > 1600) {
+  	return 8;
   }
   
-  else if(SATVerbal < 0 || SATVerbal > 1600) {
-  	throw new IllegalArgumentException("Invalid SAT Verbal.");
+ if(SATMath < 0 || SATMath > 1600) {
+  	return 9; 
   }
   
-  else if(SATMath < 0 || SATMath > 1600) {
-  	throw new IllegalArgumentException("Invalid SAT Math.");
+  if(expenses < 0) {
+  	return 10;
   }
   
-  else if(expenses < 0) {
-  	throw new IllegalArgumentException("Invalid expenses.");
+ if(percentFinancialAid < 0 || percentFinancialAid > 100) {
+  	return 11;
   }
   
-  else if(percentFinancialAid < 0 || percentFinancialAid > 100) {
-  	throw new IllegalArgumentException("Invalid percent financial aid.");
+ if(numberOfApplicants < 0) {
+  	return 12;
   }
   
-  else if(numberOfApplicants < 0) {
-  	throw new IllegalArgumentException("Invalid number of applicants.");
+  if(percentAdmitted < 0 || percentAdmitted > 100) {
+  	return 13;
   }
   
-  else if(percentAdmitted < 0 || percentAdmitted > 100) {
-  	throw new IllegalArgumentException("Invalid percent admitted.");
+ if(percentEnrolled < 0 || percentEnrolled > 100) {
+  	return 14;
   }
   
-  else if(percentEnrolled < 0 || percentEnrolled > 100) {
-  	throw new IllegalArgumentException("Invalid percent enrolled.");
+ if(academicsScale < 0 || academicsScale > 5) {
+  	return 15;
   }
   
-  else if(academicsScale < 0 || academicsScale > 5) {
-  	throw new IllegalArgumentException("Invalid academics scale.");
+ if (socialScale < 0 || socialScale > 5) {
+	return 16;
   }
   
-  else if(socialScale < 0 || socialScale > 5) {
-  	throw new IllegalArgumentException("Invalid social scale.");
-  }
-  
-  else if(qualityOfLifeScale < 0 || qualityOfLifeScale > 5) {
-  	throw new IllegalArgumentException("Invalid quality of life scale.");
+  if(qualityOfLifeScale < 0 || qualityOfLifeScale > 5) {
+  	return 17;
   }
   
   else {

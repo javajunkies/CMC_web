@@ -4,6 +4,7 @@
 //clear secession var
 AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
 String aname = ai.getCurrentUser().getUsername();
+ai.logoff();
 response.sendRedirect("temp_index.jsp");
 
 %>
