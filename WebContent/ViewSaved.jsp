@@ -66,13 +66,13 @@
 				}
 				else{
 
-					out.print("<tr><td></td><td>School Name</td></tr><tr>");
+					out.print("<tr><td></td><td></td><td>School Name</td></tr><tr>");
 				for (University s : savedSchools) {
-					/* out.print("<td>");
+					out.print("<td>");
 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
-					out.print("</td>"); */
+					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
 					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
@@ -80,12 +80,12 @@
 					out.print("</td>");
 					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
-					out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
+					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp\" name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
 //+ " (added on: " + s.getTimeStamp() + ") "
+
 				}
 				}
 				
@@ -101,8 +101,8 @@
 						</tr>
 					</tbody>
 					<tr>
-						<td></td><td></td>
-						<td><input type="submit" class="button" value="Compare"></td>
+						<td></td><td></td><td></td>
+						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
 					</tr>
 				</table>
 			</center>
