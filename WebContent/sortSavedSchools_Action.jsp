@@ -7,7 +7,8 @@ try{
 	UserInteraction ui = (UserInteraction)session.getAttribute("username");
 	String username = ui.getCurrentUser().getUsername();
 	String univname = request.getParameter("school");
-	//int toSortBy = request.getParameter("x");
+	
+	
 	
 	
 	/** if() {
