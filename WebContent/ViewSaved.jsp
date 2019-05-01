@@ -106,7 +106,7 @@
 							
 				ArrayList<University> savedSchools1;
 				try{
-					savedSchools1 = uc.viewSavedSchools(uname);
+					savedSchools1 = uc.sort(uname, 1);
 					if(savedSchools1.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
@@ -169,7 +169,7 @@
 							out.print("<table id=\"expense\" style=\"top: 10%;display: none;\"><tbody>");
 				ArrayList<University> savedSchools2;
 				try{
-					savedSchools2 = uc.viewSavedSchools(uname);
+					savedSchools2 = uc.sort(uname, 2);
 					if(savedSchools2.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
@@ -223,10 +223,6 @@
 
 						</tr>
 					</tbody>
-					<tr>
-						<td></td><td></td><td></td>
-						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
-					</tr>
 				</table>
 			</center>
 		</div>
@@ -248,7 +244,7 @@
 							out.print("<table id=\"Accept\" style=\"top: 10%;display: none;\"><tbody>");
 				ArrayList<University> savedSchools3;
 				try{
-					savedSchools3 = uc.viewSavedSchools(uname);
+					savedSchools3 = uc.sort(uname, 3);
 					if(savedSchools3.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
