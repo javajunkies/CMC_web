@@ -101,42 +101,7 @@
 					<td>QUALITY OF LIFE SCALE (1-5)</td>
 					<td><input disabled="disabled" value=<%=school.getQualityOfLife()%> name="QualScale" type="text"></td>
 					<td><input disabled="disabled" value=<%=school2.getQualityOfLife()%> name="QualScale" type="text"></td>
-				</tr>
-				
-				<%-- <tr>
-					<td>SCHOOL EMPHASES</td>
-					<%
-					    List<String> Emphases1 = school.getEmphases();
-						List<String> Emphases2 = school2.getEmphases();
-					%>
-					<%
-						int i = 0;
-					%>
-					<td>
-						<%
-							if (Emphases1.size() != 0) {
-								for (; i < Emphases1.size(); i++) {
-						%> <input disabled="disabled" value=<%=Emphases1.get(i)%>
-						name="Emphases" type="text"> <br><%
-						
- 	}
- 	}
- %>
-					</td>
-					<%
-						int j = 0;
-					%>
-					<td>
-						<%
-							if (Emphases2.size() != 0) {
-								for (; j < Emphases2.size(); j++) {
-						%> <input disabled="disabled" value=<%=Emphases2.get(j)%>
-						name="Emphases" type="text"> <br><%
- 	}
- 	}
- %>
-					</td>
-				</tr> --%>
+				</tr>	
 		</tbody>
 		</table>
 	</form>

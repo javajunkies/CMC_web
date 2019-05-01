@@ -71,7 +71,7 @@
 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
-					out.print("</td>"); 
+					out.print("</td>");
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
 					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
@@ -82,7 +82,8 @@
 					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp\" name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</form>");
 					out.print("</td>");
-					out.print("</tr>");//+ " (added on: " + s.getTimeStamp() + ") "
+					out.print("</tr>");
+					//+ " (added on: " + s.getTimeStamp() + ") "
 				}
 				}
 				
