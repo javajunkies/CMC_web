@@ -8,7 +8,7 @@ try{
 	String username = ui.getCurrentUser().getUsername();
 	String univname = request.getParameter("school");
 	
-	ui.sort(univname, 1);
+	ui.sort(univname, 3);
 	
 	response.sendRedirect("ViewSaved.jsp");
 }

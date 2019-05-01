@@ -19,7 +19,7 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+								+ "<a href=\"search.jsp\">Search</a>" + "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("index.jsp");
 					}
@@ -190,7 +190,7 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"ViewSchoolUser.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
+					out.print("<form method=\"post\" action=\"viewSchoolFromSaved.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
 					out.print("<td>" + s.getSchool()  + "</td>");
 					out.print("<td>");
@@ -246,7 +246,6 @@
 					//" (added on: "  s.getTimeStamp() +
 					
 				else{
-
 					out.print("<tr><td></td><td></td><td>School Name by Acceptance</td></tr><tr>");
 				for (University s : savedSchools3) {
 					out.print("<td>");

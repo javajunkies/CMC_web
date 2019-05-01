@@ -22,7 +22,7 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
+								+ "<a href=\"viewUsers.jsp\">Manage Users</a>" + "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("temp_index.jsp");
 					}
@@ -46,22 +46,38 @@ border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <a href="addUniversity.jsp" target="_blank">Add a University</a> <br>
 	<tr>
-		<td style="vertical-align: top; text-align: center;">School</td>
-		<td style="vertical-align: top; text-align: center;">State</td>
-		<td style="vertical-align: top; text-align: center;">Location</td>
-		<td style="vertical-align: top; text-align: center;">Control</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfStudents</td>
-		<td style="vertical-align: top; text-align: center;">PercentFemales</td>
-		<td style="vertical-align: top; text-align: center;">SATVerbal</td>
-		<td style="vertical-align: top; text-align: center;">SATMath</td>
-		<td style="vertical-align: top; text-align: center;">Expenses</td>
-		<td style="vertical-align: top; text-align: center;">PercentFinancialAid</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfApplicants</td>
-		<td style="vertical-align: top; text-align: center;">PercentAdmitted</td>
-		<td style="vertical-align: top; text-align: center;">PercentEnrolled</td>
-		<td style="vertical-align: top; text-align: center;">AcademicsScale</td>
-		<td style="vertical-align: top; text-align: center;">SocialScale</td>
-		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale</td>
+		<td style="vertical-align: top; text-align: center;">School
+		</td>
+		<td style="vertical-align: top; text-align: center;">State
+		</td>
+		<td style="vertical-align: top; text-align: center;">Location
+		</td>
+		<td style="vertical-align: top; text-align: center;">Control
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfStudents
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFemales
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATVerbal
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATMath
+		</td>
+		<td style="vertical-align: top; text-align: center;">Expenses
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFinancialAid
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfApplicants
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentAdmitted
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentEnrolled
+		</td>
+		<td style="vertical-align: top; text-align: center;">AcademicsScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">SocialScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale
+		</td>
 	</tr>
 	<%
 	AdminInteraction admin = new AdminInteraction();
