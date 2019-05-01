@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Users</title>
+<title>CMC</title>
 </head>
 <body>
-<table style="width=100%">
-	<tr> 
-		<td style="vertical-align: top; text-align: center;"> <button type="button" onclick="addUser.jsp">Add User</button>
-		</td>
-	</tr>
+<table style="text-align: left; width: 1069px; height: 480px;"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
 		</td>
@@ -36,10 +34,11 @@
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
-			"<td style=\"vertical-align: top:\"> <button type = \"button\" onclick=\"adminEditUser.jsp\">Edit</button> </td>" +
+			"<td> <form method=\"post\" action=\"adminEditUser.jsp\" name=\"adminEdit\" > <input type=\"submit\" class=\"button\" value=\"Edit User\"> <input name=\"userName\" value=\""+ admin.viewUsers().get(i).getUsername() + "\" type=\"hidden\"> </td> </form>" +
 		"</tr>");
 	}
 	%>
+</tbody>
 </table>
 </body>
 </html>

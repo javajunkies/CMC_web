@@ -10,10 +10,11 @@ import java.util.ArrayList;
 public class UserInteraction 
 {
   private User currentUser;
+  private boolean loggedIn;
   //objects
   UserController UserController = new UserController();
   AccountController AccountController = new AccountController();
-  
+  DBController dbcontroller = new DBController();
   /**
    * login method
    * 
@@ -23,6 +24,10 @@ public class UserInteraction
    */
   public int login(String username, String password)
   {
+	  if(UserController.login(username,password)==0) {
+		  this.setCurrentUser((User) dbcontroller.findByUsername(username));
+		  this.setLoggedIn(true);
+	  }
     return UserController.login(username, password);
   }
   
@@ -32,6 +37,8 @@ public class UserInteraction
    */
   public void logoff()
   {
+	this.setCurrentUser(null);
+	this.setLoggedIn(false);
     UserController.logoff();
   }
   
@@ -64,7 +71,7 @@ public class UserInteraction
    * @param username the users desired username
    * @param password the users desired password
    * @param password1 the users password confirmed
-   * @return int the status of the registration
+   * @return int the status of the registration, 0=registered, redirect to index with message, 1=short password, 2=no letter, 3=no number, 4=non unique username, 5= passwords dont match, 6=database error
    */
   public int register(String first, String last, String username, String password, String password1)
   {
@@ -90,7 +97,7 @@ public class UserInteraction
 			  	}
 		  }
 		  else {
-		  return 5;
+			  return 5;
 		  }
 	  }
 	  else {
@@ -185,13 +192,13 @@ public class UserInteraction
     return UserController.editUserInfo(userName, firstName, lastName, password);
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 1) {
-		  throw new IllegalArgumentException("Invalid Password.");
+		  return 2;
 	  }
 	  else if(AccountController.checkPasswordCriteria(password) == 2) {
-		  throw new IllegalArgumentException("Invalid Password.");
+		  return 3;
 		  }
 	  else{
-		  return 3;
+		  return 4;
 	  }
   }
   
@@ -207,6 +214,13 @@ public class UserInteraction
 	  this.currentUser=user;
   }
   public User getCurrentUser() {
-	  return currentUser;
+	  return this.currentUser;
   }
+  public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean log) {
+		this.loggedIn = log;
+	}
 }
