@@ -7,15 +7,12 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<br>
-	<%
+<%
 		UserInteraction ui = (UserInteraction) session.getAttribute("username");
 		String school = (request.getParameter("school"));
 		University univ = ui.viewExistingUniversity(school);
 	%>
-
-	<br>
-	<a href="search.jsp">Search again</a>
+	<a href="ViewSaved.jsp">Go back to saved</a>
 	<table style="text-align: center; width: 1069px; height: 480px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
@@ -109,7 +106,6 @@
 			</tr>
 		</tbody>
 	</table>
- 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=univ.getSchool()%>" type="hidden">  </form>
 	<br>
 	<br> MAY WE ALSO RECOMMEND
 	<br>
@@ -156,7 +152,9 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(0).getSchool()%>" type="hidden">  </form>
+		<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(0).getSchool()%>" type="hidden">  </form>
+
+
 	<br>
 	<br>
 	<table style="text-align: center; width: 100%;" border="1"
@@ -200,6 +198,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(1).getSchool()%>" type="hidden">  </form>
+
 	<br>
 	<table style="text-align: center; width: 100%;" border="1"
 		cellpadding="2" cellspacing="2">
@@ -242,6 +241,7 @@
 		</tbody>
 	</table>
 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(2).getSchool()%>" type="hidden">  </form>
+
 	<br>
 	<table style="text-align: center; width: 100%;" border="1"
 		cellpadding="2" cellspacing="2">
@@ -283,7 +283,8 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(3).getSchool()%>" type="hidden">  </form>
+		<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(3).getSchool()%>" type="hidden">  </form>
+
 	<br>
 	<table style="text-align: center; width: 100%;" border="1"
 		cellpadding="2" cellspacing="2">
@@ -325,9 +326,10 @@
 			</tr>
 		</tbody>
 	</table>
-	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(4).getSchool()%>" type="hidden">  </form>
+		<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(4).getSchool()%>" type="hidden">  </form>
+
 	<br>
 	<br>
 </body>
+</body>
 </html>
-

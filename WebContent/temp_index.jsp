@@ -10,10 +10,9 @@
 		<div class="nav">
 			<span class="CMC">CMC</span>
 			<div class="dropdown">
-				<button class="dropbtn">Options</button>
+				<button class="dropbtn">Welcome!</button>
 				<div class="dropdown-content">
-					<a href="ViewAccount.jsp">Edit Account</a> <a href="logout_action.jsp">Logout</a>
-				</div>
+								</div>
 
 
 			</div>
@@ -66,6 +65,8 @@
 						out.println("System Error.");
 					} else if (anyErrors != null && anyErrors.equals("7")) {
 						out.println("User Registered, please wait to be activated by an administrator.");
+					} else if (anyErrors != null && anyErrors.equals("10")) {
+						out.println("User must be logged in to access this page.");
 					}
 				%>
 

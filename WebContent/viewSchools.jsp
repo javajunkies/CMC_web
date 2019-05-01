@@ -1,7 +1,40 @@
 <%@ page language="java" import="CMC2.*" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@include file="checkAdminLoggedIn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
 <html>
+<head>
+<meta charset="UTF-8">
+<title>CMC</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<%
+	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+	String uname = ai.getCurrentUser().getUsername();
+%>
+<body>
+	<div class="container">
+		<div class="nav">
+			<span><a href="adminHome.jsp" class="CMC">CMC</a></span>
+			<div class="dropdown">
+				<%
+					if (uname != null) {
+						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
+								+ "<a href=\"viewUsers.jsp\">Manage Users</a>" + "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
+					} else {
+						response.sendRedirect("temp_index.jsp");
+					}
+				%>
+
+			</div>
+		</div>
+		<center>
+			<div class=inside>
+
+		
+		<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Schools</title>
@@ -13,22 +46,38 @@ border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <a href="addUniversity.jsp" target="_blank">Add a University</a> <br>
 	<tr>
-		<td style="vertical-align: top; text-align: center;">School</td>
-		<td style="vertical-align: top; text-align: center;">State</td>
-		<td style="vertical-align: top; text-align: center;">Location</td>
-		<td style="vertical-align: top; text-align: center;">Control</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfStudents</td>
-		<td style="vertical-align: top; text-align: center;">PercentFemales</td>
-		<td style="vertical-align: top; text-align: center;">SATVerbal</td>
-		<td style="vertical-align: top; text-align: center;">SATMath</td>
-		<td style="vertical-align: top; text-align: center;">Expenses</td>
-		<td style="vertical-align: top; text-align: center;">PercentFinancialAid</td>
-		<td style="vertical-align: top; text-align: center;">NumberOfApplicants</td>
-		<td style="vertical-align: top; text-align: center;">PercentAdmitted</td>
-		<td style="vertical-align: top; text-align: center;">PercentEnrolled</td>
-		<td style="vertical-align: top; text-align: center;">AcademicsScale</td>
-		<td style="vertical-align: top; text-align: center;">SocialScale</td>
-		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale</td>
+		<td style="vertical-align: top; text-align: center;">School
+		</td>
+		<td style="vertical-align: top; text-align: center;">State
+		</td>
+		<td style="vertical-align: top; text-align: center;">Location
+		</td>
+		<td style="vertical-align: top; text-align: center;">Control
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfStudents
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFemales
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATVerbal
+		</td>
+		<td style="vertical-align: top; text-align: center;">SATMath
+		</td>
+		<td style="vertical-align: top; text-align: center;">Expenses
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentFinancialAid
+		</td>
+		<td style="vertical-align: top; text-align: center;">NumberOfApplicants
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentAdmitted
+		</td>
+		<td style="vertical-align: top; text-align: center;">PercentEnrolled
+		</td>
+		<td style="vertical-align: top; text-align: center;">AcademicsScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">SocialScale
+		</td>
+		<td style="vertical-align: top; text-align: center;">QualityOfLifeScale
+		</td>
 	</tr>
 	<%
 	AdminInteraction admin = new AdminInteraction();
@@ -56,5 +105,14 @@ border="1" cellpadding="2" cellspacing="2">
 	 } %>
 	 </tbody>
 </table>
+</body>
+</html>
+
+
+
+			</div>
+		</center>
+	</div>
+	<span class="footer">JavaJunkies</span>
 </body>
 </html>

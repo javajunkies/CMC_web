@@ -1,4 +1,5 @@
 <%@ page language="java" import="CMC2.*, java.util.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <html>
@@ -18,7 +19,7 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+								+ "<a href=\"search.jsp\">Search</a>" + "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("index.jsp");
 					}
@@ -32,7 +33,6 @@
 		UserInteraction uc = (UserInteraction)session.getAttribute("username");
 	%>
 			<center>
-
 				<table>
 					<tbody>
 						
@@ -46,22 +46,14 @@
 						"</tr>");
 					}
 				else if(savedSchools.size() == 1){
-<<<<<<< HEAD
-					out.print("<tr><td></td><td>School</td></tr><tr>");
-=======
 					out.print("<tr><td><td></td>School Name</td></tr><tr>");
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 					for (University s : savedSchools) {
 						out.print("<td>");
 						out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
 						out.print("<input name = \"View\" class=\"button\" value=\"View\" type=\"submit\">");
 						out.print("</form>");
 						out.print("</td>");
-<<<<<<< HEAD
-						out.print("<td>" + s.getSchool() + "</td>");
-=======
 						out.print("<td>" + s.getSchool() +  "</td>");
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 						out.print("<td>");
 						out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
 						out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
@@ -73,43 +65,25 @@
 					
 				}
 				else{
-<<<<<<< HEAD
-					out.print("<tr><td></td><td></td><td>School</td></tr><tr>");
+
+					out.print("<tr><td></td><td></td><td>School Name</td></tr><tr>");
 				for (University s : savedSchools) {
 					out.print("<td>");
 					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
 					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
 					out.print("</form>");
 					out.print("</td>");
-=======
-					out.print("<tr><td></td><td>School Name</td></tr><tr>");
-				for (University s : savedSchools) {
-					/* out.print("<td>");
-					out.print("<form method=\"post\" action=\"CompareSchool.jsp?schoolName=" + s.getSchool() + "\" name=\"Compare\">");
-					out.print("<input name = \"Compare\" value=\"Compare\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
-					out.print("</td>"); */
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"../ViewSchoolUser.jsp?schoolName=" + s.getSchool() + "\" name=\"View\">");
-					out.print("<input name = \"View\" value=\"View\" class=\"button\" type=\"submit\">");
-					out.print("</form>");
+					out.print("<form method=\"post\" action=\"viewSchoolFromSaved.jsp\" name=\"view\" > <input type=\"submit\" class=\"button\" value=\"View\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</td>");
-<<<<<<< HEAD
-					out.print("<td>" + s.getSchool() + " (added on: "  + ") " + "</td>");
-=======
 					out.print("<td>" + s.getSchool()  + "</td>");
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 					out.print("<td>");
-					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp?Name=" + s.getSchool() + "\" name=\"Remove\">");
-					out.print("<input name=\"Remove\" value=\"Remove\" class=\"button\" type=\"submit\">");
+					out.print("<form method=\"post\" action=\"RemoveSavedSchool_action.jsp\" name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>");
 					out.print("</form>");
 					out.print("</td>");
-<<<<<<< HEAD
 					out.print("</tr>");
-=======
-					out.print("</tr>");//+ " (added on: " + s.getTimeStamp() + ") "
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
+//+ " (added on: " + s.getTimeStamp() + ") "
+
 				}
 				}
 				
@@ -124,13 +98,12 @@
 
 						</tr>
 					</tbody>
-<<<<<<< HEAD
-=======
-					<tr>
-						<td></td><td></td>
-						<td><input type="submit" class="button" value="Compare"></td>
+					<!-- <tr>
+						<td></td><td></td><td></td>
+						<td><form method="post" action="sortSavedSchoolsbyNumStudents_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Number Of Students"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
+						<td><form method="post" action="sortSavedSchoolsbyExpenses_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Expenses"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
+						<td><form method="post" action="sortSavedSchoolsbyAcceptance_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Acceptance"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
 					</tr>
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 				</table>
 			</center>
 		</div>

@@ -1,5 +1,5 @@
 <%@ page language="java" import="CMC2.*" import="java.util.*"%>
-
+<%@include file="checkAdminLoggedIn.jsp"%>
 
      <%
 	  UniversityController uc = (UniversityController) session.getAttribute("universitycontroller");
