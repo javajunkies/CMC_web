@@ -222,7 +222,6 @@
 
 
 
-
 				
 				
 				
@@ -239,7 +238,8 @@
 							out.print("<table id=\"Accept\" style=\"top: 10%;display: none;\"><tbody>");
 				ArrayList<University> savedSchools3;
 				try{
-					savedSchools3 = uc.sort(uname,3);
+
+					savedSchools3 = uc.sort(uname, 3);
 					if(savedSchools3.size() == 0){
 						out.print(" <tr>" + 
 							"<td>You don't have any saved schools</td>"	 +
