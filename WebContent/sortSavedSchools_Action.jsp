@@ -10,13 +10,13 @@ try{
 	int toSortBy = request.getParameter("x");
 	
 	if() {
-		ui.sort(univname, 1);
+		ui.sort(username, 1);
 	}
 	else if () {
-		ui.sort(univname, 2); 
+		ui.sort(username, 2); 
 	}
-	else) {
-	ui.sort(univname, 3); 
+	else {
+	    ui.sort(username, 3); 
 	}
 	
 	response.sendRedirect("ViewSaved.jsp");
