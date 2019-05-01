@@ -102,7 +102,9 @@
 					</tbody>
 					<tr>
 						<td></td><td></td><td></td>
-						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
+						<td><form method="post" action="sortSavedSchoolsbyNumStudents_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Number Of Students"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
+						<td><form method="post" action="sortSavedSchoolsbyExpenses_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Expenses"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
+						<td><form method="post" action="sortSavedSchoolsbyAcceptance_Action.jsp" name="sort" > <input type="submit" class="button" value="Sort By Acceptance"> <input name="sort" value=""+ s.getSchool() + "\" type="hidden"></form></td>
 					</tr>
 				</table>
 			</center>
