@@ -139,9 +139,11 @@ border="1" >
 
 
 <tr>
+
 <td style="vertical-align: top;"><input value="Edit" name="Edit" type="submit"></td>
 <!-- "<form method=\"post\"  name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>" -->
 <td style="vertical-align: top;"><input value="Reset" name="Reset" type="reset"></td>
+
 </tr>
 </tbody>
 </table>
