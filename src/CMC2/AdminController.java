@@ -242,11 +242,11 @@ public class AdminController {
   	  return 6;
   }
   
- if(percentFemales < 0 || percentFemales > 100) {
+ if(percentFemales < 0 || percentFemales > 100 ) {
   	return 7;
   }
   
-  if(SATVerbal < 0 || SATVerbal > 1600) {
+  if(SATVerbal < 0 || SATVerbal > 1600 ) {
   	return 8;
   }
   
@@ -254,11 +254,11 @@ public class AdminController {
   	return 9; 
   }
   
-  if(expenses < 0) {
+  if(expenses < 0 )  {
   	return 10;
   }
   
- if(percentFinancialAid < 0 || percentFinancialAid > 100) {
+ if(percentFinancialAid < 0 || percentFinancialAid > 100 ) {
   	return 11;
   }
   
@@ -266,7 +266,7 @@ public class AdminController {
   	return 12;
   }
   
-  if(percentAdmitted < 0 || percentAdmitted > 100) {
+  if(percentAdmitted < 0 || percentAdmitted > 100 ) {
   	return 13;
   }
   
