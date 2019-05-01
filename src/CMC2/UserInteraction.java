@@ -71,7 +71,7 @@ public class UserInteraction
    * @param username the users desired username
    * @param password the users desired password
    * @param password1 the users password confirmed
-   * @return int the status of the registration
+   * @return int the status of the registration, 0=registered, redirect to index with message, 1=short password, 2=no letter, 3=no number, 4=non unique username, 5= passwords dont match, 6=database error
    */
   public int register(String first, String last, String username, String password, String password1)
   {
@@ -97,7 +97,7 @@ public class UserInteraction
 			  	}
 		  }
 		  else {
-		  return 5;
+			  return 5;
 		  }
 	  }
 	  else {
