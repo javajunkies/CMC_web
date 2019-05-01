@@ -34,6 +34,7 @@
 				<span style="text-decoration: underline;"><a href="ViewAccount.jsp">Manage My Profile</a><br>
 				<a href="ViewSaved.jsp">Manage My Saved Schools</a><br>
 				<a href="search.jsp">Search for Schools</a><br>
+				<a href="compareFrames.jsp">Compare</a>
 				</span>
 				
 
