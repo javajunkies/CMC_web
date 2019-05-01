@@ -9,7 +9,7 @@
 </head>
 <%
 AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
-	String uname = ai.getCurrentUser().getUsername();
+String uname = ai.getCurrentUser().getUsername();
 
 
 String univ = request.getParameter("school");
@@ -50,7 +50,6 @@ University school = ai.getCurrentUniversity(univ);
 <br>
 	
 	<form method="post" action="editUniversity_action.jsp" name="editUniversity"><br>
-	"<form method=\"post\" action=\"RemoveSavedSchool_action.jsp\" name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>"
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
@@ -142,8 +141,7 @@ border="1" >
 <tr>
 
 <td style="vertical-align: top;"><input value="Edit" name="Edit" type="submit"></td>
-//"<form method=\"post\"  name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>"
-<td style="vertical-align: top;"><input value="Remove" name="Remove" type="reset" action=\"RemoveSavedSchool_action.jsp\"></td>
+<!-- "<form method=\"post\"  name=\"remove\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form>" -->
 <td style="vertical-align: top;"><input value="Reset" name="Reset" type="reset"></td>
 
 </tr>
