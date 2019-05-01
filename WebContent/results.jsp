@@ -387,7 +387,6 @@
 						}
 					%>
 				</table>
-
 		</div>
 		</center>
 	</div>

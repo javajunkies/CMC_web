@@ -7,8 +7,8 @@
 <title>Manage Saved Schools</title>
 </head>
 <%
-	UserInteraction ui = (UserInteraction) session.getAttribute("username");
-	String uname = ui.getCurrentUser().getUsername();
+	UserInteraction uc = (UserInteraction) session.getAttribute("username");
+	String uname = uc.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">
@@ -28,10 +28,7 @@
 		</div>
 		<div class="inside">
 
-			<%
-		UserInteraction uc = (UserInteraction)session.getAttribute("username");
-	%>
-			<center>
+	<center>
 
 				<table>
 					<tbody>
@@ -85,7 +82,6 @@
 					out.print("</td>");
 					out.print("</tr>");
 //+ " (added on: " + s.getTimeStamp() + ") "
-
 				}
 				}
 				
@@ -96,8 +92,6 @@
 							"</tr>");
 				}
 			%>
-
-
 						</tr>
 					</tbody>
 					<tr>

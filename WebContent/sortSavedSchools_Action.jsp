@@ -7,11 +7,17 @@ try{
 	UserInteraction ui = (UserInteraction)session.getAttribute("username");
 	String username = ui.getCurrentUser().getUsername();
 	String univname = request.getParameter("school");
+	int toSortBy = request.getParameter("x");
 	
-	
-	ui.sort(univname, 1);
-	ui.sort(univname, 2); 
+	if() {
+		ui.sort(univname, 1);
+	}
+	else if () {
+		ui.sort(univname, 2); 
+	}
+	else) {
 	ui.sort(univname, 3); 
+	}
 	
 	response.sendRedirect("ViewSaved.jsp");
 }
