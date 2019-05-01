@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="CMC2.*" import="java.util.*"%>
+    <%@include file="checkUserLoggedIn.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -101,50 +102,8 @@
 					<td>QUALITY OF LIFE SCALE (1-5)</td>
 					<td><input disabled="disabled" value=<%=school.getQualityOfLife()%> name="QualScale" type="text"></td>
 					<td><input disabled="disabled" value=<%=school2.getQualityOfLife()%> name="QualScale" type="text"></td>
-				</tr>
-<<<<<<< HEAD
-				<tr>
-					<td>EMPHASES</td>
-					<td><input disabled="disabled" 
-			</tbody>
-=======
-				
-				<%-- <tr>
-					<td>SCHOOL EMPHASES</td>
-					<%
-					    List<String> Emphases1 = school.getEmphases();
-						List<String> Emphases2 = school2.getEmphases();
-					%>
-					<%
-						int i = 0;
-					%>
-					<td>
-						<%
-							if (Emphases1.size() != 0) {
-								for (; i < Emphases1.size(); i++) {
-						%> <input disabled="disabled" value=<%=Emphases1.get(i)%>
-						name="Emphases" type="text"> <br><%
-						
- 	}
- 	}
- %>
-					</td>
-					<%
-						int j = 0;
-					%>
-					<td>
-						<%
-							if (Emphases2.size() != 0) {
-								for (; j < Emphases2.size(); j++) {
-						%> <input disabled="disabled" value=<%=Emphases2.get(j)%>
-						name="Emphases" type="text"> <br><%
- 	}
- 	}
- %>
-					</td>
-				</tr> --%>
+				</tr>	
 		</tbody>
->>>>>>> 19ed2da08ae78778c287e0c10af2db30d251cff7
 		</table>
 	</form>
 </body>

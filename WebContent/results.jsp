@@ -1,4 +1,5 @@
 <%@page language="java" import="CMC2.*,java.util.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -370,14 +371,8 @@
 								minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife,
 								maxQualityOfLife);
 
-							if (result.size() == 1)
-							{
-								out.print("<tr><td></td><td></td><td>"+ result.size() + " School </td><td>Compare</td></tr>");
-							}
-							else if (result.size() < 1)
-							{
 								out.print("<tr><td></td><td></td><td>"+ result.size() + " Schools </td><td>Compare</td></tr>");
-							}
+
 						
 								
 						for (int i = 0; i != result.size(); i++) {
@@ -388,14 +383,10 @@
 										"<td width=5% > <form method=\"post\" action=\"saveSchoolSearchAction.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
-											"<td width=10% ><input type=\"checkbox\" name=\"compare[]\" value=" + result.get(i).getSchool() + "></td>" +
+											"<td width=10% > <form method=\"post\" action=\"compareAction.jsp\" name=\"Compare\" > <input type=\"submit\" class=\"button\" value=\"Compare\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" + 
 									"</tr>");
 						}
 					%>
-					<tr>
-						<td></td><td></td>
-						<td><input type="submit" class="button" value="Compare"></td>
-					</tr>
 				</table>
 
 		</div>

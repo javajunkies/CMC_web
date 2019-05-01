@@ -66,6 +66,8 @@
 						out.println("System Error.");
 					} else if (anyErrors != null && anyErrors.equals("7")) {
 						out.println("User Registered, please wait to be activated by an administrator.");
+					} else if (anyErrors != null && anyErrors.equals("10")) {
+						out.println("User must be logged in to access this page.");
 					}
 				%>
 

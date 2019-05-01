@@ -1,4 +1,5 @@
 <%@page language="java" import="CMC2.*,java.util.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <%UserInteraction ui = new UserInteraction();
 String school = request.getParameter("school");
 String state = request.getParameter("state");

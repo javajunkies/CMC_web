@@ -1,4 +1,5 @@
 <%@page language="java" import="CMC2.*"%>
+<%@include file="checkUserLoggedIn.jsp"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -124,7 +125,7 @@
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
 					name="School1"
-					value="<%out.println(ui.getRecommendedList(school).get(0).getSchool());%>"><br>
+					value="<%out.print(ui.getRecommendedList(school).get(0).getSchool());%>"><br>
 				</td>
 			</tr>
 			<tr>
@@ -132,26 +133,29 @@
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
 					name="State1"
-					value="<%out.println(ui.getRecommendedList(school).get(0).getState());%>"><br>
+					value="<%out.print(ui.getRecommendedList(school).get(0).getState());%>"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Location<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Local1" <%=%>><br></td>
+					name="Local1"
+					value="<%out.print(ui.getRecommendedList(school).get(0).getLocation());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Control<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Control1" <%=%>><br></td>
+					name="Control1"
+					value="<%out.print(ui.getRecommendedList(school).get(0).getControl());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Number of Students<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="NumStudents1" <%=%>><br></td>
+					name="NumStudents1"
+					value="<%out.print(ui.getRecommendedList(school).get(0).getNumStudents());%>"><br></td>
 			</tr>
 		</tbody>
 	</table>
@@ -167,31 +171,36 @@
 				<td style="vertical-align: top;">School<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="School1" <%=%>><br></td>
+					name="School1"
+					value="<%out.print(ui.getRecommendedList(school).get(1).getSchool());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">State<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="State1" <%=%>><br></td>
+					name="State1"
+					value="<%out.print(ui.getRecommendedList(school).get(1).getState());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Location<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Local1" <%=%>><br></td>
+					name="Local1"
+					value="<%out.print(ui.getRecommendedList(school).get(1).getLocation());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Control<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Control1" <%=%>><br></td>
+					name="Control1"
+					value="<%out.print(ui.getRecommendedList(school).get(1).getControl());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Number of Students<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="NumStudents1" <%=%>><br></td>
+					name="NumStudents1"
+					value="<%out.print(ui.getRecommendedList(school).get(1).getNumStudents());%>"><br></td>
 			</tr>
 		</tbody>
 	</table>
@@ -206,31 +215,36 @@
 				<td style="vertical-align: top;">School<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="School1" <%=%>><br></td>
+					name="School1"
+					value="<%out.print(ui.getRecommendedList(school).get(2).getSchool());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">State<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="State1" <%=%>><br></td>
+					name="State1"
+					value="<%out.print(ui.getRecommendedList(school).get(2).getState());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Location<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Local1" <%=%>><br></td>
+					name="Local1"
+					value="<%out.print(ui.getRecommendedList(school).get(2).getLocation());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Control<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Control1" <%=%>><br></td>
+					name="Control1"
+					value="<%out.print(ui.getRecommendedList(school).get(2).getControl());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Number of Students<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="NumStudents1" <%=%>><br></td>
+					name="NumStudents1"
+					value="<%out.print(ui.getRecommendedList(school).get(2).getNumStudents());%>"><br></td>
 			</tr>
 		</tbody>
 	</table>
@@ -245,31 +259,36 @@
 				<td style="vertical-align: top;">School<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="School1" <%=%>><br></td>
+					name="School1"
+					value="<%out.print(ui.getRecommendedList(school).get(3).getSchool());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">State<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="State1" <%=%>><br></td>
+					name="State1"
+					value="<%out.print(ui.getRecommendedList(school).get(3).getState());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Location<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Local1" <%=%>><br></td>
+					name="Local1"
+					value="<%out.print(ui.getRecommendedList(school).get(3).getLocation());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Control<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Control1" <%=%>><br></td>
+					name="Control1"
+					value="<%out.print(ui.getRecommendedList(school).get(3).getControl());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Number of Students<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="NumStudents1" <%=%>><br></td>
+					name="NumStudents1"
+					value="<%out.print(ui.getRecommendedList(school).get(3).getNumStudents());%>"><br></td>
 			</tr>
 		</tbody>
 	</table>
@@ -284,31 +303,36 @@
 				<td style="vertical-align: top;">School<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="School1" <%=%>><br></td>
+					name="School1"
+					value="<%out.print(ui.getRecommendedList(school).get(4).getSchool());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">State<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="State1" <%=%>><br></td>
+					name="State1"
+					value="<%out.print(ui.getRecommendedList(school).get(4).getState());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Location<br>
 				</td>
-				<td style="vertical-align: top;">name="Local1" <%=%>><br>
-				</td>
+				<td style="vertical-align: top;"><input readonly="readonly"
+					name="Local1" 
+					value="<%out.print(ui.getRecommendedList(school).get(4).getLocation());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Control<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="Control1" <%=%>><br></td>
+					name="Control1"
+					value="<%out.print(ui.getRecommendedList(school).get(4).getControl());%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Number of Students<br>
 				</td>
 				<td style="vertical-align: top;"><input readonly="readonly"
-					name="NumStudents1" <%=%>><br></td>
+					name="NumStudents1"
+					value="<%out.print(ui.getRecommendedList(school).get(4).getNumStudents());%>"><br></td>
 			</tr>
 		</tbody>
 	</table>
@@ -316,7 +340,7 @@
 		<input name="SaveButton" value="Save" type="submit">
 	</form>
 	<br>
-	<br> --%>
+	<br>
 </body>
 </html>
 
