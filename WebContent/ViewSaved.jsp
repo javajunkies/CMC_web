@@ -65,7 +65,6 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
-					//+ " (added on: " + s.getTimeStamp() + ") "
 
 				}
 				out.print("</tbody>" +

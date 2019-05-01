@@ -3,18 +3,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ViewSchool</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<%
+	UserInteraction ui = (UserInteraction) session.getAttribute("username");
+	String uname = ui.getCurrentUser().getUsername();
+	String school = (request.getParameter("school"));
+	University univ = ui.viewExistingUniversity(school);
+%>
+<title>CMC</title>
 </head>
 <body>
-<%
-		UserInteraction ui = (UserInteraction) session.getAttribute("username");
-		String school = (request.getParameter("school"));
-		University univ = ui.viewExistingUniversity(school);
-	%>
-	<a href="ViewSaved.jsp">Go back to saved</a>
-	<table style="text-align: center; width: 1069px; height: 480px;"
-		border="1" cellpadding="2" cellspacing="2">
+<div class="nav">
+			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<div class="dropdown">
+				<%
+					if (uname != null) {
+						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
+								+ "<a href=\"search.jsp\">Search</a>" + "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+					} else {
+						response.sendRedirect("index.jsp");
+					}
+				%>
+
+			</div>
+		</div>
+	<div class="inside">
+	<center>
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -110,8 +127,7 @@
 	<br> MAY WE ALSO RECOMMEND
 	<br>
 
-	<table style="text-align: left; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -157,8 +173,7 @@
 
 	<br>
 	<br>
-	<table style="text-align: center; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -200,8 +215,7 @@
 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(1).getSchool()%>" type="hidden">  </form>
 
 	<br>
-	<table style="text-align: center; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -243,8 +257,7 @@
 	<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(2).getSchool()%>" type="hidden">  </form>
 
 	<br>
-	<table style="text-align: center; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -286,8 +299,7 @@
 		<form method="post" action="saveSchoolSearchAction.jsp" name="Save" > <input type="submit" class="button" value="Save"> <input name="school" value="<%=ui.getRecommendedList(school).get(3).getSchool()%>" type="hidden">  </form>
 
 	<br>
-	<table style="text-align: center; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table>
 		<tbody>
 			<tr>
 				<td style="vertical-align: top;">School<br>
@@ -330,6 +342,7 @@
 
 	<br>
 	<br>
-</body>
+</center>
+</div>
 </body>
 </html>
