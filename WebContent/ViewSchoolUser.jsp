@@ -14,7 +14,6 @@
 		University univ = ui.viewExistingUniversity(school);
 	%>
 
-	<a href="results.jsp">Go back to search results</a>
 	<br>
 	<a href="search.jsp">Search again</a>
 	<table style="text-align: center; width: 1069px; height: 480px;"
