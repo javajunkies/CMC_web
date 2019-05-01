@@ -30,10 +30,6 @@
 		
 		<div class="sort">
 
-			<%
-		UserInteraction uc = (UserInteraction)session.getAttribute("username");
-	%>
-
 		<br>
 		<br>
 						
