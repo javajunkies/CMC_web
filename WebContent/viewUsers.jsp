@@ -7,6 +7,15 @@
 <title>CMC</title>
 </head>
 <body>
+<%
+		
+		String r = request.getParameter("Result");
+		if(r != null && r.equals("1")){
+			out.println("User was successfully edited."+ "<br> <br>");
+		} else if(r != null){
+			out.println("Edit unsuccessful, please try again." + "<br><br>");
+		}
+	%>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>

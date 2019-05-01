@@ -24,7 +24,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Username" value="<%=user.getUsername()%>"><br>
+<td style="vertical-align: top;"><input readonly="readonly" name="Username" value="<%=user.getUsername()%>"><br>
 </td>
 </tr>
 <tr>
