@@ -8,8 +8,8 @@
 <title>Manage Saved Schools</title>
 </head>
 <%
-	UserInteraction ui = (UserInteraction) session.getAttribute("username");
-	String uname = ui.getCurrentUser().getUsername();
+	UserInteraction uc = (UserInteraction) session.getAttribute("username");
+	String uname = uc.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">
@@ -30,14 +30,6 @@
 		
 		<div class="sort">
 
-			<%
-		UserInteraction uc = (UserInteraction)session.getAttribute("username");
-	%>
-
-		
-						
-						
-						
 							<%
 							
 							out.print("<table id=\"defaults\" style=\"top: 10%; display: block;\"><tbody>");
@@ -198,7 +190,10 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
-					//+ " (added on: " + s.getTimeStamp() + ") "
+
+//+ " (added on: " + s.getTimeStamp() + ") "
+
+
 
 				}
 				out.print("</tbody>" +
@@ -220,6 +215,17 @@
 							"</tr>");
 				}
 			%>
+
+						</tr>
+					</tbody>
+					<tr>
+						<td></td><td></td><td></td>
+						<td><form method=\"post\" action=\"sortSavedSchools_Action.jsp\" name=\"sort\" > <input type=\"submit\" class=\"button\" value=\"Sort By Number Of Applicants\"> <input name=\"sort\" value=\""+ s.getSchool() + "\" type=\"hidden\"></form></td>
+					</tr>
+				</table>
+			</center>
+		</div>
+
 
 				
 				
@@ -286,9 +292,7 @@
 			%>
 				
 					
-				</div>
-				</div>
-				
+		
 				
 				
 				

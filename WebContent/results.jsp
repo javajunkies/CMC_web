@@ -396,7 +396,6 @@ session.setAttribute("searchParams", params);
 						}
 					%>
 				</table>
-
 		</div>
 		</center>
 	</div>
