@@ -379,7 +379,7 @@ session.setAttribute("searchParams", params);
 								minAcademicsScale, maxAcademicsScale, minSocialScale, maxSocialScale, minQualityOfLife,
 								maxQualityOfLife);
 
-								out.print("<tr><td></td><td></td><td>"+ result.size() + " Schools </td><td>Compare</td></tr>");
+								out.print("<tr><td></td><td></td><td>"+ result.size() + " Schools </td></tr>");
 
 						
 								
@@ -391,7 +391,7 @@ session.setAttribute("searchParams", params);
 										"<td width=5% > <form method=\"post\" action=\"saveSchoolSearchAction.jsp\" name=\"Save\" > <input type=\"submit\" class=\"button\" value=\"Save\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\">  </form> </td>" +
 
 											"<td width=50% >" + result.get(i).getSchool() + "</td>" +
-											"<td width=10% > <form method=\"post\" action=\"compareAction.jsp\" name=\"Compare\" > <input type=\"submit\" class=\"button\" value=\"Compare\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"></form> </td>" + 
+											//"<td width=10% > <form method=\"post\" action=\"compareAction.jsp\" name=\"Compare\" > <input type=\"submit\" class=\"button\" value=\"Compare\"> <input name=\"school\" value=\""+ result.get(i).getSchool() + "\" type=\"hidden\"></form> </td>" + 
 									"</tr>");
 						}
 					%>

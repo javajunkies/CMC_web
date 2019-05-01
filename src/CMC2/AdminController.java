@@ -118,66 +118,69 @@ public class AdminController {
 	  if(nameChange == true) {
 		  throw new IllegalArgumentException("Invalid school name entered.");
 	  }
-    
-    if(state.equals("")) {
-    	throw new IllegalArgumentException("No state entered.");
-    }
-    
-    else if(location.equals("")) {
-    	throw new IllegalArgumentException("No location entered.");
-    }
-    
-    else if(control.equals("")) {
-    	throw new IllegalArgumentException("No control entered.");
-    }
-    
-    else if(numberOfStudents <= 0) {
-    	throw new IllegalArgumentException("Invalid number of students.");
-    }
-    
-    else if(percentFemales < 0 || percentFemales > 100) {
-    	throw new IllegalArgumentException("Invalid percent femalale.");
-    }
-    
-    else if(SATVerbal < 0 || SATVerbal > 1600) {
-    	throw new IllegalArgumentException("Invalid SAT Verbal.");
-    }
-    
-    else if(SATMath < 0 || SATMath > 1600) {
-    	throw new IllegalArgumentException("Invalid SAT Math.");
-    }
-    
-    else if(expenses < 0) {
-    	throw new IllegalArgumentException("Invalid expenses.");
-    }
-    
-    else if(percentFinancialAid < 0 || percentFinancialAid > 100) {
-    	throw new IllegalArgumentException("Invalid percent financial aid.");
-    }
-    
-    else if(numberOfApplicants < 0) {
-    	throw new IllegalArgumentException("Invalid number of applicants.");
-    }
-    
-    else if(percentAdmitted < 0 || percentAdmitted > 100) {
-    	throw new IllegalArgumentException("Invalid percent admitted.");
-    }
-    
-    else if(percentEnrolled < 0 || percentEnrolled > 100) {
-    	throw new IllegalArgumentException("Invalid percent enrolled.");
-    }
-    
-    else if(academicsScale < 0 || academicsScale > 5) {
-    	throw new IllegalArgumentException("Invalid academics scale.");
-    }
-    
-    else if(socialScale < 0 || socialScale > 5) {
-    	throw new IllegalArgumentException("Invalid social scale.");
-    }
-    
-    else if(qualityOfLifeScale < 0 || qualityOfLifeScale > 5) {
-    	throw new IllegalArgumentException("Invalid quality of life scale.");
-    }
+
+	  if( school.equals("")) {
+		  return 2;
+	  }
+		  if(state.equals("")) {
+			  return 3; 
+		  }
+	  
+		  if(location.equals("")) {
+			 return 4;
+		  }
+	  
+	     if(control.equals("")) {
+	  	   return 5;
+	     }
+	  
+	 if(numberOfStudents <= 0) {
+	  	  return 6;
+	  }
+	  
+	 if(percentFemales < 0 || percentFemales > 100 ) {
+	  	return 7;
+	  }
+	  
+	  if(SATVerbal < 0 || SATVerbal > 1600 ) {
+	  	return 8;
+	  }
+	  
+	 if(SATMath < 0 || SATMath > 1600) {
+	  	return 9; 
+	  }
+	  
+	  if(expenses < 0 )  {
+	  	return 10;
+	  }
+	  
+	 if(percentFinancialAid < 0 || percentFinancialAid > 100 ) {
+	  	return 11;
+	  }
+	  
+	 if(numberOfApplicants < 0) {
+	  	return 12;
+	  }
+	  
+	  if(percentAdmitted < 0 || percentAdmitted > 100 ) {
+	  	return 13;
+	  }
+	  
+	 if(percentEnrolled < 0 || percentEnrolled > 100) {
+	  	return 14;
+	  }
+	  
+	 if(academicsScale < 0 || academicsScale > 5) {
+	  	return 15;
+	  }
+	  
+	 if (socialScale < 0 || socialScale > 5) {
+		return 16;
+	  }
+	  
+	  if(qualityOfLifeScale < 0 || qualityOfLifeScale > 5) {
+	  	return 17;
+	  }
     
     else {
     	return dbcontroller.addUniversity(school, state, location, control, numberOfStudents,
