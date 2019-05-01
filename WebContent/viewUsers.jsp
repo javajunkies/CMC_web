@@ -26,11 +26,11 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-<<<<<<< HEAD
+
 								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>"
-=======
+
 								+ "<a href=\"viewSchools.jsp\">Manage Universities</a>"
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
+
 								+ "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("temp_index.jsp");
@@ -49,41 +49,7 @@
 <title>CMC</title>
 </head>
 <body>
-<<<<<<< HEAD
-	<table style="text-align: left; width: 1069px; height: 480px;"
-		border="1" cellpadding="2" cellspacing="2">
-		<tbody>
-		<a href="adminAddUser.jsp" target="_blank">Add a User</a> <br>
-			<tr>
-				<td style="vertical-align: top; text-align: center;">First name
-				</td>
-				<td style="vertical-align: top; text-align: center;">Last name
-				</td>
-				<td style="vertical-align: top; text-align: center;">Username</td>
-				<td style="vertical-align: top; text-align: center;">Password</td>
-				<td style="vertical-align: top; text-align: center;">Type</td>
-				<td style="vertical-align: top; text-align: center;">Status</td>
-			</tr>
-			<%
-				AdminInteraction admin = new AdminInteraction();
-				for (int i = 0; i < admin.viewUsers().size(); i++) {
-					out.print("<tr>" + "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getFirst() + "</td>"
-							+ "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getLast() + "</td>"
-							+ "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsername() + "</td>"
-							+ "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getPassword() + "</td>"
-							+ "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>"
-							+ "<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>"
-							+ "<td> <form method=\"post\" action=\"adminEditUser.jsp\" name=\"adminEdit\" > <input type=\"submit\" class=\"button\" value=\"Edit User\"> <input name=\"userName\" value=\""
-							+ admin.viewUsers().get(i).getUsername() + "\" type=\"hidden\"> </td> </form>" + "</tr>");
-				}
-			%>
-		</tbody>
-	</table>
-</body>
-				</html>
 
-=======
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
 
 <%
 		

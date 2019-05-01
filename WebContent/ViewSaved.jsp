@@ -30,18 +30,6 @@
 		
 		<div class="sort">
 
-<<<<<<< HEAD
-	<center>
-=======
-			<%
-		UserInteraction uc = (UserInteraction)session.getAttribute("username");
-	%>
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
-
-		
-						
-						
-						
 							<%
 							
 							out.print("<table id=\"defaults\" style=\"top: 10%; display: block;\"><tbody>");
@@ -202,12 +190,11 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
-<<<<<<< HEAD
-//+ " (added on: " + s.getTimeStamp() + ") "
-=======
-					//+ " (added on: " + s.getTimeStamp() + ") "
 
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
+//+ " (added on: " + s.getTimeStamp() + ") "
+
+
+
 				}
 				out.print("</tbody>" +
 						"<tr>" +
@@ -228,7 +215,7 @@
 							"</tr>");
 				}
 			%>
-<<<<<<< HEAD
+
 						</tr>
 					</tbody>
 					<tr>
@@ -238,7 +225,7 @@
 				</table>
 			</center>
 		</div>
-=======
+
 
 				
 				
@@ -305,9 +292,7 @@
 			%>
 				
 					
-				</div>
-				</div>
-				
+		
 				
 				
 				
@@ -356,6 +341,5 @@
 					Accept.style.display = "block";
 				}
 		</script>
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
 </body>
 </html>

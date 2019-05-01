@@ -32,8 +32,7 @@
 		<center>
 			<div class=inside>
 
-		
-		<html>
+
 <head>
 <meta charset="UTF-8">
 <title>ViewSchool</title>
@@ -41,15 +40,7 @@
 </head>
 <body>
 	<br>
-<<<<<<< HEAD
-=======
-	<%
-		UserInteraction ui = (UserInteraction) session.getAttribute("username");
-		String school = (request.getParameter("school"));
-		University univ = ui.viewExistingUniversity(school);
-		String uname = ui.getCurrentUser().getUsername();
-	%>
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
+
 
 	<br>
 	<a href="search.jsp">Search again</a>
@@ -734,8 +725,8 @@
 	</form>
 	<br>
 	<br>
-</body>
-</html>
+
+
 
 
 
@@ -744,9 +735,6 @@
 	</div>
 	<span class="footer">JavaJunkies</span>
 </body>
-<<<<<<< HEAD
-</html>
-=======
+
 </html>
 
->>>>>>> 823fa56d1065ce5aa48f3d7d074782ae400efff6
