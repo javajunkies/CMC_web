@@ -140,7 +140,7 @@ border="1" >
 
 <tr>
 <td style="vertical-align: top;"><input value="Edit"
-name="Edit" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+name="Edit" type="submit"></td>
 <td style="vertical-align: top;"><input value="Reset"
 name="Reset" type="reset"></td>
 </tr>
