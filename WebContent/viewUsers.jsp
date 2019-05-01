@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 6b0280acbbe534f3db52dbec1669f556dd1934ea
 <%@ page language="java" import="CMC2.*" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@include file="checkAdminLoggedIn.jsp"%>
@@ -61,6 +58,7 @@
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">
 <tbody>
+<a href="adminAddUser.jsp" target="_blank">Add a User</a> <br>
 	<tr>
 		<td style="vertical-align: top; text-align: center;">First name
 		</td>

@@ -9,4 +9,5 @@
   //char s = request.getParameter("Status").charAt(0);
   //User user = new User(request.getParameter("FirstName"),request.getParameter("LastName"),request.getParameter("Username"),request.getParameter("Password"), t, s); 
   ai.addNewUser(username, request.getParameter("LastName"), request.getParameter("Username"), request.getParameter("Password"), t);
+  response.sendRedirect("viewUsers.jsp");
 %>
