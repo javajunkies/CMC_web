@@ -4,12 +4,15 @@
 <html>
 
 <%
+
+UserInteraction ui = (UserInteraction)session.getAttribute("username");
+String username = ui.getCurrentUser().getUsername();
+DBController db = new DBController();
+
+String name = request.getParameter("school");
+
 try{
-	UserInteraction ui = (UserInteraction)session.getAttribute("Name");
-	String name = request.getParameter("Name");
-	String uname = ui.getCurrentUser().getUsername();
-	ui.removeSavedSchool(uname, name);
-	
+	ui.removeSavedSchool(username, name);
 	response.sendRedirect("ViewSaved.jsp");
 	
 }catch(Exception e){
@@ -17,5 +20,3 @@ try{
 	out.println(e.getMessage());
 }
 %>
-
-</html>
