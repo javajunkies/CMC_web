@@ -1,9 +1,12 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
-<<<<<<< HEAD
 <%@include file="checkAdminLoggedIn.jsp"%>
-	<%	
-	AdminInteraction ai = (AdminInteraction)session.getAttribute("username");    
-=======
+
+<%
+	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+	String uname = ai.getCurrentUser().getUsername();
+	String username = request.getParameter("userName");
+	User user = ai.viewUserInfo(username);
+%>
 
 <html>
 <head>
@@ -11,10 +14,8 @@
 <title>CMC</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<%
-	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
-	String uname = ai.getCurrentUser().getUsername();
-%>
+
+
 <body>
 	<div class="container">
 		<div class="nav">
@@ -35,12 +36,7 @@
 			<div class=inside>
 
 		
-<%	 
->>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
-	String username = request.getParameter("userName");
-	User user = ai.viewUserInfo(username);
-%>
-	
+
 
 <html>
 <head>

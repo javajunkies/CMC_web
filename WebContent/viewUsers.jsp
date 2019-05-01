@@ -1,11 +1,8 @@
-<<<<<<< HEAD
+
 <%@ page language="java" import="CMC2.*" import="java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@include file="checkAdminLoggedIn.jsp"%>
-=======
-<%@ page language="java" import="CMC2.*" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
->>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -18,8 +15,8 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <%
-	UserInteraction ui = (UserInteraction) session.getAttribute("username");
-	String uname = ui.getCurrentUser().getUsername();
+	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+	String uname = ai.getCurrentUser().getUsername();
 %>
 <body>
 	<div class="container">
@@ -30,7 +27,7 @@
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
 								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>"
-								+ "<a href=\"logout_action.jsp\">Logout</a></div>");
+								+ "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("temp_index.jsp");
 					}
@@ -51,6 +48,7 @@
 	<table style="text-align: left; width: 1069px; height: 480px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
+		<a href="adminAddUser.jsp" target="_blank">Add a User</a> <br>
 			<tr>
 				<td style="vertical-align: top; text-align: center;">First name
 				</td>

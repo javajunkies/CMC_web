@@ -40,6 +40,45 @@
 <title>Schools</title>
 </head>
 <body>
+<%
+String r = request.getParameter("Result");
+		if(r != null && r.equals("1")){
+			out.println("University sucessfully edited."+ "<br> <br>");
+		}
+			if (r != null && r.equals("2")) {
+		out.println("No school entered." + "<br> <br>");
+			} else if (r != null && r.equals("3")) {
+		out.println("No state entered.");
+			} else if (r != null && r.equals("4")) {
+			out.println("No location entered.");
+		} else if (r != null && r.equals("5")) {
+			out.println("No control entered.");
+		} else if (r != null && r.equals("6")) {
+			out.println("Invalid number of students.");
+		} else if (r != null && r.equals("7")) {
+			out.println("Invalid Percent Female.");
+		} else if (r != null && r.equals("8")) {
+			out.println("SAT Verbal.");
+		} else if (r != null && r.equals("9")) {
+			out.println("Invalid SAT Math.");
+		} else if (r != null && r.equals("10")) {
+			out.println("Invalid expenses.");
+		} else if (r != null && r.equals("11")) {
+			out.println("Invalid percent financial aid.");
+		} else if (r != null && r.equals("12")) {
+			out.println("Invalid number of applicants.");
+		} else if (r != null && r.equals("13")) {
+			out.println("Invalid percent admitted.");
+		} else if (r != null && r.equals("14")) {
+			out.println("Invalid percent enrolled.");
+		} else if (r != null && r.equals("15")) {
+			out.println("Invalid academics scale.");
+		} else if (r != null && r.equals("16")) {
+			out.println("Invalid social scale.");
+		} else if (r != null && r.equals("17")) {
+			out.println("Invalid quality of life scale.");
+		}
+	%>
 <form method="post" action="editUniversity.jsp" name="editUniversity"><br>
 <table style="text-align: left; width: 1069px; height: 480px;"
 border="1" cellpadding="2" cellspacing="2">

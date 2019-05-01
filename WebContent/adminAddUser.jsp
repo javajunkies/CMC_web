@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+
 <%@ page language="java" import="CMC2.*" import="java.util.*"%>
 <%@include file="checkAdminLoggedIn.jsp"%>
-=======
->>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
 
-
-<%@page language="java" import="CMC2.*"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -35,55 +31,49 @@
 		<center>
 			<div class=inside>
 
-		
-		<html>
-<head>
-<title>Add User Form</title>
-</head>
-<body>
+
 
 <br>
 <form method="post" action="adminAddUser_action.jsp" name="addUser"><br>
-<table style="text-align: left; width: 266px; height: 228px;"
-border="1" cellpadding="2" cellspacing="2">
+<table>
 <tbody>
 <tr>
-<td style="vertical-align: top;">First Name<br>
+<td>First Name<br>
 </td>
-<td style="vertical-align: top;"><input name="FirstName"><br>
-</td>
-</tr>
-<tr>
-<td style="vertical-align: top;">Last Name<br>
-</td>
-<td style="vertical-align: top;"><input name="LastName"><br>
+<td width=50%><input name="FirstName">
 </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Username<br>
+<td>Last Name<br>
 </td>
-<td style="vertical-align: top;"><input name="Username"> value=</td>
+<td><input name="LastName">
+</td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Password<br>
+<td>Username<br>
 </td>
-<td style="vertical-align: top;"><input name="Password"> </td>
+<td><input name="Username"> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Type<br>
+<td>Password<br>
 </td>
-<td style="vertical-align: top;"><input name="Type"> </td>
+<td><input name="Password"> </td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Status<br>
+<td>Type<br>
 </td>
-<td style="vertical-align: top;"><input name="Status"> </td>
+<td><input name="Type"> </td>
+</tr>
+<tr>
+<td>Status<br>
+</td>
+<td><input name="Status"> </td>
 </tr>
 
 <tr>
-<td style="vertical-align: top;"><input value="Add"
+<td><input value="Add"
 name="Add" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td style="vertical-align: top;"><input value="Reset"
+<td><input value="Reset"
 name="Reset" type="reset"></td>
 </tr>
 </tbody>
@@ -91,8 +81,7 @@ name="Reset" type="reset"></td>
 <br>
 </form>
 <br>
-</body>
-</html>
+
 
 
 
