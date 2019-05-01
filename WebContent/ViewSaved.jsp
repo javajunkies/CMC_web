@@ -65,6 +65,7 @@
 					
 				}
 				else{
+
 					out.print("<tr><td></td><td></td><td>School Name</td></tr><tr>");
 				for (University s : savedSchools) {
 					out.print("<td>");
@@ -83,7 +84,8 @@
 					out.print("</form>");
 					out.print("</td>");
 					out.print("</tr>");
-					//+ " (added on: " + s.getTimeStamp() + ") "
+//+ " (added on: " + s.getTimeStamp() + ") "
+
 				}
 				}
 				
