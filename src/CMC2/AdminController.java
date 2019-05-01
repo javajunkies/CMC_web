@@ -307,25 +307,21 @@ public class AdminController {
    * @return int the status of editing a user
    */
   public int editUser(String username, String firstName, String lastName, String password, char type, char status) {
-	  for(User user : dbcontroller.getAllUsers()) {
-		  if(username.equals(user.getUsername()) || username.equals("")) {
-			  throw new IllegalArgumentException("Invalid username.");
-		  }
-	  }
+	  
 	  if(firstName.equals("")) {
-		  throw new IllegalArgumentException("Invalid first name.");
+		  return 2;
 	  }
 	  else if(lastName.equals("")) {
-		  throw new IllegalArgumentException("Invalid last name.");
+		  return 3;
 	  }
 	  else if (accountController.checkPasswordCriteria(password) != 0) {
-		  throw new IllegalArgumentException("Invalid password, must be 8 characters.");
+		  return 4;
 	  }
 	  else if (type != 'u' && type != 'a' && type != 't') {
-		  throw new IllegalArgumentException("Invalid account type.");
+		  return 5;
 	  }
 	  else if (status != 'Y' && status != 'N') {
-		  throw new IllegalArgumentException("Invalid account status.");
+		  return 6;
 	  }
 	  else {
 	  return dbcontroller.adminEditUser(username, firstName, lastName, password, type, status);

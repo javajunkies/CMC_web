@@ -18,7 +18,7 @@
 				<%
 					if (uname != null) {
 						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
-								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
+								+ "<a href=\"ViewSaved.jsp\">My Saved Schools</a>" + "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logout_action.jsp\">Logout</a></div>");
 					} else {
 						response.sendRedirect("index.jsp");
 					}
@@ -43,8 +43,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="button" class="button" value="Advanced >"
-								onclick="toggle()"></td>
+							<td><input type="button" class="button" value="Advanced >" onclick="toggle()"></td>
 						</tr>
 					</table>
 				</form>
