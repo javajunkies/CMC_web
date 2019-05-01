@@ -20,6 +20,6 @@
 	int socialScale = Integer.parseInt(request.getParameter("SocialScale"));
 	int qualityOfLife= Integer.parseInt(request.getParameter("QualityOfLifeScale"));
 	
-	ai.addUniversity(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
-	response.sendRedirect("viewSchools.jsp");
+	int result = ai.addUniversity(school, state, location, control, numStudents, percentFemale, SATVerbal, SATMath, expenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLife);
+ 	response.sendRedirect("viewSchools.jsp?Result=" + result);
 %> 
