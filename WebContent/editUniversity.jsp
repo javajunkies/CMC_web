@@ -1,11 +1,50 @@
 <%@page language="java" import="CMC2.*" import="java.util.*"%>
+<<<<<<< HEAD
+<%@include file="checkAdminLoggedIn.jsp"%>
+=======
 
+
+
+
+<%@page language="java" import="CMC2.*"%>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CMC</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+>>>>>>> 19a99568c865b24097628b212a65d493d8417bbd
 <%
-	AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
-	String univ = request.getParameter("school");
-	out.print(univ);
-	University school = ai.getCurrentUniversity(univ);
+AdminInteraction ai = (AdminInteraction) session.getAttribute("username");
+	String uname = ai.getCurrentUser().getUsername();
+
+
+String univ = request.getParameter("school");
+out.print(univ);
+University school = ai.getCurrentUniversity(univ);
 %>
+
+<body>
+	<div class="container">
+		<div class="nav">
+			<span><a href="userHome.jsp" class="CMC">CMC</a></span>
+			<div class="dropdown">
+				<%
+					if (uname != null) {
+						out.print("<button class=\"dropbtn\">" + uname + "</button>" + "<div class= \"dropdown-content\">"
+								+ "<a href=\"ViewAccount.jsp\">Edit Account</a>" + "<a href=\"logoutAdmin_action.jsp\">Logout</a></div>");
+					} else {
+						response.sendRedirect("temp_index.jsp");
+					}
+				%>
+
+			</div>
+		</div>
+		<center>
+			<div class=inside>
+
+		
+
 
 <html>
 <head>
@@ -36,12 +75,12 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Location<br>
 </td>
-<td style="vertical-align: top;"><input name="Location" value=<%=school.getLocation()%> readonly> </td>
+<td style="vertical-align: top;"><input name="Location" value=<%=school.getLocation()%>> </td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Control<br>
 </td>
-<td style="vertical-align: top;"><input name="Control" value=<%=school.getControl()%>> </td>
+<td style="vertical-align: top;"><input name="Control" value=<%=school.getControl()%>></td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Number of Students<br>
@@ -116,5 +155,13 @@ name="Reset" type="reset"></td>
 <br>
 </form>
 <br>
+</body>
+</html>
+
+
+			</div>
+		</center>
+	</div>
+	<span class="footer">JavaJunkies</span>
 </body>
 </html>
