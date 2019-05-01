@@ -139,7 +139,9 @@ border="1" cellpadding="2" cellspacing="2">
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getSocialScale() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUniversities().get(i).getQualityOfLife() + "</td>" +
 			"<td> <form method=\"post\" action=\"editUniversity.jsp\" name=\"editUniv\" > <input type=\"submit\" class=\"button\" value=\"Edit\"> <input name=\"school\" value=\""+ admin.viewUniversities().get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
-
+			"<td> <form method=\"post\" action=\"removeSchool_action.jsp\" name=\"RemoveUniv\" > <input type=\"submit\" class=\"button\" value=\"Remove\"> <input name=\"school\" value=\""+ admin.viewUniversities().get(i).getSchool() + "\" type=\"hidden\"> </td> </form>" +
+					
+		
 					"</tr>");
 	 } %>
 	 </tbody>

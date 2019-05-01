@@ -56,7 +56,12 @@
 		String r = request.getParameter("Result");
 		if(r != null && r.equals("1")){
 			out.println("User was successfully edited."+ "<br> <br>");
-		} else if(r != null){
+		} 
+		else if(r != null && r.equals("12")){
+			out.println("User was successfully deactivated."+ "<br> <br>");
+
+		}
+		else if(r != null){
 			out.println("Edit unsuccessful, please try again." + "<br><br>");
 		}
 	%>
@@ -89,7 +94,9 @@ border="1" cellpadding="2" cellspacing="2">
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getUsertype() + "</td>" +
 			"<td style=\"vertical-align: top;\">" + admin.viewUsers().get(i).getStatus() + "</td>" +
 			"<td> <form method=\"post\" action=\"adminEditUser.jsp\" name=\"adminEdit\" > <input type=\"submit\" class=\"button\" value=\"Edit User\"> <input name=\"userName\" value=\""+ admin.viewUsers().get(i).getUsername() + "\" type=\"hidden\"> </td> </form>" +
-		"</tr>");
+			"<td> <form method=\"post\" action=\"deactivateUser_action.jsp\" name=\"Deactivate\" > <input type=\"submit\" class=\"button\" value=\"Deactivate\"> <input name=\"userName\" value=\""+ admin.viewUsers().get(i).getUsername()  + "\" type=\"hidden\"> </td> </form>" +
+
+					"</tr>");
 	}
 	%>
 </tbody>
