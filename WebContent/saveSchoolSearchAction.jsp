@@ -12,7 +12,7 @@ University univ = db.viewExistingUniversity(name);
 String uname = univ.getSchool();
 
 try{
-	ui.saveSchool(username, name);
+	ui.saveSchool(username, uname);
 	response.sendRedirect("ViewSaved.jsp");
 }
 catch(Exception e){
